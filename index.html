@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Venta de mudanza · CDMX</title>
+<meta name="description" content="Muebles y artículos en venta por mudanza en Ciudad de México. Paga con Mercado Pago, hasta 3 meses sin intereses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,600..800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #EEF0EC; --card: #FFFFFF; --ink: #15181C; --muted: #5B626B; --line: #D5D9D3;
+  --accent: #D9481F; --go: #1D7347; --soft: #F6F7F4;
+  --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--body); }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 64px; display: grid; gap: 20px; }
+header { display: grid; gap: 8px; }
+.route { font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 800 clamp(30px, 6vw, 44px)/1.05 var(--display); font-stretch: 85%; margin: 0; text-wrap: balance; }
+h2 { font: 700 20px/1.2 var(--display); font-stretch: 85%; margin: 0; }
+p { margin: 0; }
+.lede { color: var(--muted); max-width: 62ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px; }
+.fact { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 14px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.card.sold { opacity: .55; }
+.photo { aspect-ratio: 4 / 3; background: var(--soft); position: relative; }
+.photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.badge { position: absolute; top: 10px; left: 10px; background: var(--ink); color: #fff; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+.badge.sold { background: var(--accent); }
+.body { padding: 14px; display: grid; gap: 8px; align-content: start; }
+.price { font: 800 28px/1 var(--display); font-variant-numeric: tabular-nums; }
+.msi { font-size: 14px; color: var(--muted); }
+.desc { font-size: 14px; white-space: pre-wrap; }
+.cond { font-size: 13px; color: var(--muted); }
+.buttons { display: grid; gap: 8px; margin-top: 4px; }
+.btn { display: block; text-align: center; text-decoration: none; font-weight: 600; font-size: 15px; padding: 10px 12px; border-radius: 6px; border: 1.5px solid var(--ink); color: var(--ink); background: transparent; }
+.btn.primary { background: var(--go); border-color: var(--go); color: #fff; }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.thumbs { display: flex; gap: 4px; padding: 0 14px; }
+.thumbs img { width: 48px; height: 48px; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); cursor: pointer; }
+.empty { background: var(--card); border: 1.5px dashed var(--line); border-radius: 8px; padding: 32px 20px; text-align: center; color: var(--muted); }
+.how { background: var(--card); border-radius: 8px; border: 1px solid var(--line); padding: 16px; display: grid; gap: 8px; }
+.how ol { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+footer { font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <span class="route">Ciudad de México · hasta el 25 de noviembre</span>
+    <h1>Venta de mudanza</h1>
+    <p class="lede">Me mudo y vendo muebles y artículos de mi departamento. Todo usado y en buen estado. Paga en línea con Mercado Pago y recoge en persona, o pide envío dentro de la CDMX.</p>
+    <div class="facts">
+      <span class="fact">Hasta 3 meses sin intereses</span>
+      <span class="fact">Tarjeta, OXXO o transferencia</span>
+      <span class="fact">Recoger en persona o con envío</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Estoy subiendo los artículos. Vuelve pronto o escríbeme.</p>
+  </section>
+
+  <section class="how">
+    <h2>Cómo comprar</h2>
+    <ol>
+      <li>Elige <b>Recoger</b> (precio del artículo) o <b>Con envío</b> (incluye entrega en CDMX).</li>
+      <li>Paga con Mercado Pago. Puedes elegir hasta 3 meses sin intereses con tarjeta de crédito.</li>
+      <li>Escríbeme con tu comprobante para acordar día y hora.</li>
+    </ol>
+    <p><a class="btn" id="contact" href="https://www.facebook.com/CristiianAaron" target="_blank" rel="noopener">Escríbeme por Facebook</a></p>
+  </section>
+
+  <footer>Los precios están en pesos mexicanos (MXN). Los artículos marcados como vendidos ya no están disponibles.</footer>
+</div>
+<script>
+(function () {
+  function el(tag, attrs, kids) {
+    var e = document.createElement(tag);
+    for (var k in (attrs || {})) { if (k === "text") e.textContent = attrs[k]; else e.setAttribute(k, attrs[k]); }
+    (kids || []).forEach(function (c) { if (c) e.appendChild(c); });
+    return e;
+  }
+  function money(n) { return "$" + Math.round(Number(n) || 0).toLocaleString("es-MX"); }
+  function safe(u) { return typeof u === "string" && /^https:\/\//.test(u) ? u : null; }
+  function photo(p) { return typeof p === "string" && /^(images\/[\w.\-]+|https:\/\/)/.test(p) ? p : null; }
+
+  fetch("items.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (items) {
+    var grid = document.getElementById("grid");
+    items = (Array.isArray(items) ? items : []).filter(function (i) { return i && i.title && i.price; });
+    items.sort(function (a, b) { return (a.status === "vendido") - (b.status === "vendido"); });
+    if (!items.length) { document.getElementById("empty").hidden = false; return; }
+    items.forEach(function (it) {
+      var sold = it.status === "vendido", held = it.status === "apartado";
+      var pics = (it.photos || []).map(photo).filter(Boolean);
+      var main = pics[0] ? el("img", { src: pics[0], alt: it.title, loading: "lazy" }) : null;
+      var ph = el("div", { class: "photo" }, [main, sold ? el("span", { class: "badge sold", text: "Vendido" }) : held ? el("span", { class: "badge", text: "Apartado" }) : null]);
+      var thumbs = pics.length > 1 ? el("div", { class: "thumbs" }, pics.map(function (p) {
+        var t = el("img", { src: p, alt: "", loading: "lazy" }); t.onclick = function () { if (main) main.src = p; }; return t;
+      })) : null;
+      var price = Number(it.price), deliv = Number(it.delivery) || 0;
+      var btns = [];
+      if (!sold && !held) {
+        var L = it.links || {};
+        if (safe(L.pickup)) btns.push(el("a", { class: "btn primary", href: safe(L.pickup), target: "_blank", rel: "noopener", text: "Pagar y recoger · " + money(price) }));
+        if (safe(L.delivery) && deliv > 0) btns.push(el("a", { class: "btn", href: safe(L.delivery), target: "_blank", rel: "noopener", text: "Pagar con envío · " + money(price + deliv) }));
+        if (!btns.length) btns.push(el("a", { class: "btn", href: document.getElementById("contact").href, target: "_blank", rel: "noopener", text: "Preguntar" }));
+      }
+      var body = el("div", { class: "body" }, [
+        el("h2", { text: it.title }),
+        el("div", { class: "price", text: money(price) }),
+        el("div", { class: "msi", text: sold ? "Ya se vendió" : "o 3 meses sin intereses de " + money(price / 3) }),
+        it.condition ? el("div", { class: "cond", text: "Estado: " + it.condition }) : null,
+        it.description ? el("p", { class: "desc", text: it.description }) : null,
+        btns.length ? el("div", { class: "buttons" }, btns) : null
+      ]);
+      grid.appendChild(el("article", { class: "card" + (sold ? " sold" : "") }, [el("div", null, [ph, thumbs]), body]));
+    });
+  }).catch(function () { document.getElementById("empty").hidden = false; });
+})();
+</script>
+</body>
+</html>
