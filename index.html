@@ -161,6 +161,11 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
 #m-orig .orig { font-size: 18px; }
 .msi-box { background: var(--lime); border-radius: 10px; padding: 10px 16px; font-size: 18px; display: flex; gap: 12px; align-items: center; }
 .msi-box b { font-weight: 700; }
+.cash-box { border: 1.5px dashed var(--green); border-radius: 10px; padding: 10px 16px; font-size: 17px; display: flex; gap: 12px; align-items: center; }
+.cash-box b { font: 700 22px/1 var(--serif); }
+.cash-box small { display: block; color: var(--muted); font-size: 14px; }
+.card .cash { font-size: 14px; font-weight: 600; color: var(--green); }
+.btn.cashbtn { background: var(--paper); border-color: var(--green); color: var(--green); }
 .facts { margin: 0; display: grid; grid-template-columns: 170px 1fr; font-size: 17px; }
 .facts dt, .facts dd { margin: 0; padding: 7px 0; border-bottom: 1px solid var(--line); }
 .facts dt { color: var(--muted); }
@@ -227,7 +232,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     <div class="hero-text">
       <span class="tag" id="deadline">Hasta el 25 de noviembre</span>
       <h1>Venta de mudanza</h1>
-      <p>Me mudo y todo se tiene que ir. Muebles y artículos usados en buen estado, al mismo precio en efectivo o con tarjeta.</p>
+      <p>Me mudo y todo se tiene que ir. Muebles y artículos usados en buen estado. Paga con Mercado Pago hasta 3 meses sin intereses, o en efectivo con descuento al recoger.</p>
       <a class="cta" href="#articulos">Ver artículos <svg class="i" style="width:20px;height:20px;stroke-width:2"><use href="#i-down"/></svg></a>
     </div>
     <div class="photos">
@@ -240,7 +245,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
 <div class="wrap">
   <div class="features">
     <div class="feature"><svg class="i"><use href="#i-card"/></svg>Hasta 3 meses sin intereses</div>
-    <div class="feature"><svg class="i"><use href="#i-cash"/></svg>Efectivo o transferencia</div>
+    <div class="feature"><svg class="i"><use href="#i-cash"/></svg>Descuento en efectivo al recoger</div>
     <div class="feature"><svg class="i"><use href="#i-truck"/></svg>Recoge o pide envío en CDMX</div>
   </div>
 
@@ -262,7 +267,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
 
   <section class="how" id="como-comprar" aria-label="Cómo comprar">
     <div class="step"><svg class="i"><use href="#i-hand"/></svg><h3>Elige</h3><p>Toca cualquier artículo para ver fotos, medidas y detalles.</p></div>
-    <div class="step"><svg class="i"><use href="#i-tag"/></svg><h3>Paga o haz una oferta</h3><p>Paga con Mercado Pago (tarjeta hasta 3 MSI, OXXO o transferencia) o mándame tu oferta por WhatsApp.</p></div>
+    <div class="step"><svg class="i"><use href="#i-tag"/></svg><h3>Paga o haz una oferta</h3><p>Paga con Mercado Pago (tarjeta hasta 3 MSI, OXXO o transferencia), en efectivo al recoger con descuento, o mándame tu oferta por WhatsApp.</p></div>
     <div class="step"><svg class="i"><use href="#i-open"/></svg><h3>Recoge o recibe</h3><p id="step3">Coordinamos día y hora por WhatsApp. El envío se cobra aparte y es dentro de la CDMX.</p></div>
   </section>
 </div>
@@ -270,7 +275,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
 <footer id="contacto">
   <div class="wrap">
     <span class="mpfoot">Pagos seguros con <img src="brand/mercadopago-color-horizontal.svg" alt="Mercado Pago"></span>
-    <span>Precios en pesos mexicanos (MXN). Mismo precio en efectivo y con tarjeta.</span>
+    <span>Precios en pesos mexicanos (MXN). El precio en efectivo ya descuenta la comisión de Mercado Pago y es solo para recoger en persona.</span>
     <a id="foot-wa" target="_blank" rel="noopener">Contacto por WhatsApp</a>
   </div>
 </footer>
@@ -288,14 +293,15 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
         <button class="close" type="button" id="m-close" aria-label="Cerrar"><svg class="i"><use href="#i-x"/></svg></button>
       </div>
       <h2 id="m-title"></h2>
-      <div class="bigprice"><b id="m-price"></b><span>MXN · efectivo o tarjeta</span></div>
+      <div class="bigprice"><b id="m-price"></b><span>MXN · con Mercado Pago</span></div>
       <div id="m-orig"></div>
       <div class="msi-box" id="m-msi"></div>
+      <div class="cash-box" id="m-cash"></div>
       <dl class="facts" id="m-facts"></dl>
       <p class="desc" id="m-desc"></p>
       <div class="actions" id="m-actions"></div>
       <button class="share" type="button" id="m-share">Copiar enlace</button>
-      <p class="fine">Paga con Mercado Pago y envía tu comprobante por WhatsApp para coordinar la entrega.</p>
+      <p class="fine">Paga con Mercado Pago y envía tu comprobante por WhatsApp para coordinar la entrega. El pago en efectivo es solo para recoger en persona.</p>
     </div>
   </div>
 </dialog>
@@ -309,7 +315,9 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     whatsappFallback: "https://wa.me/qr/PAX2YVEUDF44G1?s=p",
     pickup: "BeGrand Alto Polanco, Torre 4 · Anáhuac I Secc., CP 11320, CDMX",
     pickupShort: "Alto Polanco, CDMX",
-    deadline: "2026-11-25T23:59:00-06:00"
+    deadline: "2026-11-25T23:59:00-06:00",
+    // Cash price = Mercado Pago price minus its commission (3.49% + $4, + IVA), rounded down to $10. Pickup only.
+    mpRate: 0.0349, mpFixed: 4, iva: 1.16
   };
 
   function h(tag, attrs, kids) {
@@ -328,6 +336,11 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     s.setAttribute("class", "i" + (cls ? " " + cls : "")); s.setAttribute("aria-hidden", "true");
     var u = document.createElementNS("http://www.w3.org/2000/svg", "use"); u.setAttribute("href", "#" + id); s.appendChild(u);
     return s;
+  }
+  function cashPrice(it) {
+    if (Number(it.cashPrice) > 0) return Number(it.cashPrice);
+    var p = Number(it.price) || 0;
+    return Math.floor((p - (p * CONFIG.mpRate + CONFIG.mpFixed) * CONFIG.iva) / 10) * 10;
   }
   function money(n) { return "$" + Math.round(Number(n) || 0).toLocaleString("es-MX"); }
   function safeUrl(u) { return typeof u === "string" && /^https:\/\//.test(u) ? u : null; }
@@ -388,6 +401,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
         h("h3", { text: it.title }),
         h("div", { class: "price", text: money(it.price) }),
         h("div", { class: "sub", text: sold ? "Vendido" : "o 3 × " + money(it.price / 3) + " sin intereses" }),
+        sold ? null : h("div", { class: "cash", text: "Efectivo al recoger: " + money(cashPrice(it)) }),
         origLine(it)
       ]);
       grid.appendChild(h("button", { class: "card" + (sold ? " is-sold" : ""), type: "button", "aria-label": it.code + ", " + it.title + ", " + money(it.price), onclick: function () { open(it.code); } }, [ph, meta]));
@@ -443,6 +457,9 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     var msi = document.getElementById("m-msi");
     msi.replaceChildren(icon("i-card"), h("span", null, ["Hasta 3 meses sin intereses · ", h("b", { text: "3 × " + money(it.price / 3) })]));
     msi.hidden = sold;
+    var cb = document.getElementById("m-cash");
+    cb.replaceChildren(icon("i-cash"), h("span", null, ["Pago en efectivo: ", h("b", { text: money(cashPrice(it)) }), h("small", { text: "Solo para recoger en persona, sin envío. Ya descuenta la comisión de Mercado Pago." })]));
+    cb.hidden = sold;
     var facts = document.getElementById("m-facts");
     facts.replaceChildren();
     [["Estado", it.condition], ["Medidas", it.size], ["Marca", it.brand], ["Recoger en", CONFIG.pickup || "CDMX"]].forEach(function (f) {
@@ -456,6 +473,11 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       var L = it.links || {}, deliv = Number(it.delivery) || 0;
       if (safeUrl(L.pickup)) acts.appendChild(mpBtn("", "y recoger", money(it.price), safeUrl(L.pickup)));
       if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(mpBtn("alt", "+ envío", money(it.price + deliv), safeUrl(L.delivery)));
+    }
+    if (!sold && !held) {
+      var cashMsg = "Hola, quiero el " + it.code + " · " + it.title + " pagando en efectivo (" + money(cashPrice(it)) + ") y recogiéndolo en persona. ¿Cuándo puedo pasar?";
+      var cbtn = h("a", { class: "btn cashbtn", href: waLink(cashMsg), target: "_blank", rel: "noopener" }, [icon("i-cash"), h("span", { text: "Pagar en efectivo al recoger" }), h("span", { class: "amt", text: money(cashPrice(it)) })]);
+      acts.appendChild(cbtn);
     }
     var msg = sold ? "Hola, vi que vendiste " + it.code + " " + it.title + ". ¿Tienes algo parecido?"
       : "Hola, te ofrezco $____ por " + it.code + " · " + it.title + " (precio " + money(it.price) + ").";
