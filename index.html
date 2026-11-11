@@ -20,7 +20,8 @@
   --line: #DCE1E7;
   --accent: #2F5BFF;
   --sticker: #FFD23F;
-  --wa: #1FA855;
+  --wa: #25D366;
+  --mp-navy: #0A0080;
   --sold: #E5484D;
   --display: "Archivo", "Arial Narrow", system-ui, sans-serif;
   --body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -83,7 +84,7 @@ main .wrap { padding-top: 24px; padding-bottom: 48px; display: grid; gap: 24px; 
 .card .price-line span { font-size: 13px; color: var(--muted); }
 .orig { font-size: 13px; color: var(--muted); }
 .orig s { font-family: var(--mono); }
-.orig .save { color: var(--wa); font-weight: 600; margin-left: 6px; }
+.orig .save { color: #138A4A; font-weight: 600; margin-left: 6px; }
 
 .empty { background: var(--card); border: 2px dashed var(--line); border-radius: 14px; padding: 48px 20px; text-align: center; display: grid; gap: 10px; justify-items: center; }
 .empty h2 { margin: 0; font: 800 26px/1.1 var(--display); font-stretch: 80%; }
@@ -99,8 +100,12 @@ main .wrap { padding-top: 24px; padding-bottom: 48px; display: grid; gap: 24px; 
 /* Buttons */
 .btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 16px; border-radius: 10px; border: 1.5px solid var(--ink); background: var(--card); color: var(--ink); cursor: pointer; }
 .btn svg { width: 20px; height: 20px; flex: none; }
-.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-.btn.wa { background: var(--wa); border-color: var(--wa); color: #fff; }
+.btn.mp { background: #fff; border: 2px solid var(--mp-navy); color: var(--mp-navy); }
+.btn.mp.alt { border-color: var(--line); }
+.btn .mplogo { height: 38px; width: auto; display: inline-block; vertical-align: middle; margin: -12px -2px; }
+.btn.wa { background: var(--wa); border-color: var(--wa); color: var(--ink); }
+.btn .walogo { width: 22px; height: 22px; flex: none; }
+.pill .mpwhite { height: 34px; width: auto; margin: -10px -4px; }
 .btn:focus-visible { outline: 3px solid var(--sticker); outline-offset: 2px; }
 .btn .amt { font-family: var(--mono); font-weight: 600; margin-left: auto; }
 
@@ -160,6 +165,7 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
     <p>Me mudo y todo se tiene que ir. Muebles y artículos usados en buen estado, al mismo precio en efectivo o con tarjeta. Paga en línea y recoge, pide envío, o hazme una oferta.</p>
     <div class="hero-row">
       <span class="pill countdown" id="countdown">Hasta el 25 de noviembre</span>
+      <span class="pill">Pagos con <img class="mpwhite" src="brand/mercadopago-white-horizontal.svg" alt="Mercado Pago"></span>
       <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19M6 15h4"/></svg>Hasta 3 meses sin intereses</span>
       <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10h16l-1.5-5h-13zM5 10v9h14v-9M9.5 19v-5h5v5"/></svg>Efectivo en tiendas o transferencia</span>
       <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.5" cy="17.5" r="1.8"/></svg>Recoge o con envío en CDMX</span>
@@ -267,6 +273,18 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
     var n = String(CONFIG.whatsapp || "").replace(/\D/g, "");
     return n ? "https://wa.me/" + n + "?text=" + encodeURIComponent(text) : CONFIG.whatsappFallback;
   }
+  function mpBtn(cls, before, after, amt, href) {
+    var a = h("a", { class: "btn mp " + cls, href: href, target: "_blank", rel: "noopener" });
+    a.appendChild(h("span", null, [before + " ", h("img", { class: "mplogo", src: "brand/mercadopago-color-horizontal.svg", alt: "Mercado Pago" }), after ? " " + after : ""]));
+    if (amt) a.appendChild(h("span", { class: "amt", text: amt }));
+    return a;
+  }
+  function waBtn(label, href) {
+    var a = h("a", { class: "btn wa", href: href, target: "_blank", rel: "noopener" });
+    a.appendChild(h("img", { class: "walogo", src: "brand/whatsapp-glyph-white.svg", alt: "" }));
+    a.appendChild(h("span", { text: label }));
+    return a;
+  }
   function btn(cls, icon, label, amt, href) {
     var a = h("a", { class: "btn " + cls, href: href, target: "_blank", rel: "noopener" });
     a.appendChild(h("span", { html: icon }).firstChild);
@@ -287,7 +305,7 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
   })();
   var emptyWa = document.getElementById("empty-wa");
   emptyWa.href = waLink("Hola, vi tu venta de mudanza. ¿Tienes…?");
-  emptyWa.innerHTML = ICON.chat; emptyWa.appendChild(h("span", { text: "Escríbeme por WhatsApp" }));
+  emptyWa.appendChild(h("img", { class: "walogo", src: "brand/whatsapp-glyph-white.svg", alt: "" })); emptyWa.appendChild(h("span", { text: "Escríbeme por WhatsApp" }));
 
   var items = [], cat = "", hideSold = false;
   var grid = document.getElementById("grid");
@@ -376,12 +394,12 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
     acts.replaceChildren();
     if (!sold && !held) {
       var L = it.links || {}, deliv = Number(it.delivery) || 0;
-      if (safeUrl(L.pickup)) acts.appendChild(btn("primary", ICON.card, "Pagar con Mercado Pago y recoger", money(it.price), safeUrl(L.pickup)));
-      if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(btn("", ICON.truck, "Pagar con Mercado Pago + envío", money(it.price + deliv), safeUrl(L.delivery)));
+      if (safeUrl(L.pickup)) acts.appendChild(mpBtn("", "Pagar con", "y recoger", money(it.price), safeUrl(L.pickup)));
+      if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(mpBtn("alt", "Pagar con", "+ envío", money(it.price + deliv), safeUrl(L.delivery)));
     }
     var msg = sold ? "Hola, vi que vendiste " + it.code + " " + it.title + ". ¿Tienes algo parecido?"
       : "Hola, te ofrezco $____ por " + it.code + " · " + it.title + " (precio " + money(it.price) + ").";
-    acts.appendChild(btn("wa", ICON.chat, sold ? "Preguntar por algo parecido" : "Hazme una oferta en WhatsApp", null, waLink(msg)));
+    acts.appendChild(waBtn(sold ? "Preguntar por algo parecido en WhatsApp" : "Hazme una oferta en WhatsApp", waLink(msg)));
     showPhoto(0);
     if (location.hash !== "#" + it.code) history.replaceState(null, "", "#" + it.code);
     if (!modal.open) modal.showModal();
