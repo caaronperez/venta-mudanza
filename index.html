@@ -364,7 +364,7 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
     if (!sold && !held) {
       var L = it.links || {}, deliv = Number(it.delivery) || 0;
       if (safeUrl(L.pickup)) acts.appendChild(btn("primary", ICON.card, "Pagar con Mercado Pago y recoger", money(it.price), safeUrl(L.pickup)));
-      if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(btn("", ICON.truck, "Pagar con envío en CDMX", money(it.price + deliv), safeUrl(L.delivery)));
+      if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(btn("", ICON.truck, "Pagar con Mercado Pago + envío", money(it.price + deliv), safeUrl(L.delivery)));
     }
     var msg = sold ? "Hola, vi que vendiste " + it.code + " " + it.title + ". ¿Tienes algo parecido?"
       : "Hola, te ofrezco $____ por " + it.code + " · " + it.title + " (precio " + money(it.price) + ").";
