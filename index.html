@@ -305,9 +305,10 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   "use strict";
   // ---- Settings (edit these) ----
   var CONFIG = {
-    whatsapp: "",                 // number with country code, digits only, e.g. "5215512345678"
+    whatsapp: "13605908567",      // number with country code, digits only
     whatsappFallback: "https://wa.me/qr/PAX2YVEUDF44G1?s=p",
-    pickup: "",                   // e.g. "Roma Norte, Cuauhtémoc"
+    pickup: "BeGrand Alto Polanco, Torre 4 · Anáhuac I Secc., CP 11320, CDMX",
+    pickupShort: "Alto Polanco, CDMX",
     deadline: "2026-11-25T23:59:00-06:00"
   };
 
@@ -352,7 +353,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
 
   // ---- Static bits ----
   if (CONFIG.pickup) {
-    document.getElementById("loc").textContent = CONFIG.pickup;
+    document.getElementById("loc").textContent = CONFIG.pickupShort || CONFIG.pickup;
     document.getElementById("step3").textContent = "Recoge en " + CONFIG.pickup + " o pide envío dentro de la CDMX (se cobra aparte). Coordinamos por WhatsApp.";
   }
   (function () {
