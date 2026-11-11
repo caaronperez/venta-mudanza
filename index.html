@@ -81,6 +81,9 @@ main .wrap { padding-top: 24px; padding-bottom: 48px; display: grid; gap: 24px; 
 .card .price-line { display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .card .price-line b { font: 800 20px/1 var(--display); font-variant-numeric: tabular-nums; }
 .card .price-line span { font-size: 13px; color: var(--muted); }
+.orig { font-size: 13px; color: var(--muted); }
+.orig s { font-family: var(--mono); }
+.orig .save { color: var(--wa); font-weight: 600; margin-left: 6px; }
 
 .empty { background: var(--card); border: 2px dashed var(--line); border-radius: 14px; padding: 48px 20px; text-align: center; display: grid; gap: 10px; justify-items: center; }
 .empty h2 { margin: 0; font: 800 26px/1.1 var(--display); font-stretch: 80%; }
@@ -115,7 +118,8 @@ dialog::backdrop { background: rgba(14,21,32,.6); backdrop-filter: blur(3px); }
 .gallery .thumbs button[aria-current="true"] { border-color: var(--sticker); }
 .gallery .thumbs img { width: 100%; height: 100%; object-fit: cover; }
 .info { padding: 22px 22px 20px; display: grid; gap: 14px; align-content: start; overflow-y: auto; }
-.gclose { display: none; }
+.close.gclose { display: none; }
+dialog:focus { outline: none; }
 .info-top { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
 .close { flex: none; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); cursor: pointer; display: grid; place-items: center; }
 .info h2 { margin: 4px 0 0; font: 800 clamp(26px, 4vw, 34px)/1.05 var(--display); font-stretch: 80%; text-wrap: balance; }
@@ -138,7 +142,7 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
 @media (max-width: 760px) {
   .m { grid-template-columns: 1fr; grid-template-rows: auto auto; overflow-y: auto; }
   .gallery { min-height: 0; }
-  .gclose { display: grid; position: absolute; top: 10px; right: 10px; z-index: 2; border: none; background: rgba(255,255,255,.92); }
+  .close.gclose { display: grid; position: absolute; top: 10px; right: 10px; z-index: 2; border: none; background: rgba(255,255,255,.92); }
   .gallery .main { height: min(88vw, 46dvh); }
   .gallery .main img { height: 100%; max-height: none; }
   .info { overflow: visible; }
@@ -209,6 +213,7 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
         <button class="close" type="button" id="m-close" aria-label="Cerrar"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
       <div class="bigprice"><b id="m-price"></b><span>MXN · efectivo o tarjeta</span></div>
+      <div id="m-orig"></div>
       <div class="msi-box" id="m-msi"></div>
       <dl class="facts" id="m-facts"></dl>
       <p class="desc" id="m-desc"></p>
@@ -249,6 +254,11 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
     }
     (kids || []).forEach(function (c) { if (c != null && c !== false) e.appendChild(typeof c === "string" ? document.createTextNode(c) : c); });
     return e;
+  }
+  function origLine(it) {
+    var o = Number(it.originalPrice) || 0, p = Number(it.price) || 0;
+    if (o <= p) return null;
+    return h("div", { class: "orig" }, ["Precio original: ", h("s", { text: money(o) }), h("span", { class: "save", text: "-" + Math.round((1 - p / o) * 100) + "%" })]);
   }
   function money(n) { return "$" + Math.round(Number(n) || 0).toLocaleString("es-MX"); }
   function safeUrl(u) { return typeof u === "string" && /^https:\/\//.test(u) ? u : null; }
@@ -296,7 +306,8 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
       var meta = h("div", { class: "meta" }, [
         h("span", { class: "code", text: it.code }),
         h("h3", { text: it.title }),
-        h("div", { class: "price-line" }, [h("b", { text: money(it.price) }), h("span", { text: sold ? "Vendido" : "o 3 × " + money(it.price / 3) })])
+        h("div", { class: "price-line" }, [h("b", { text: money(it.price) }), h("span", { text: sold ? "Vendido" : "o 3 × " + money(it.price / 3) })]),
+        origLine(it)
       ]);
       grid.appendChild(h("button", { class: "card" + (sold ? " is-sold" : ""), type: "button", "aria-label": it.code + ", " + it.title + ", " + money(it.price), onclick: function () { open(it.code); } }, [ph, meta]));
     });
@@ -348,6 +359,8 @@ footer .wrap { padding-top: 20px; padding-bottom: 32px; display: flex; flex-wrap
     document.getElementById("m-code").textContent = it.code + (sold ? " · VENDIDO" : held ? " · APARTADO" : "");
     document.getElementById("m-title").textContent = it.title;
     document.getElementById("m-price").textContent = money(it.price);
+    var mo = document.getElementById("m-orig"), ol = origLine(it);
+    mo.replaceChildren(); if (ol) { ol.style.fontSize = "15px"; mo.appendChild(ol); } mo.hidden = !ol;
     var msi = document.getElementById("m-msi");
     msi.replaceChildren(h("span", { html: ICON.card }).firstChild, h("span", null, ["Hasta 3 meses sin intereses: ", h("b", { text: "3 × " + money(it.price / 3) })]));
     msi.firstChild.style.cssText = "width:22px;height:22px;flex:none";
