@@ -458,7 +458,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     msi.replaceChildren(icon("i-card"), h("span", null, ["Hasta 3 meses sin intereses · ", h("b", { text: "3 × " + money(it.price / 3) })]));
     msi.hidden = sold;
     var cb = document.getElementById("m-cash");
-    cb.replaceChildren(icon("i-cash"), h("span", null, ["Pago en efectivo: ", h("b", { text: money(cashPrice(it)) }), h("small", { text: "Solo para recoger en persona, sin envío. Ya descuenta la comisión de Mercado Pago." })]));
+    cb.replaceChildren(icon("i-cash"), h("span", null, ["Pago en efectivo: ", h("b", { text: money(cashPrice(it)) }), h("small", { text: "Se paga en persona al recoger, sin envío. Ya descuenta la comisión de Mercado Pago. Escríbeme por WhatsApp para apartarlo." })]));
     cb.hidden = sold;
     var facts = document.getElementById("m-facts");
     facts.replaceChildren();
@@ -473,11 +473,6 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       var L = it.links || {}, deliv = Number(it.delivery) || 0;
       if (safeUrl(L.pickup)) acts.appendChild(mpBtn("", "y recoger", money(it.price), safeUrl(L.pickup)));
       if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(mpBtn("alt", "+ envío", money(it.price + deliv), safeUrl(L.delivery)));
-    }
-    if (!sold && !held) {
-      var cashMsg = "Hola, quiero el " + it.code + " · " + it.title + " pagando en efectivo (" + money(cashPrice(it)) + ") y recogiéndolo en persona. ¿Cuándo puedo pasar?";
-      var cbtn = h("a", { class: "btn cashbtn", href: waLink(cashMsg), target: "_blank", rel: "noopener" }, [icon("i-cash"), h("span", { text: "Pagar en efectivo al recoger" }), h("span", { class: "amt", text: money(cashPrice(it)) })]);
-      acts.appendChild(cbtn);
     }
     var msg = sold ? "Hola, vi que vendiste " + it.code + " " + it.title + ". ¿Tienes algo parecido?"
       : "Hola, te ofrezco $____ por " + it.code + " · " + it.title + " (precio " + money(it.price) + ").";
