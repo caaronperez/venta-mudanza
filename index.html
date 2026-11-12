@@ -246,7 +246,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   <div class="features">
     <div class="feature"><svg class="i"><use href="#i-card"/></svg>Hasta 3 meses sin intereses</div>
     <div class="feature"><svg class="i"><use href="#i-cash"/></svg>Descuento en efectivo al recoger</div>
-    <div class="feature"><svg class="i"><use href="#i-truck"/></svg>Recoge o pide envío en CDMX</div>
+    <div class="feature"><svg class="i"><use href="#i-truck"/></svg>Recoge en persona o manda tu Lalamove / Uber Flash</div>
   </div>
 
   <section id="articulos" aria-label="Artículos">
@@ -268,7 +268,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   <section class="how" id="como-comprar" aria-label="Cómo comprar">
     <div class="step"><svg class="i"><use href="#i-hand"/></svg><h3>Elige</h3><p>Toca cualquier artículo para ver fotos, medidas y detalles.</p></div>
     <div class="step"><svg class="i"><use href="#i-tag"/></svg><h3>Paga o haz una oferta</h3><p>Paga con Mercado Pago (tarjeta hasta 3 MSI, OXXO o transferencia), en efectivo al recoger con descuento, o mándame tu oferta por WhatsApp.</p></div>
-    <div class="step"><svg class="i"><use href="#i-open"/></svg><h3>Recoge o recibe</h3><p id="step3">Coordinamos día y hora por WhatsApp. El envío se cobra aparte y es dentro de la CDMX.</p></div>
+    <div class="step"><svg class="i"><use href="#i-open"/></svg><h3>Recoge o recibe</h3><p id="step3">Coordinamos día y hora por WhatsApp. Si quieres envío, tú pides el Lalamove, Uber Flash o DiDi Entrega y le pagas directo al conductor.</p></div>
   </section>
 </div>
 
@@ -367,7 +367,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   // ---- Static bits ----
   if (CONFIG.pickup) {
     document.getElementById("loc").textContent = CONFIG.pickupShort || CONFIG.pickup;
-    document.getElementById("step3").textContent = "Recoge en " + CONFIG.pickup + " o pide envío dentro de la CDMX (se cobra aparte). Coordinamos por WhatsApp.";
+    document.getElementById("step3").textContent = "Recoge en " + CONFIG.pickup + ". Si quieres envío, tú pides el Lalamove, Uber Flash o DiDi Entrega y le pagas directo al conductor. Coordinamos por WhatsApp.";
   }
   (function () {
     var days = Math.ceil((new Date(CONFIG.deadline) - new Date()) / 86400000);
@@ -462,7 +462,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     cb.hidden = sold;
     var facts = document.getElementById("m-facts");
     facts.replaceChildren();
-    [["Estado", it.condition], ["Medidas", it.size], ["Marca", it.brand], ["Recoger en", CONFIG.pickup || "CDMX"]].forEach(function (f) {
+    [["Estado", it.condition], ["Medidas", it.size], ["Marca", it.brand], ["Recoger en", CONFIG.pickup || "CDMX"], ["Envío", "Por tu cuenta: Lalamove, Uber Flash o DiDi Entrega"]].forEach(function (f) {
       if (f[1]) { facts.appendChild(h("dt", { text: f[0] })); facts.appendChild(h("dd", { text: f[1] })); }
     });
     var desc = document.getElementById("m-desc");
