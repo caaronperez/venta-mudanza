@@ -275,7 +275,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
 <footer id="contacto">
   <div class="wrap">
     <span class="mpfoot">Pagos seguros con <img src="brand/mercadopago-color-horizontal.svg" alt="Mercado Pago"></span>
-    <span>Precios en pesos mexicanos (MXN). El precio en efectivo ya descuenta la comisión de Mercado Pago y es solo para recoger en persona.</span>
+    <span>Precios en pesos mexicanos (MXN). El precio en efectivo es solo para recoger en persona.</span>
     <a id="foot-wa" target="_blank" rel="noopener">Contacto por WhatsApp</a>
   </div>
 </footer>
@@ -458,7 +458,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     msi.replaceChildren(icon("i-card"), h("span", null, ["Hasta 3 meses sin intereses · ", h("b", { text: "3 × " + money(it.price / 3) })]));
     msi.hidden = sold;
     var cb = document.getElementById("m-cash");
-    cb.replaceChildren(icon("i-cash"), h("span", null, ["Pago en efectivo: ", h("b", { text: money(cashPrice(it)) }), h("small", { text: "Se paga en persona al recoger, sin envío. Ya descuenta la comisión de Mercado Pago. Escríbeme por WhatsApp para apartarlo." })]));
+    cb.replaceChildren(icon("i-cash"), h("span", null, ["Pago en efectivo: ", h("b", { text: money(cashPrice(it)) }), h("small", { text: "Se paga en persona al recoger, sin envío. Escríbeme por WhatsApp para apartarlo." })]));
     cb.hidden = sold;
     var facts = document.getElementById("m-facts");
     facts.replaceChildren();
