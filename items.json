@@ -1,1 +1,24 @@
-[]
+[
+ {
+  "code": "MV-01",
+  "title": "Sala modular esquinera gris oxford con chaise, grande",
+  "price": 8350,
+  "originalPrice": 16500,
+  "cashPrice": 7999,
+  "delivery": 0,
+  "category": "Sala",
+  "condition": "Buen estado",
+  "size": "3 módulos · 3.2 m de ancho",
+  "brand": "",
+  "description": "Sala modular en L color gris oxford con chaise y respaldos capitonados. 3 módulos, 3.2 m de ancho, cómoda para 5–6 personas. En buen estado; se separa en módulos para moverla.",
+  "photos": [
+   "images/mv-01-1.jpg",
+   "images/mv-01-2.jpg",
+   "images/mv-01-3.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9ffebeea-9a8d-4539-a42d-bdb4a1cf7f55"
+  }
+ }
+]
