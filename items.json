@@ -6,7 +6,7 @@
   "originalPrice": 16500,
   "cashPrice": 6499,
   "delivery": 0,
-  "category": "Sala",
+  "category": "Muebles",
   "condition": "Buen estado",
   "size": "3 módulos · 3.2 m de ancho",
   "brand": "",
@@ -17,6 +17,506 @@
   "status": "disponible",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9ffebeea-9a8d-4539-a42d-bdb4a1cf7f55"
+  }
+ },
+ {
+  "code": "MV-02",
+  "title": "Sala esquinera gris claro con chaise, capitonada",
+  "price": 3660,
+  "originalPrice": 8500,
+  "cashPrice": 3500,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "230 x 160 cm",
+  "brand": "",
+  "description": "Sala en L color gris claro con chaise y respaldo capitonado, patas de madera. Mide aprox. 230 x 160 cm. En buen estado, sin roturas visibles; se entrega tal cual con sus cojines.",
+  "photos": [
+   "images/mv-02-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c5036175-b40d-4208-ae9f-42ae974e1f04"
+  }
+ },
+ {
+  "code": "MV-03",
+  "title": "Tapete shaggy gris oxford para sala",
+  "price": 1050,
+  "originalPrice": 3099,
+  "cashPrice": 1000,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "200 x 250 cm",
+  "brand": "",
+  "description": "Tapete de pelo largo (shaggy) gris oscuro, comprado en Home Depot. Medida aprox. 200 x 250 cm. En buen estado, se entrega aspirado.",
+  "photos": [
+   "images/mv-03-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-fd285d99-5ab2-4bb9-897b-de4ec291fb10"
+  }
+ },
+ {
+  "code": "MV-04",
+  "title": "Mesa de centro de vidrio y madera nogal Sonheo",
+  "price": 1260,
+  "originalPrice": 1888,
+  "cashPrice": 1200,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "110 x 60 x 45 cm",
+  "brand": "Sonheo",
+  "description": "Mesa de centro rectangular con cubierta de vidrio templado y base color nogal con repisa inferior. Mide aprox. 110 x 60 x 45 cm. En buen estado, sin roturas.",
+  "photos": [
+   "images/mv-04-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9be11c3c-b684-4f03-a6b1-317f4edb3178"
+  }
+ },
+ {
+  "code": "MV-05",
+  "title": "Pantalla LG 75\" 4K UHD Smart TV ThinQ AI (75UN8000)",
+  "price": 13040,
+  "originalPrice": 0,
+  "cashPrice": 12500,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Buen estado",
+  "size": "75 pulgadas",
+  "brand": "LG",
+  "description": "Pantalla LG UHD de 75 pulgadas, modelo 75UN8000PUB: 4K, Smart TV con webOS y ThinQ AI. Funciona perfectamente. Se entrega con control remoto y cable de corriente; se desmonta de la pared para la entrega.",
+  "photos": [
+   "images/mv-05-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-2dd1c096-4d98-4d03-9863-357e06229277"
+  }
+ },
+ {
+  "code": "MV-06",
+  "title": "Mueble para TV negro Madesa 180 cm, 2 puertas y 1 cajón",
+  "price": 1360,
+  "originalPrice": 3199,
+  "cashPrice": 1299,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "180 x 40 x 50 cm",
+  "brand": "Madesa",
+  "description": "Mueble para TV Madesa color negro, para pantallas de hasta 80\". Mide 180 cm de ancho x 40 cm de fondo x 50 cm de alto, con 2 puertas y 1 cajón para guardar consolas y controles. En buen estado.",
+  "photos": [
+   "images/mv-06-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-537bd007-5bdd-4d93-9b86-e797a1e657d5"
+  }
+ },
+ {
+  "code": "MV-07",
+  "title": "Tocadiscos Sony PS-LX310BT Bluetooth automático",
+  "price": 2300,
+  "originalPrice": 4200,
+  "cashPrice": 2200,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Como nuevo",
+  "size": "43 x 37 x 11 cm",
+  "brand": "Sony",
+  "description": "Tocadiscos Sony PS-LX310BT con Bluetooth, automático, con preamplificador integrado y tapa acrílica. Funciona perfecto; se conecta a bocinas o audífonos Bluetooth. Incluye eliminador.",
+  "photos": [
+   "images/mv-07-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c3719e68-5733-429c-9eb5-d84eadb559e4"
+  }
+ },
+ {
+  "code": "MV-08",
+  "title": "Bocina Sonos Roam 2 negra, WiFi + Bluetooth",
+  "price": 1050,
+  "originalPrice": 3699,
+  "cashPrice": 1000,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Como nuevo",
+  "size": "17 x 6 x 6 cm",
+  "brand": "Sonos",
+  "description": "Bocina portátil Sonos Roam 2 color negro, WiFi y Bluetooth, AirPlay 2, resistente al agua IP67. En muy buen estado. Se entrega restablecida de fábrica con cable USB-C.",
+  "photos": [
+   "images/mv-08-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-dc85a576-74fa-456a-a116-0b10456b6e29"
+  }
+ },
+ {
+  "code": "MV-09",
+  "title": "Lámpara de pie trípode de madera con pantalla gris oscuro",
+  "price": 640,
+  "originalPrice": 2198,
+  "cashPrice": 600,
+  "delivery": 0,
+  "category": "Iluminación",
+  "condition": "Buen estado",
+  "size": "Alto 155 cm",
+  "brand": "",
+  "description": "Lámpara de piso tipo trípode con patas de madera y pantalla de tela gris oscuro. Altura aprox. 155 cm. Funciona perfecto, en buen estado.",
+  "photos": [
+   "images/mv-09-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9542f2c4-e8bb-4677-80bc-16c98e3b0435"
+  }
+ },
+ {
+  "code": "MV-10",
+  "title": "Lámpara de esquina LED RGB con control y app WiFi",
+  "price": 270,
+  "originalPrice": 530,
+  "cashPrice": 250,
+  "delivery": 0,
+  "category": "Iluminación",
+  "condition": "Buen estado",
+  "size": "Alto 150 cm",
+  "brand": "",
+  "description": "Lámpara de pie LED RGB para esquina, cambia de colores, con control remoto y app WiFi. Altura aprox. 150 cm. Funciona perfecto.",
+  "photos": [
+   "images/mv-10-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-31288fce-6488-4559-b8f8-6dcecbcda264"
+  }
+ },
+ {
+  "code": "MV-11",
+  "title": "Muro verde artificial, paneles de follaje (lote)",
+  "price": 450,
+  "originalPrice": 1294,
+  "cashPrice": 420,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "Cubre 200 x 260 cm",
+  "brand": "",
+  "description": "Lote de paneles de follaje artificial tipo boj con helechos decorativos, cubre aprox. 2 x 2.6 m. En buen estado, color verde intenso. Se entregan desmontados.",
+  "photos": [
+   "images/mv-11-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-15d1bc7d-8558-4d79-bb69-dba1227a9cc7"
+  }
+ },
+ {
+  "code": "MV-12",
+  "title": "Lámpara de pared LED lineal negra (arbotante)",
+  "price": 320,
+  "originalPrice": 350,
+  "cashPrice": 300,
+  "delivery": 0,
+  "category": "Iluminación",
+  "condition": "Buen estado",
+  "size": "60 cm de largo",
+  "brand": "",
+  "description": "Arbotante LED lineal color negro, luz cálida, aprox. 60 cm. Funciona perfecto; se entrega desmontado (requiere instalación eléctrica). Hay 2 disponibles. Precio por pieza.",
+  "photos": [
+   "images/mv-12-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-493f4a8e-0353-4bc0-a6ff-1b0895311878"
+  }
+ },
+ {
+  "code": "MV-13",
+  "title": "Espejo de cuerpo completo en arco Antok 180 x 71 cm",
+  "price": 1260,
+  "originalPrice": 3438,
+  "cashPrice": 1200,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "180 x 71 cm",
+  "brand": "Antok",
+  "description": "Espejo de cuerpo completo Antok en forma de arco, 180 x 71 cm, con marco delgado de aluminio y vidrio HD con respaldo de seguridad. Se puede colgar o recargar en la pared. En buen estado, sin manchas ni despostilladuras.",
+  "photos": [
+   "images/mv-13-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-cb38bf2b-bc49-4db4-ade8-73322c0eb846"
+  }
+ },
+ {
+  "code": "MV-14",
+  "title": "Espejo de pared ondulado irregular sin marco",
+  "price": 530,
+  "originalPrice": 1143,
+  "cashPrice": 500,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "100 x 60 cm",
+  "brand": "",
+  "description": "Espejo decorativo de forma orgánica/ondulada, sin marco. Medidas aprox. 100 x 60 cm. En buen estado, listo para colgar.",
+  "photos": [
+   "images/mv-14-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-b4979dbe-2483-4bce-9f0c-e97829e184c4"
+  }
+ },
+ {
+  "code": "MV-15",
+  "title": "Fuente de agua de piedra volcánica con plantas",
+  "price": 580,
+  "originalPrice": 2000,
+  "cashPrice": 550,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "70 x 35 x 50 cm",
+  "brand": "",
+  "description": "Fuente decorativa artesanal de piedra volcánica con cascada en niveles, piedras de río y macetas con plantas. Medidas aprox. 70 x 35 x 50 cm. Incluye bomba eléctrica; funciona perfecto.",
+  "photos": [
+   "images/mv-15-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-a7d915e2-6e05-4696-ab24-44ed52db2462"
+  }
+ },
+ {
+  "code": "MV-16",
+  "title": "Cubos organizadores negros apilables",
+  "price": 60,
+  "originalPrice": 150,
+  "cashPrice": 50,
+  "delivery": 0,
+  "category": "Organización",
+  "condition": "Buen estado",
+  "size": "35 x 30 x 35 cm",
+  "brand": "",
+  "description": "Cubo organizador color negro, apilable, sirve como librero o mesa lateral. Medida aprox. 35 x 30 x 35 cm cada uno. En buen estado; se venden por pieza o en lote.",
+  "photos": [
+   "images/mv-16-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-fbb9644b-5c16-4786-8bc4-4c1d99be076f"
+  }
+ },
+ {
+  "code": "MV-17",
+  "title": "3 cajas organizadoras de tela negras",
+  "price": 90,
+  "originalPrice": 300,
+  "cashPrice": 75,
+  "delivery": 0,
+  "category": "Organización",
+  "condition": "Buen estado",
+  "size": "27 x 27 x 28 cm",
+  "brand": "",
+  "description": "Juego de 3 cajas organizadoras plegables de tela negra con asa metálica. Aprox. 27 x 27 x 28 cm cada una. Buen estado; ideales para cubos organizadores.",
+  "photos": [
+   "images/mv-17-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-a61813f3-4675-4ea2-aa73-51bd7c55375c"
+  }
+ },
+ {
+  "code": "MV-18",
+  "title": "Aire portátil Mirage X-One 14,000 BTU frío/calor",
+  "price": 4700,
+  "originalPrice": 12400,
+  "cashPrice": 4500,
+  "delivery": 0,
+  "category": "Electrodomésticos",
+  "condition": "Buen estado",
+  "size": "47 x 39 x 77 cm",
+  "brand": "Mirage",
+  "description": "Aire acondicionado portátil Mirage X-One MAPS1411H, 14,000 BTU, frío y calor, con deshumidificador. Incluye manguera de salida, kit para ventana y control remoto. Funciona perfecto.",
+  "photos": [
+   "images/mv-18-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-0b74bbf9-9b8e-4679-92c6-b4a9cc51dd8f"
+  }
+ },
+ {
+  "code": "MV-19",
+  "title": "Dyson Hot+Cool HP04: purificador, calefactor y ventilador",
+  "price": 3970,
+  "originalPrice": 6620,
+  "cashPrice": 3800,
+  "delivery": 0,
+  "category": "Electrodomésticos",
+  "condition": "Como nuevo",
+  "size": "25 x 25 x 102 cm",
+  "brand": "Dyson",
+  "description": "Dyson Pure Hot+Cool HP04 blanco/plata: purificador de aire con filtro HEPA, calefactor y ventilador en uno, con control remoto. Versión japonesa (2020). En excelente estado.",
+  "photos": [
+   "images/mv-19-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-85ab8435-3b1f-4af5-8b47-707171da9695"
+  }
+ },
+ {
+  "code": "MV-20",
+  "title": "Reloj de pared 3D DIY grande, números negros",
+  "price": 170,
+  "originalPrice": 399,
+  "cashPrice": 150,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "Diámetro 100–120 cm",
+  "brand": "",
+  "description": "Reloj de pared decorativo tipo DIY con números y manecillas negras que se adhieren directo a la pared, mecanismo silencioso. Diámetro ajustable aprox. 100–120 cm. Funciona perfecto.",
+  "photos": [
+   "images/mv-20-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-cc7a304e-0f0d-4ecb-b81d-a9ea377b5fc2"
+  }
+ },
+ {
+  "code": "MV-21",
+  "title": "Bicicleta eléctrica VanMoof S3 – urbana, con app",
+  "price": 21900,
+  "originalPrice": 42800,
+  "cashPrice": 21000,
+  "delivery": 0,
+  "category": "Movilidad",
+  "condition": "Buen estado",
+  "size": "180 x 65 x 100 cm",
+  "brand": "VanMoof",
+  "description": "Bicicleta eléctrica VanMoof S3 color gris oscuro, batería integrada, cambios automáticos, frenos de disco hidráulicos, candado y luces integrados. En buen estado general. A considerar: marca el código de error 44 (común en las S3) y los botones de claxon y boost se dañaron en un mantenimiento; ambas funciones se usan desde la app de VanMoof. Se entrega con cargador y transferencia de la cuenta/llave digital.",
+  "photos": [
+   "images/mv-21-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-4e85deab-d10e-4104-ad20-67487f9eb952"
+  }
+ },
+ {
+  "code": "MV-22",
+  "title": "Docking Targus USB-C Quad 4K DOCK570USZ, 100W",
+  "price": 1570,
+  "originalPrice": 8834,
+  "cashPrice": 1500,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Buen estado",
+  "size": "21 x 9 x 5 cm",
+  "brand": "Targus",
+  "description": "Estación de acoplamiento Targus DOCK570USZ USB-C Universal Quad 4K (DisplayLink): hasta 4 monitores 4K, carga de laptop de 100 W, puertos USB y Ethernet. Funciona con Mac y Windows. Incluye eliminador y cable USB-C. Hay 2 disponibles. Precio por pieza.",
+  "photos": [
+   "images/mv-22-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-14ce892d-9006-4d74-9b66-b39dc2283312"
+  }
+ },
+ {
+  "code": "MV-23",
+  "title": "Arenero automático autolimpiable MeoWant WiFi + tapete",
+  "price": 3340,
+  "originalPrice": 6479,
+  "cashPrice": 3200,
+  "delivery": 0,
+  "category": "Mascotas",
+  "condition": "Buen estado",
+  "size": "60 x 58 x 68 cm",
+  "brand": "MeoWant",
+  "description": "Arenero automático MeoWant MW-SC01 con autolimpieza, app WiFi y sensores de seguridad, para gatos grandes o varios gatos. Incluye tapete atrapa arena. Funciona perfecto; se entrega lavado y desinfectado.",
+  "photos": [
+   "images/mv-23-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-5c183d1b-311c-49a7-9ee2-8991f59fde29"
+  }
+ },
+ {
+  "code": "MV-24",
+  "title": "Rueda de ejercicio para gatos de madera con escalones",
+  "price": 1360,
+  "originalPrice": 0,
+  "cashPrice": 1300,
+  "delivery": 0,
+  "category": "Mascotas",
+  "condition": "Como nuevo",
+  "size": "100 x 35 x 85 cm",
+  "brand": "",
+  "description": "Rueda de ejercicio para gatos de madera con pista alfombrada, escalones y dos comederos. Medidas aprox. 100 x 35 x 85 cm. Casi nueva (comprada en mayo 2026), en excelente estado.",
+  "photos": [
+   "images/mv-24-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-a09349e4-81c2-465b-8b44-9ae5cd17bc9c"
+  }
+ },
+ {
+  "code": "MV-25",
+  "title": "Poste rascador para gato Feandrea 73 cm sisal",
+  "price": 370,
+  "originalPrice": 608,
+  "cashPrice": 350,
+  "delivery": 0,
+  "category": "Mascotas",
+  "condition": "Buen estado",
+  "size": "38 x 38 x 73 cm",
+  "brand": "Feandrea",
+  "description": "Poste rascador Feandrea de 73 cm de alto con base de 38 x 38 cm, cubierto de sisal, color marrón rústico. En buen estado con el desgaste normal del sisal por uso. Estable y listo para usar.",
+  "photos": [
+   "images/mv-25-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-5d21df59-d4e0-45b8-8eb5-39c7685d56de"
+  }
+ },
+ {
+  "code": "MV-26",
+  "title": "Librero negro con puertas CasaEaster 1.66 m",
+  "price": 2300,
+  "originalPrice": 4600,
+  "cashPrice": 2200,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "79 x 40 x 166 cm",
+  "brand": "CasaEaster",
+  "description": "Librero/aparador CasaEaster modelo 31255B Fiona en color negro, de 166 cm de alto x 79 cm de ancho x 40 cm de fondo, en MDF con soportes metálicos y puertas. En buen estado. Comprado en 2024.",
+  "photos": [
+   "images/mv-26-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-abf66068-4885-4ec2-968a-3669242f99a0"
   }
  }
 ]
