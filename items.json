@@ -518,5 +518,1269 @@
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-abf66068-4885-4ec2-968a-3669242f99a0"
   }
+ },
+ {
+  "code": "MV-27",
+  "title": "Casa / cubo para gato blanco estilo minimalista",
+  "price": 480,
+  "originalPrice": 1199,
+  "cashPrice": 450,
+  "delivery": 0,
+  "category": "Mascotas",
+  "condition": "Buen estado",
+  "size": "45 x 40 x 60 cm aprox.",
+  "brand": "",
+  "description": "Casa para gato estilo minimalista color blanco/beige con estructura metálica y tela tipo bouclé, con espacio para dormir. En buen estado y limpia. Ideal para un rincón de la sala.",
+  "photos": [
+   "images/mv-27-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-6dfd1d43-3561-48dc-9321-074495d8d739"
+  }
+ },
+ {
+  "code": "MV-28",
+  "title": "Mesa de comedor rústica de madera oscura con patas en X, para 6",
+  "price": 5220,
+  "originalPrice": 0,
+  "cashPrice": 4999,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "180–200 x 90 x 76 cm aprox.",
+  "brand": "",
+  "description": "Mesa de comedor de madera estilo rústico en tono oscuro con patas cruzadas en X, para 6 personas (aprox. 180–200 x 90 cm). En buen estado con el desgaste normal de uso. Las sillas grises estilo Eames se venden por separado.",
+  "photos": [
+   "images/mv-28-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-2b4f992e-9aed-43fd-a8d2-773922c128cd"
+  }
+ },
+ {
+  "code": "MV-29",
+  "title": "Sillas de comedor estilo Eames gris con patas de madera",
+  "price": 320,
+  "originalPrice": 648,
+  "cashPrice": 300,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "46 x 53 x 82 cm aprox. c/u",
+  "brand": "",
+  "description": "Sillas de comedor estilo Eames color gris, asiento de polipropileno y patas de madera. Hay 5 disponibles, en buen estado. Precio por silla.",
+  "photos": [
+   "images/mv-29-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c4796b28-6a68-4d3f-b735-ab5b06885716"
+  }
+ },
+ {
+  "code": "MV-30",
+  "title": "Mesa redonda de cristal estilo Eames + 1 silla gris",
+  "price": 1050,
+  "originalPrice": 1329,
+  "cashPrice": 1000,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "Mesa Ø 80 cm x 73 cm aprox.",
+  "brand": "",
+  "description": "Mesa redonda con cubierta de cristal templado de aprox. 80 cm y patas de madera estilo Eames con travesaños metálicos negros. Incluye una silla estilo Eames gris (igual a las del comedor). En buen estado, ideal para desayunador o espacio pequeño.",
+  "photos": [
+   "images/mv-30-1.jpg",
+   "images/mv-30-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-14bef7a5-dbbb-40f5-8aff-9ea1cbd986db"
+  }
+ },
+ {
+  "code": "MV-31",
+  "title": "Aparador negro acanalado Merax 121 cm",
+  "price": 2930,
+  "originalPrice": 0,
+  "cashPrice": 2800,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Con detalles de uso",
+  "size": "121 x 42 x 76 cm",
+  "brand": "Merax",
+  "description": "Aparador/buffet marca Merax en negro con frente curvo acanalado y estantes ajustables, de 121 x 42 x 76 cm. A considerar: tiene detalles en la pintura y pequeños raspones en las puntas de las patas. Muy buen espacio de guardado para comedor o sala.",
+  "photos": [
+   "images/mv-31-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-b859563a-a203-463d-b6b1-96b675b060aa"
+  }
+ },
+ {
+  "code": "MV-32",
+  "title": "Cómoda negra 6 cajones con jaladeras doradas",
+  "price": 370,
+  "originalPrice": 0,
+  "cashPrice": 350,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Con detalles de uso",
+  "size": "140 x 45 x 80 cm aprox.",
+  "brand": "",
+  "description": "Cómoda hecha a la medida en color negro con 6 cajones (3 chicos y 3 grandes), jaladeras y detalles dorados y patas metálicas doradas, aprox. 140 x 45 x 80 cm. Funciona bien; la cubierta tiene rayones visibles por uso. Precio fijo.",
+  "photos": [
+   "images/mv-32-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-cad349b0-9a03-4875-a543-a83e13ad87b5"
+  }
+ },
+ {
+  "code": "MV-33",
+  "title": "Aparador IKEA FJÄLLBO negro con puertas de malla",
+  "price": 3660,
+  "originalPrice": 6999,
+  "cashPrice": 3500,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "111 x 47 x 95 cm",
+  "brand": "IKEA",
+  "description": "Aparador IKEA FJÄLLBO en negro, estructura de acero con puertas de malla y cubierta/repisa de pino macizo, 111 x 47 x 95 cm. En buen estado. Estilo industrial, ideal para sala o comedor.",
+  "photos": [
+   "images/mv-33-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-142a7241-aad8-4bda-a30e-4bbcae75bd4b"
+  }
+ },
+ {
+  "code": "MV-34",
+  "title": "Bancos altos de bar negros giratorios con pistón",
+  "price": 430,
+  "originalPrice": 943,
+  "cashPrice": 400,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "Altura ajustable 85–105 cm",
+  "brand": "Miereirl",
+  "description": "Bancos/taburetes de bar marca Miereirl con asiento y respaldo de polipropileno negro, giratorios, con pistón para ajustar la altura y aro para los pies. Hay 4 en buen estado. Precio por banco.",
+  "photos": [
+   "images/mv-34-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9e0058d9-0592-442c-a1f8-972044a73209"
+  }
+ },
+ {
+  "code": "MV-35",
+  "title": "Refrigerador Samsung side-by-side negro con FlexZone",
+  "price": 20850,
+  "originalPrice": 49990,
+  "cashPrice": 20000,
+  "delivery": 0,
+  "category": "Electrodomésticos",
+  "condition": "Buen estado",
+  "size": "91 x 72 x 178 cm aprox.",
+  "brand": "Samsung",
+  "description": "Refrigerador Samsung side-by-side de 3 puertas en negro mate, con despachador de agua/hielo y compartimento FlexZone de temperatura ajustable (modelo probable RS68N8670B1). Funciona perfectamente y está en buen estado. Comprado en Palacio de Hierro.",
+  "photos": [
+   "images/mv-35-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-99dc2bac-7c4e-43df-9ee0-ffd2424a9d87"
+  }
+ },
+ {
+  "code": "MV-36",
+  "title": "Lavavajillas Frigidaire 24\" acero inoxidable",
+  "price": 1570,
+  "originalPrice": 3500,
+  "cashPrice": 1500,
+  "delivery": 0,
+  "category": "Electrodomésticos",
+  "condition": "Buen estado",
+  "size": "24\" (60 x 60 x 86 cm)",
+  "brand": "Frigidaire",
+  "description": "Lavavajillas Frigidaire empotrable de 24 pulgadas con puerta de acero inoxidable y panel de control negro. Funciona bien. El comprador se encarga de desinstalarlo y conectarlo.",
+  "photos": [
+   "images/mv-36-1.jpg",
+   "images/mv-36-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-bef6ba7f-c7c8-45fe-a268-00d219e4c173"
+  }
+ },
+ {
+  "code": "MV-37",
+  "title": "Microondas Whirlpool 1.1 pies³ WM1211D plata",
+  "price": 950,
+  "originalPrice": 2129,
+  "cashPrice": 900,
+  "delivery": 0,
+  "category": "Electrodomésticos",
+  "condition": "Buen estado",
+  "size": "52 x 41 x 31 cm",
+  "brand": "Whirlpool",
+  "description": "Horno de microondas Whirlpool modelo WM1211D de 1.1 pies cúbicos en plata/negro. Funciona perfectamente, en buen estado. Comprado en 2021.",
+  "photos": [
+   "images/mv-37-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-bd868867-165f-46ef-9624-062ab4eb62a8"
+  }
+ },
+ {
+  "code": "MV-38",
+  "title": "Freidora de aire Instant Vortex 6 qt (5.7 L)",
+  "price": 630,
+  "originalPrice": 1925,
+  "cashPrice": 599,
+  "delivery": 0,
+  "category": "Cocina",
+  "condition": "Buen estado",
+  "size": "5.7 L",
+  "brand": "Instant",
+  "description": "Freidora de aire Instant Vortex de 6 cuartos (5.7 L) en color negro, con panel digital y canasta antiadherente. Funciona perfectamente y está en buen estado.",
+  "photos": [
+   "images/mv-38-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3a7cedc6-ddb1-40ea-bda0-9f3caba72e40"
+  }
+ },
+ {
+  "code": "MV-39",
+  "title": "Cafetera Nespresso Lattissima con espumador de leche",
+  "price": 2930,
+  "originalPrice": 8990,
+  "cashPrice": 2800,
+  "delivery": 0,
+  "category": "Cocina",
+  "condition": "Buen estado",
+  "size": "18 x 33 x 27 cm aprox.",
+  "brand": "Nespresso",
+  "description": "Cafetera Nespresso by De'Longhi de la línea Lattissima con jarra de leche integrada para cappuccino y latte, color gris. Funciona perfectamente y está en buen estado. Usa cápsulas Nespresso Original.",
+  "photos": [
+   "images/mv-39-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-5f729465-cd64-4609-ad2f-d00a22660400"
+  }
+ },
+ {
+  "code": "MV-40",
+  "title": "Tostador Hamilton Beach 2 rebanadas acero inox",
+  "price": 270,
+  "originalPrice": 579,
+  "cashPrice": 250,
+  "delivery": 0,
+  "category": "Cocina",
+  "condition": "Buen estado",
+  "size": "29 x 18 x 19 cm",
+  "brand": "Hamilton Beach",
+  "description": "Tostador Hamilton Beach de 2 rebanadas en acero inoxidable/negro, con funciones para bagel, descongelar y mantener caliente. Funciona perfectamente.",
+  "photos": [
+   "images/mv-40-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-f697ec5d-a4b8-45da-ad3e-1c184e299202"
+  }
+ },
+ {
+  "code": "MV-41",
+  "title": "Juego de cuchillos Farberware con bloque de madera",
+  "price": 270,
+  "originalPrice": 499,
+  "cashPrice": 250,
+  "delivery": 0,
+  "category": "Cocina",
+  "condition": "Con detalles de uso",
+  "size": "Bloque 15 x 10 x 35 cm",
+  "brand": "Farberware",
+  "description": "Juego de cuchillos Farberware con bloque de madera y mangos negros con remaches. A considerar: le faltan 3 cuchillos del juego. Uso normal; se entregan limpios.",
+  "photos": [
+   "images/mv-41-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-88cb200d-801a-4f4f-856d-da30663fb761"
+  }
+ },
+ {
+  "code": "MV-42",
+  "title": "Portautensilios de acero inoxidable",
+  "price": 170,
+  "originalPrice": 279,
+  "cashPrice": 150,
+  "delivery": 0,
+  "category": "Cocina",
+  "condition": "Buen estado",
+  "size": "Ø 12 x 18 cm",
+  "brand": "",
+  "description": "Portautensilios cilíndrico de acero inoxidable perforado para cocina. En buen estado.",
+  "photos": [
+   "images/mv-42-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-fa68d0fd-8f6a-4b4e-8bae-fa28aad2672f"
+  }
+ },
+ {
+  "code": "MV-43",
+  "title": "Escurridor de platos 2 niveles acero inoxidable",
+  "price": 110,
+  "originalPrice": 399,
+  "cashPrice": 100,
+  "delivery": 0,
+  "category": "Cocina",
+  "condition": "Buen estado",
+  "size": "50 x 25 x 38 cm aprox.",
+  "brand": "",
+  "description": "Escurridor de platos de acero inoxidable de dos niveles con charola para escurrir. En buen estado y limpio.",
+  "photos": [
+   "images/mv-43-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-bd5becac-ec2c-42ba-a641-efbbab915135"
+  }
+ },
+ {
+  "code": "MV-44",
+  "title": "Despachador de agua Whirlpool carga inferior frío/caliente",
+  "price": 2090,
+  "originalPrice": 9899,
+  "cashPrice": 1999,
+  "delivery": 0,
+  "category": "Electrodomésticos",
+  "condition": "Buen estado",
+  "size": "34 x 31 x 104 cm",
+  "brand": "Whirlpool",
+  "description": "Despachador enfriador de agua Whirlpool de carga inferior (el garrafón de 11 o 19 L va oculto abajo), con enfriamiento por compresor y panel digital de temperatura. Funciona perfectamente y está en buen estado. Medidas aprox. 34 x 31 x 104 cm.",
+  "photos": [
+   "images/mv-44-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-69354c8f-0cc4-47da-8be1-e465e470f0d7"
+  }
+ },
+ {
+  "code": "MV-45",
+  "title": "Mueble cafetero de madera café con cajón y puertas",
+  "price": 950,
+  "originalPrice": 1639,
+  "cashPrice": 900,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "60 x 40 x 85 cm aprox.",
+  "brand": "",
+  "description": "Mueble cafetero/alacena en tono madera café con un cajón superior y dos puertas, aprox. 60 x 40 x 85 cm. En buen estado. Ideal para la estación de café o como mueble auxiliar.",
+  "photos": [
+   "images/mv-45-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-2d01fe95-f232-4cdd-bd65-70b0b0a7c452"
+  }
+ },
+ {
+  "code": "MV-46",
+  "title": "Barra de luz LED bajo gabinete para cocina",
+  "price": 110,
+  "originalPrice": 0,
+  "cashPrice": 99,
+  "delivery": 0,
+  "category": "Iluminación",
+  "condition": "Buen estado",
+  "size": "50–60 cm de largo",
+  "brand": "",
+  "description": "Barra de luz LED para bajo gabinete de cocina, cuerpo de aluminio con difusor, aprox. 50–60 cm. Funciona bien.",
+  "photos": [
+   "images/mv-46-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-5e66b304-26c9-41a6-8979-062843ae6dfd"
+  }
+ },
+ {
+  "code": "MV-47",
+  "title": "Lavadora Mabe 18 kg Aqua Saver Green blanca",
+  "price": 5220,
+  "originalPrice": 10399,
+  "cashPrice": 4999,
+  "delivery": 0,
+  "category": "Electrodomésticos",
+  "condition": "Buen estado",
+  "size": "18 kg · 68 x 68 x 112 cm",
+  "brand": "Mabe",
+  "description": "Lavadora automática Mabe de 18 kg, modelo LMA78113CBAB0 Aqua Saver Green, carga superior, color blanco. Funciona perfectamente, comprada en Home Depot en 2021. Se vende sola o en combo con la secadora de gas Mabe.",
+  "photos": [
+   "images/mv-47-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-704b0506-e96f-48e1-bbfe-0fd3f5cb1812"
+  }
+ },
+ {
+  "code": "MV-48",
+  "title": "Secadora de gas Mabe 20 kg blanca",
+  "price": 5220,
+  "originalPrice": 7500,
+  "cashPrice": 4999,
+  "delivery": 0,
+  "category": "Electrodomésticos",
+  "condition": "Buen estado",
+  "size": "20 kg · 68 x 72 x 107 cm aprox.",
+  "brand": "Mabe",
+  "description": "Secadora Mabe de gas de 20 kg en color blanco, comprada en Home Depot en 2021 junto con la lavadora. Funciona perfectamente. Se vende sola o en combo con la lavadora Mabe de 18 kg.",
+  "photos": [
+   "images/mv-48-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-eb40c344-3a51-4e4d-8560-6c2ef78c3dae"
+  }
+ },
+ {
+  "code": "MV-49",
+  "title": "Bote de basura chico con pedal, color crema",
+  "price": 60,
+  "originalPrice": 0,
+  "cashPrice": 50,
+  "delivery": 0,
+  "category": "Hogar",
+  "condition": "Buen estado",
+  "size": "3–5 L",
+  "brand": "",
+  "description": "Bote de basura pequeño con pedal, color crema con base negra, ideal para baño o recámara. Usado, funciona bien.",
+  "photos": [
+   "images/mv-49-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-127919b1-22f5-40d7-870f-16c00372e379"
+  }
+ },
+ {
+  "code": "MV-50",
+  "title": "Bote de basura de acero inoxidable con pedal 12 L",
+  "price": 130,
+  "originalPrice": 0,
+  "cashPrice": 120,
+  "delivery": 0,
+  "category": "Hogar",
+  "condition": "Buen estado",
+  "size": "12 L",
+  "brand": "",
+  "description": "Bote de basura redondo de acero inoxidable con pedal, aprox. 12 litros. Usado y en buen estado; la tapa tiene un par de calcomanías que se pueden quitar.",
+  "photos": [
+   "images/mv-50-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-00a002b4-719d-41b1-8b7e-f0dcc21d55a9"
+  }
+ },
+ {
+  "code": "MV-51",
+  "title": "Bote de basura cuadrado 5 L con pedal y cierre suave",
+  "price": 220,
+  "originalPrice": 499,
+  "cashPrice": 200,
+  "delivery": 0,
+  "category": "Hogar",
+  "condition": "Buen estado",
+  "size": "5 L",
+  "brand": "",
+  "description": "Bote de basura rectangular de 5 litros con pedal y tapa de cierre suave, ideal para baño. Usado, en buen estado.",
+  "photos": [
+   "images/mv-51-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-674353df-b411-49ae-bb19-b3c1cd1802cd"
+  }
+ },
+ {
+  "code": "MV-52",
+  "title": "Buró IKEA MALM 2 cajones roble tinte blanco",
+  "price": 1050,
+  "originalPrice": 1799,
+  "cashPrice": 999,
+  "delivery": 0,
+  "category": "Recámara",
+  "condition": "Buen estado",
+  "size": "40 x 48 x 55 cm",
+  "brand": "IKEA",
+  "description": "Buró IKEA MALM de 2 cajones en chapa de roble tinte blanco, 40x55 cm. En buen estado; tengo dos iguales, $1,500 por el par.",
+  "photos": [
+   "images/mv-52-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-717d990b-5f1b-4729-9edf-453afd8d9d0d"
+  }
+ },
+ {
+  "code": "MV-53",
+  "title": "Lámpara bocina IKEA SYMFONISK Sonos Wi-Fi negra",
+  "price": 5220,
+  "originalPrice": 7999,
+  "cashPrice": 4999,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Buen estado",
+  "size": "40 cm de alto aprox.",
+  "brand": "IKEA x Sonos",
+  "description": "Lámpara con bocina Wi-Fi IKEA SYMFONISK (Sonos), base negra con pantalla de vidrio ahumado. Funciona con la app de Sonos y AirPlay 2, sonido muy bueno. Tengo dos; se pueden usar juntas como par estéreo. Precio por pieza.",
+  "photos": [
+   "images/mv-53-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-aebf4289-ae9b-4e24-ae8a-f77029fd0787"
+  }
+ },
+ {
+  "code": "MV-54",
+  "title": "Buró estilo mid-century con cajón chevron",
+  "price": 430,
+  "originalPrice": 1500,
+  "cashPrice": 400,
+  "delivery": 0,
+  "category": "Recámara",
+  "condition": "Buen estado",
+  "size": "40 x 35 x 55 cm aprox.",
+  "brand": "",
+  "description": "Buró de estilo mid-century en tono nogal, con cajón de diseño chevron, repisa abierta y patas negras. Usado, con detalles leves de uso en la cubierta.",
+  "photos": [
+   "images/mv-54-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3c41ff9f-60a2-4c10-90d4-31b578c93d96"
+  }
+ },
+ {
+  "code": "MV-55",
+  "title": "Lámpara de mesa IKEA TÄRNABY antracita",
+  "price": 530,
+  "originalPrice": 999,
+  "cashPrice": 500,
+  "delivery": 0,
+  "category": "Iluminación",
+  "condition": "Buen estado",
+  "size": "25 cm de alto aprox.",
+  "brand": "IKEA",
+  "description": "Lámpara de mesa IKEA TÄRNABY color antracita con pantalla de vidrio transparente. Funciona perfecto, ideal para buró. No incluye foco.",
+  "photos": [
+   "images/mv-55-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-4d4faae3-b0a7-436e-acf5-774a69fdad23"
+  }
+ },
+ {
+  "code": "MV-56",
+  "title": "Espejo de cuerpo completo arco marco negro",
+  "price": 580,
+  "originalPrice": 949,
+  "cashPrice": 550,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "50 x 145 cm aprox.",
+  "brand": "",
+  "description": "Espejo de cuerpo completo con forma de arco y marco metálico negro, aprox. 50x145 cm. En buen estado, sin manchas ni despostilladuras.",
+  "photos": [
+   "images/mv-56-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-bd2680fd-7ec2-4453-a165-4b881cae293c"
+  }
+ },
+ {
+  "code": "MV-57",
+  "title": "Baúl banca con almacenamiento negro vinipiel",
+  "price": 220,
+  "originalPrice": 413,
+  "cashPrice": 200,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "76 x 38 x 38 cm",
+  "brand": "",
+  "description": "Banca baúl plegable con almacenamiento, en vinipiel negra capitonada, aprox. 76x38x38 cm. Ideal al pie de la cama; en buen estado.",
+  "photos": [
+   "images/mv-57-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9a1b6859-999e-4ef3-9a59-1c800e80fabc"
+  }
+ },
+ {
+  "code": "MV-58",
+  "title": "Par de espejos dorados de pared con portavelas",
+  "price": 370,
+  "originalPrice": 0,
+  "cashPrice": 350,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "20 x 40 cm aprox. c/u",
+  "brand": "",
+  "description": "Par de apliques de pared dorados con espejo en arco y portavelas de vidrio. Decorativos y en buen estado; se venden juntos.",
+  "photos": [
+   "images/mv-58-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-1943af16-1a90-44e9-b19a-5ae78c3bae23"
+  }
+ },
+ {
+  "code": "MV-59",
+  "title": "Cuadro decorativo en canvas aprox. 60x60 cm",
+  "price": 370,
+  "originalPrice": 999,
+  "cashPrice": 350,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "60 x 60 cm",
+  "brand": "",
+  "description": "Cuadro decorativo impreso en canvas con bastidor, aprox. 60x60 cm. En buen estado, listo para colgar.",
+  "photos": [
+   "images/mv-59-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-29240fe9-5fe3-49d9-874f-04de22271a30"
+  }
+ },
+ {
+  "code": "MV-60",
+  "title": "Consola recibidor industrial patas X negras",
+  "price": 740,
+  "originalPrice": 1350,
+  "cashPrice": 700,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "70 x 35 x 75 cm aprox.",
+  "brand": "",
+  "description": "Mesa consola estilo industrial con patas metálicas negras en X y cubierta de madera oscura, aprox. 70x35 cm. Ideal para recibidor; en buen estado.",
+  "photos": [
+   "images/mv-60-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-e5b24ce8-1a32-4c4a-8a30-17626acde6b9"
+  }
+ },
+ {
+  "code": "MV-61",
+  "title": "Espejo redondo IKEA STOCKHOLM 80 cm marco roble",
+  "price": 1260,
+  "originalPrice": 2499,
+  "cashPrice": 1200,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "Ø 80 cm",
+  "brand": "IKEA",
+  "description": "Espejo redondo IKEA STOCKHOLM de 80 cm con marco de chapa de roble. En muy buen estado; actualmente cuesta $2,499 nuevo.",
+  "photos": [
+   "images/mv-61-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-becdbfb8-3508-4759-a40b-03c48511d6de"
+  }
+ },
+ {
+  "code": "MV-62",
+  "title": "Zapatera blanca con madera, 3 puertas y cajón",
+  "price": 1160,
+  "originalPrice": 1741,
+  "cashPrice": 1100,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "100 x 30 x 105 cm aprox.",
+  "brand": "",
+  "description": "Zapatera/mueble de recibidor en blanco con madera, 3 puertas, un cajón y repisa abierta abajo, aprox. 100x30x105 cm. En buen estado.",
+  "photos": [
+   "images/mv-62-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-47c17a47-7a6d-4193-8cf8-c87936032922"
+  }
+ },
+ {
+  "code": "MV-63",
+  "title": "Escritorio eléctrico de altura ajustable Radlove",
+  "price": 2090,
+  "originalPrice": 3780,
+  "cashPrice": 1999,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "140 x 60 cm aprox.",
+  "brand": "Radlove",
+  "description": "Escritorio eléctrico Radlove de altura ajustable, aprox. 140x60 cm, con control de memorias. Funciona perfecto para trabajar sentado o de pie.",
+  "photos": [
+   "images/mv-63-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-ac5fbceb-9204-490e-ad81-450eb9227120"
+  }
+ },
+ {
+  "code": "MV-64",
+  "title": "Brazo doble para monitores con resorte de gas",
+  "price": 840,
+  "originalPrice": 1159,
+  "cashPrice": 800,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Buen estado",
+  "size": "2 monitores, VESA 75/100",
+  "brand": "",
+  "description": "Soporte de brazo doble para dos monitores con resorte de gas y montaje de pinza al escritorio, VESA 75/100. Funciona bien, se ajusta fácilmente.",
+  "photos": [
+   "images/mv-64-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-568a6ffc-a7af-4e7b-bd75-62c8b79a22a8"
+  }
+ },
+ {
+  "code": "MV-65",
+  "title": "Cajonera bajo escritorio blanca con madera",
+  "price": 170,
+  "originalPrice": 0,
+  "cashPrice": 150,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Con detalles de uso",
+  "size": "40 x 40 x 60 cm aprox.",
+  "brand": "",
+  "description": "Cajonera para debajo del escritorio en blanco con madera, con dos cajones y repisa abierta. A considerar: tiene una pata rota.",
+  "photos": [
+   "images/mv-65-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-5299bd48-2471-4af1-bef8-65e49ac1aeec"
+  }
+ },
+ {
+  "code": "MV-66",
+  "title": "Monitor LG 27\" 4K UHD IPS 27UL500 blanco",
+  "price": 4700,
+  "originalPrice": 8099,
+  "cashPrice": 4499,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Buen estado",
+  "size": "27 pulgadas",
+  "brand": "LG",
+  "description": "Monitor LG 27UL500 de 27 pulgadas 4K UHD con panel IPS, HDR10 y FreeSync, entradas HDMI y DisplayPort. Funciona perfecto, sin pixeles muertos.",
+  "photos": [
+   "images/mv-66-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-18ca3ebb-0c75-499b-bc5f-fffe82a8e4df"
+  }
+ },
+ {
+  "code": "MV-67",
+  "title": "Silla de oficina ergonómica de malla con cabecera",
+  "price": 320,
+  "originalPrice": 0,
+  "cashPrice": 300,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Con detalles de uso",
+  "size": "",
+  "brand": "",
+  "description": "Silla ergonómica de oficina con respaldo de malla, cabecera, brazos abatibles y base cromada con ruedas. Altura ajustable. A considerar: un tornillo está zafado, por lo que el reclinable no se detiene bien.",
+  "photos": [
+   "images/mv-67-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-4c8520e2-c8ba-4406-9882-cd5165d9abaa"
+  }
+ },
+ {
+  "code": "MV-68",
+  "title": "Librero IKEA KALLAX 2x2 blanco 77x77 cm",
+  "price": 790,
+  "originalPrice": 1299,
+  "cashPrice": 750,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "77 x 39 x 77 cm",
+  "brand": "IKEA",
+  "description": "Librero/organizador IKEA KALLAX de 4 cubos en color blanco, 77 x 39 x 77 cm. En buen estado, sin daños visibles; ideal para canastas o libros. Se entrega armado.",
+  "photos": [
+   "images/mv-68-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3ed949d5-c210-4713-aac7-7d2609f06e04"
+  }
+ },
+ {
+  "code": "MV-69",
+  "title": "Lámpara de mesa hongo naranja estilo retro",
+  "price": 130,
+  "originalPrice": 650,
+  "cashPrice": 120,
+  "delivery": 0,
+  "category": "Iluminación",
+  "condition": "Buen estado",
+  "size": "Ø 34 x 27 cm aprox.",
+  "brand": "",
+  "description": "Lámpara de mesa tipo hongo color naranja, estilo retro de los 70 (réplica estilo Nesso). Aprox. 34 cm de diámetro x 27 cm de alto. Funciona perfecto, en buen estado.",
+  "photos": [
+   "images/mv-69-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-57a4e1a9-1344-4ca7-a9d4-c1eae5c93f79"
+  }
+ },
+ {
+  "code": "MV-70",
+  "title": "Repisa flotante negra tipo escalón",
+  "price": 110,
+  "originalPrice": 0,
+  "cashPrice": 100,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "60 x 15 x 15 cm aprox.",
+  "brand": "",
+  "description": "Repisa flotante de pared color negro tipo escalón, comprada en Mercado Libre. Hay 2 disponibles, en buen estado. Precio por pieza.",
+  "photos": [
+   "images/mv-70-1.jpg",
+   "images/mv-70-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-0cc0c7ee-f5b5-4e6e-aaa9-d7a34b9d9802"
+  }
+ },
+ {
+  "code": "MV-71",
+  "title": "Cuadro enmarcado La Coronación de Napoleón (David)",
+  "price": 1050,
+  "originalPrice": 2500,
+  "cashPrice": 1000,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "100 x 70 cm aprox.",
+  "brand": "",
+  "description": "Reproducción de 'La Coronación de Napoleón' de Jacques-Louis David con marco hecho a la medida en tono plata/champaña. Aprox. 100 x 70 cm. En buen estado, listo para colgar.",
+  "photos": [
+   "images/mv-71-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-95b32ad9-f9f5-484c-84e2-c5e09ceee1f2"
+  }
+ },
+ {
+  "code": "MV-72",
+  "title": "Cuadro enmarcado Las Bodas de Caná (Veronese)",
+  "price": 1050,
+  "originalPrice": 2500,
+  "cashPrice": 1000,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "100 x 70 cm aprox.",
+  "brand": "",
+  "description": "Reproducción de 'Las Bodas de Caná' de Paolo Veronese con marco de madera hecho a la medida en tono vino oscuro. Aprox. 100 x 70 cm. En buen estado, listo para colgar.",
+  "photos": [
+   "images/mv-72-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-04537b30-95ed-4ef1-8fc7-5c85cde79dc9"
+  }
+ },
+ {
+  "code": "MV-73",
+  "title": "Cuadros pequeños enmarcados: Catedral de Oaxaca y ajolote",
+  "price": 1570,
+  "originalPrice": 3500,
+  "cashPrice": 1500,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "40 x 30 cm aprox. c/u",
+  "brand": "",
+  "description": "Láminas enmarcadas: 'Catedral de Oaxaca' de José María Velasco (marco negro) y lámina científica de ajolote (marco de madera natural). Aprox. 40 x 30 cm cada una. En buen estado. Precio por pieza.",
+  "photos": [
+   "images/mv-73-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-27684d95-7014-4274-a671-2abe99ab3aa4"
+  }
+ },
+ {
+  "code": "MV-74",
+  "title": "Cajonera angosta MU:4LIFE 4 cajones gris",
+  "price": 370,
+  "originalPrice": 1099,
+  "cashPrice": 350,
+  "delivery": 0,
+  "category": "Organización",
+  "condition": "Buen estado",
+  "size": "20 x 48 x 75 cm",
+  "brand": "MU:4LIFE",
+  "description": "Cajonera estrecha MU:4LIFE con 4 cajones de tela gris claro y estructura metálica blanca, aprox. 20 x 48 x 75 cm. Ideal para baño o espacios angostos. En buen estado.",
+  "photos": [
+   "images/mv-74-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-37771bcb-1342-4c70-8fd3-72429a5753d7"
+  }
+ },
+ {
+  "code": "MV-75",
+  "title": "Cajas organizadoras de zapatos transparentes apilables",
+  "price": 40,
+  "originalPrice": 0,
+  "cashPrice": 25,
+  "delivery": 0,
+  "category": "Organización",
+  "condition": "Buen estado",
+  "size": "33 x 23 x 14 cm c/u",
+  "brand": "",
+  "description": "Cajas para zapatos apilables de plástico transparente con puerta frontal y marco blanco, aprox. 33 x 23 x 14 cm cada una. En buen estado. Precio por caja.",
+  "photos": [
+   "images/mv-75-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-85409395-8508-4e46-b576-db8a588bb4ce"
+  }
+ },
+ {
+  "code": "MV-76",
+  "title": "Cactus órgano 1.4 m con maceta de cemento blanca",
+  "price": 1050,
+  "originalPrice": 0,
+  "cashPrice": 999,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "1.4 m de alto",
+  "brand": "",
+  "description": "Cactus órgano natural de aprox. 1.4 m de alto (con maceta), con brotes nuevos en las puntas. Incluye maceta redonda de cemento blanco con grava decorativa. Muy fácil de cuidar; necesita luz.",
+  "photos": [
+   "images/mv-76-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-d6d1ec21-d0d1-4410-9c8a-955ad3099906"
+  }
+ },
+ {
+  "code": "MV-77",
+  "title": "Monstera deliciosa grande 1.2 m con maceta blanca",
+  "price": 1050,
+  "originalPrice": 2500,
+  "cashPrice": 999,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "1.2 m de alto",
+  "brand": "",
+  "description": "Monstera deliciosa (costilla de Adán) natural, grande y frondosa, aprox. 1.2 m de alto con maceta y 1 m de ancho. Incluye maceta de cerámica blanca con plato y tutores de bambú. Sana y con hojas grandes.",
+  "photos": [
+   "images/mv-77-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-692efaed-5d2d-4c3f-bc16-a4f7efb43175"
+  }
+ },
+ {
+  "code": "MV-78",
+  "title": "Ficus lyrata (hoja de violín) natural con maceta",
+  "price": 1050,
+  "originalPrice": 2500,
+  "cashPrice": 999,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "2.3 m y 1.7 m de alto",
+  "brand": "",
+  "description": "Ficus lyrata (pandurata/hoja de violín) natural con maceta de cemento blanca. Hay 2: una de aprox. 2.3 m y otra de aprox. 1.7 m de alto, ambas sanas. Precio por planta. Ideal para esquinas con buena luz.",
+  "photos": [
+   "images/mv-78-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c0833161-91b5-49f9-ae15-92bcc14ef1ad"
+  }
+ },
+ {
+  "code": "MV-79",
+  "title": "Árbol aralia/schefflera 2.2 m con maceta negra grande",
+  "price": 950,
+  "originalPrice": 0,
+  "cashPrice": 900,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "2.2 m de alto",
+  "brand": "",
+  "description": "Árbol paraguas (aralia/schefflera) natural de aprox. 2.2 m de alto con maceta, varios troncos y follaje abundante. Incluye maceta negra grande (aprox. 45 cm). Requiere vehículo grande para transportarlo.",
+  "photos": [
+   "images/mv-79-1.jpg",
+   "images/mv-79-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-caab3dfc-15de-4b6a-be8d-31c917bf43ff"
+  }
+ },
+ {
+  "code": "MV-80",
+  "title": "Árbol decorativo dorado 1.5 m con jarrón blanco",
+  "price": 60,
+  "originalPrice": 0,
+  "cashPrice": 50,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "1.5 m de alto",
+  "brand": "",
+  "description": "Árbol decorativo tipo topiario con flores secas/preservadas en acabado dorado, aprox. 1.5 m de alto. Incluye jarrón de cerámica blanca brillante con diseño torcido. No requiere cuidados.",
+  "photos": [
+   "images/mv-80-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-5d1bef09-b060-4816-bfd2-665c4cf6e2f9"
+  }
+ },
+ {
+  "code": "MV-81",
+  "title": "Soporte para plantas IKEA SATSUMAS bambú 78 cm",
+  "price": 530,
+  "originalPrice": 1199,
+  "cashPrice": 500,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "36 x 33 x 78 cm",
+  "brand": "IKEA",
+  "description": "Soporte para plantas IKEA SATSUMAS de bambú con 3 bandejas blancas, 78 cm de alto. En buen estado. No incluye las plantas ni macetas.",
+  "photos": [
+   "images/mv-81-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-8be41b85-1b1c-42f5-9d91-b371b730646c"
+  }
+ },
+ {
+  "code": "MV-82",
+  "title": "Organizador de baño 2 niveles dorado y negro",
+  "price": 110,
+  "originalPrice": 0,
+  "cashPrice": 100,
+  "delivery": 0,
+  "category": "Organización",
+  "condition": "Buen estado",
+  "size": "32 x 22 x 35 cm",
+  "brand": "",
+  "description": "Organizador de encimera de 2 niveles con estructura metálica dorada y bandejas negras, aprox. 32 x 22 x 35 cm. Ideal para baño o tocador. En buen estado.",
+  "photos": [
+   "images/mv-82-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-62c216c9-2c6c-45e7-8e76-104ed57ad23e"
+  }
+ },
+ {
+  "code": "MV-83",
+  "title": "Juego de balcón: mesa redonda de vidrio + silla plegable",
+  "price": 1260,
+  "originalPrice": 3599,
+  "cashPrice": 1200,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "Mesa Ø 70 x 72 cm aprox.",
+  "brand": "",
+  "description": "Mesa redonda para exterior con cubierta de vidrio templado texturizado y patas de acero negro, aprox. 70 cm de diámetro, con silla plegable de malla. Usado en balcón techado, en buen estado.",
+  "photos": [
+   "images/mv-83-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-57859469-6303-4f10-abe2-f21c5dccd295"
+  }
+ },
+ {
+  "code": "MV-84",
+  "title": "Google Nest Wifi router malla AC2200 (2a gen)",
+  "price": 1050,
+  "originalPrice": 2155,
+  "cashPrice": 999,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Buen estado",
+  "size": "Ø 11 x 9 cm",
+  "brand": "Google",
+  "description": "Router Google Nest Wifi de 2a generación (AC2200, sistema de malla), funciona con la app Google Home. En buen estado, incluye eliminador. Precio por pieza.",
+  "photos": [
+   "images/mv-84-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-a1f0d3f0-fd45-40c5-b16b-145105cf7b45"
+  }
+ },
+ {
+  "code": "MV-85",
+  "title": "Difusor de aromas profesional sin agua Bluetooth",
+  "price": 370,
+  "originalPrice": 849,
+  "cashPrice": 350,
+  "delivery": 0,
+  "category": "Hogar",
+  "condition": "Buen estado",
+  "size": "22 x 9 x 32 cm aprox.",
+  "brand": "",
+  "description": "Difusor de aceites esenciales por nebulización (sin agua), control por app Bluetooth, para pared o mesa, con botella de 400 ml. Aromatiza espacios grandes tipo hotel. Funciona perfecto.",
+  "photos": [
+   "images/mv-85-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-96ef491f-1caa-43cb-91b4-fabe44af2870"
+  }
+ },
+ {
+  "code": "MV-86",
+  "title": "Teléfono inalámbrico AEGTVA con identificador",
+  "price": 270,
+  "originalPrice": 498,
+  "cashPrice": 250,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Como nuevo",
+  "size": "",
+  "brand": "AEGTVA",
+  "description": "Teléfono inalámbrico para casa u oficina marca AEGTVA, con identificador de llamadas, bloqueo de llamadas y agenda de 50 números. Comprado en abril 2026, como nuevo. Incluye base y eliminador.",
+  "photos": [
+   "images/mv-86-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-70005732-dd46-4cd1-bfae-597fa597ee10"
+  }
+ },
+ {
+  "code": "MV-87",
+  "title": "Cámara exterior Tapo TC41 360° Wi-Fi visión color",
+  "price": 690,
+  "originalPrice": 999,
+  "cashPrice": 650,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Como nuevo",
+  "size": "",
+  "brand": "TP-Link Tapo",
+  "description": "Cámara de seguridad exterior TP-Link Tapo TC41, giratoria 360°, resolución 2K (3MP), visión nocturna a color, audio bidireccional, IP65. Comprada en marzo 2026, como nueva; incluye soporte de pared y eliminador.",
+  "photos": [
+   "images/mv-87-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-96ab6f22-f5bc-41e3-b328-bf8045ae2b7d"
+  }
+ },
+ {
+  "code": "MV-88",
+  "title": "Cámara interior Tapo TC74 5MP giratoria Wi-Fi",
+  "price": 580,
+  "originalPrice": 899,
+  "cashPrice": 550,
+  "delivery": 0,
+  "category": "Electrónica",
+  "condition": "Como nuevo",
+  "size": "",
+  "brand": "TP-Link Tapo",
+  "description": "Cámara de seguridad interior TP-Link Tapo TC74, resolución 5MP (3K), giratoria 360°, detección por IA de personas y mascotas, visión nocturna y audio bidireccional. Comprada en marzo 2026, como nueva. Incluye eliminador.",
+  "photos": [
+   "images/mv-88-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-b610d86e-c045-4ef1-8205-395e302b6de7"
+  }
+ },
+ {
+  "code": "MV-89",
+  "title": "Charola dorada redonda IKEA GLATTIS 38 cm",
+  "price": 270,
+  "originalPrice": 599,
+  "cashPrice": 250,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "Ø 38 cm",
+  "brand": "IKEA",
+  "description": "Charola decorativa redonda IKEA GLATTIS color latón/dorado, 38 cm de diámetro. En buen estado. Hay 2 disponibles; se venden por pieza o juntas.",
+  "photos": [
+   "images/mv-89-1.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-e9ee0928-84d5-4a4c-bb2c-b75963c82ea4"
+  }
  }
 ]
