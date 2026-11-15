@@ -79,7 +79,7 @@ def plan(db_items_path, db_requests_path):
         e = {
             "itemId": iid, "version": it["version"], "code": d["code"], "sid": d.get("sid") or iid,
             "requestId": iid if iid in reqs else None, "requestVersion": (reqs.get(iid) or {}).get("version"),
-            "hadPendingUpdate": bool(pu),
+            "hadPendingUpdate": bool(pu), "reqPrice": float(rq.get("price") or 0),
             "title": pu.get("title") or p.get("title") or d.get("name") or d["code"],
             "cashOld": cash_now, "cash": cash_new, "base": base or cash_new,
             "link": mp_link(cash_new), "linkOld": int(((d.get("payLinks") or {}).get("pickup") or {}).get("amount") or mp_link(cash_now)),
@@ -212,7 +212,12 @@ def apply(plan_path, mp_result_path, photos_dir):
         patch["updatedAt"] = now
         ops.append({"op": "update", "path": "items/" + e["itemId"], "ifVersion": e["version"], "data": patch})
         if e["requestId"]:
-            ops.append({"op": "delete", "path": "requests/" + e["itemId"], "ifVersion": e["requestVersion"]})
+            if e["reqPrice"] and e["reqPrice"] != e["cashOld"] and not e["priceChange"]:
+                # Price couldn't go to Mercado Pago this run (Mac offline): keep it pending, drop what was applied.
+                ops.append({"op": "update", "path": "requests/" + e["itemId"], "ifVersion": e["requestVersion"],
+                            "data": {"photos": {"__delete__": True}}})
+            else:
+                ops.append({"op": "delete", "path": "requests/" + e["itemId"], "ifVersion": e["requestVersion"]})
         notes.append(e["code"] + ": " + ", ".join(did))
     with open(ITEMS, "w", encoding="utf-8") as f:
         f.write(json.dumps(cat, ensure_ascii=False, indent=1) + "\n")
