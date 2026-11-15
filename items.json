@@ -641,26 +641,6 @@
   }
  },
  {
-  "code": "MV-33",
-  "title": "Aparador IKEA FJÄLLBO negro con puertas de malla",
-  "price": 3660,
-  "originalPrice": 6999,
-  "cashPrice": 3500,
-  "delivery": 0,
-  "category": "Muebles",
-  "condition": "Buen estado",
-  "size": "111 x 47 x 95 cm",
-  "brand": "IKEA",
-  "description": "Aparador IKEA FJÄLLBO en negro, estructura de acero con puertas de malla y cubierta/repisa de pino macizo, 111 x 47 x 95 cm. En buen estado. Estilo industrial, ideal para sala o comedor.",
-  "photos": [
-   "images/mv-33-1.jpg"
-  ],
-  "status": "disponible",
-  "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-142a7241-aad8-4bda-a30e-4bbcae75bd4b"
-  }
- },
- {
   "code": "MV-34",
   "title": "Bancos altos de bar negros giratorios con pistón",
   "price": 430,
