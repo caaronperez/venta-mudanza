@@ -12,9 +12,11 @@ Steps (run from the repo root):
      -> work/mp_update.json   input for `mp_links.py --update` (only entries whose price changes)
      -> work/assets.txt       asset ids to download into work/photos/<assetId>.jpg
   2. (Mac) python3 ~/MovingSale/mp_links.py --update mp_update.json  > work/mp_result.json
+     (Mercado Pago ids are the item codes, e.g. "MV-02"; titles are "MV-02 <title>", same as when the links were made.)
   3. python3 tools/sync.py apply work/plan.json work/mp_result.json work/photos
      -> edits items.json and images/, prints a summary
      -> work/db_ops.json      ops for the artifact db_write (item updates + request deletes)
+  Sold items: python3 tools/sync.py sold MV-02 MV-14   -> status "vendido" in items.json (kept on the site as Vendido)
 """
 import glob, hashlib, json, math, os, re, sys
 
@@ -94,7 +96,7 @@ def plan(db_items_path, db_requests_path):
             if not e["prefIds"]:
                 skipped.append({"id": iid, "reason": "no Mercado Pago link to update"})
                 continue
-            mp.append({"id": e["sid"], "title": e["title"], "price": e["link"], "delivery": e["delivery"],
+            mp.append({"id": e["code"], "title": e["code"] + " " + e["title"], "price": e["link"], "delivery": e["delivery"],
                        "prefIds": e["prefIds"], "urls": e["urls"]})
         assets += photos
         out.append(e)
@@ -131,7 +133,7 @@ def apply(plan_path, mp_result_path, photos_dir):
         did, patch = [], {}
         prop, site = dict(e["proposal"]), dict(e["siteObj"])
         if e["priceChange"]:
-            res = mp.get(e["sid"])
+            res = mp.get(e["code"])
             if not res or not all(k in res for k in e["prefIds"]):
                 notes.append(e["code"] + ": Mercado Pago update missing, price not changed")
                 if e["requestId"]:
@@ -218,9 +220,24 @@ def apply(plan_path, mp_result_path, photos_dir):
     print("\n".join(notes))
 
 
+def sold(codes):
+    """Mark items as sold on the catalog (they stay visible with the "Vendido" badge)."""
+    cat = load(ITEMS)
+    changed = []
+    for c in cat:
+        if c.get("code") in codes and c.get("status") != "vendido":
+            c["status"] = "vendido"
+            changed.append(c["code"])
+    with open(ITEMS, "w", encoding="utf-8") as f:
+        f.write(json.dumps(cat, ensure_ascii=False, indent=1) + "\n")
+    print(json.dumps({"markedSold": changed}))
+
+
 if __name__ == "__main__":
     if len(sys.argv) == 4 and sys.argv[1] == "plan":
         plan(sys.argv[2], sys.argv[3])
+    elif len(sys.argv) >= 2 and sys.argv[1] == "sold":
+        sold(set(sys.argv[2:]))
     elif len(sys.argv) == 5 and sys.argv[1] == "apply":
         apply(sys.argv[2], sys.argv[3], sys.argv[4])
     else:
