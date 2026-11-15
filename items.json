@@ -1742,5 +1742,28 @@
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-e9ee0928-84d5-4a4c-bb2c-b75963c82ea4"
   }
+ },
+ {
+  "code": "MV-90",
+  "title": "Georgie - Scottish de pelo corto, campeón mundial de siestas",
+  "price": 5000000,
+  "originalPrice": 0,
+  "cashPrice": 4797570,
+  "delivery": 0,
+  "category": "Mascotas",
+  "condition": "Sano y consentido",
+  "size": "Cabe perfecto en tu regazo (o en una bolsa de tela)",
+  "brand": "",
+  "description": "Georgie duerme la mayor parte del día. Súper tranquilo: nunca rasguña ni muerde. Sano y muy cariñoso; te despierta con ronroneos. Lo único: no le gusta estar solo, así que necesita compañía.",
+  "photos": [
+   "images/mv-90-1.jpg",
+   "images/mv-90-2.jpg",
+   "images/mv-90-3.jpg",
+   "images/mv-90-4.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3754ffb4-80d7-4ad4-b301-091f6f6860d7"
+  }
  }
 ]
