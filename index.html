@@ -133,6 +133,14 @@ svg.i { width: 26px; height: 26px; flex: none; fill: none; stroke: currentColor;
 .btn.mp.alt { border-color: #CFC8B8; }
 .btn .mplogo { height: 40px; width: auto; display: inline-block; vertical-align: middle; margin: -12px -2px; }
 .btn.wa { background: var(--wa); color: var(--ink); }
+.plan { border: 1.5px solid var(--mp-navy); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; }
+.plan h3 { margin: 0; font: 700 20px/1.2 var(--serif); color: var(--mp-navy); }
+.plan p { margin: 0; font-size: 15px; color: var(--muted); }
+.plan ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.plan a { display: grid; gap: 1px; text-decoration: none; color: var(--mp-navy); background: #fff; border: 1.5px solid #CFC8B8; border-radius: 10px; padding: 8px 12px; }
+.plan a:hover { border-color: var(--mp-navy); }
+.plan a span { font-size: 13px; color: var(--muted); }
+.plan a b { font-size: 17px; font-variant-numeric: tabular-nums; }
 .btn.wa-dark { background: var(--green); color: var(--paper); width: auto; padding: 12px 30px; border-radius: 999px; }
 .btn .walogo { width: 26px; height: 26px; flex: none; }
 .btn:focus-visible { outline: 3px solid var(--lime); outline-offset: 2px; }
@@ -521,7 +529,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     mo.replaceChildren(); if (ol) mo.appendChild(ol); mo.hidden = !ol;
     var msi = document.getElementById("m-msi");
     msi.replaceChildren(icon("i-card"), h("span", null, ["Hasta 3 meses sin intereses · ", h("b", { text: "3 × " + money(it.price / 3) })]));
-    msi.hidden = sold;
+    msi.hidden = sold || Number(it.price) > 300000;
     var cb = document.getElementById("m-cash");
     cb.replaceChildren(icon("i-cash"), h("span", null, ["Pago en efectivo: ", h("b", { text: money(cashPrice(it)) }), h("small", { text: "Se paga en persona al recoger, sin envío. Escríbeme por WhatsApp para apartarlo." })]));
     cb.hidden = sold;
@@ -536,7 +544,18 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     acts.replaceChildren();
     if (!sold && !held) {
       var L = it.links || {}, deliv = Number(it.delivery) || 0;
-      if (safeUrl(L.pickup)) acts.appendChild(mpBtn("", "y recoger", money(it.price), safeUrl(L.pickup)));
+      // Cards top out at $300,000 per payment on Mercado Pago, so big items carry a plan of several links that add up to the price.
+      var plan = (Array.isArray(it.paymentPlan) ? it.paymentPlan : []).filter(function (p) { return p && safeUrl(p.url) && Number(p.amount) > 0; });
+      if (plan.length) {
+        acts.appendChild(h("div", { class: "plan" }, [
+          h("h3", { text: "Paga con tarjeta en " + plan.length + " pagos" }),
+          h("p", { text: "Mercado Pago acepta hasta $300,000 por pago con tarjeta. Haz los " + plan.length + " pagos (suman " + money(it.price) + ") y mándame los comprobantes por WhatsApp." }),
+          h("ol", null, plan.map(function (p, k) {
+            return h("li", null, [h("a", { href: safeUrl(p.url), target: "_blank", rel: "noopener" }, [h("span", { text: "Pago " + (k + 1) + " de " + plan.length }), h("b", { text: money(p.amount) })])]);
+          }))
+        ]));
+        if (safeUrl(L.pickup)) acts.appendChild(mpBtn("alt", "todo por transferencia", money(it.price), safeUrl(L.pickup)));
+      } else if (safeUrl(L.pickup)) acts.appendChild(mpBtn("", "y recoger", money(it.price), safeUrl(L.pickup)));
       if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(mpBtn("alt", "+ envío", money(it.price + deliv), safeUrl(L.delivery)));
     }
     var msg = sold ? "Hola, vi que vendiste " + it.code + " " + it.title + ". ¿Tienes algo parecido?"

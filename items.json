@@ -1765,6 +1765,93 @@
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3754ffb4-80d7-4ad4-b301-091f6f6860d7"
   },
-  "featured": true
+  "featured": true,
+  "paymentPlan": [
+   {
+    "n": 1,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-beca312a-dc6c-47ec-8ccc-cbf1300df98e"
+   },
+   {
+    "n": 2,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-4ddbf12a-3196-48ef-94ec-8f197f49baf8"
+   },
+   {
+    "n": 3,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c4852fe8-29dd-47e8-80f2-4a2922f29f78"
+   },
+   {
+    "n": 4,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-dbf97fa3-a960-4ea5-8ac9-395df3f7c43f"
+   },
+   {
+    "n": 5,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-06ea8c12-827f-4a55-8432-362eaa055134"
+   },
+   {
+    "n": 6,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-297b04c2-50a6-4a4d-a771-7cd923f5f3fe"
+   },
+   {
+    "n": 7,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-ffb62bbd-cecf-4b04-abd0-7fbc19678090"
+   },
+   {
+    "n": 8,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-b7dba1d8-3b7b-4fce-a77b-b02155ff0588"
+   },
+   {
+    "n": 9,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-4bd55a81-08a7-4df1-9557-b1582e9a854f"
+   },
+   {
+    "n": 10,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-a0d5365f-3455-4430-bce1-62b216deeb13"
+   },
+   {
+    "n": 11,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9b9955f7-c496-4746-b3b7-89436d50f53b"
+   },
+   {
+    "n": 12,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-4431d600-b898-4887-bdf0-440740ca40b2"
+   },
+   {
+    "n": 13,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-22b475ab-03c1-440c-8d94-419ea92571d3"
+   },
+   {
+    "n": 14,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-532589bd-27be-4002-8967-d5bfa531103a"
+   },
+   {
+    "n": 15,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-924732e4-97a1-4e26-9736-d2053f6dbc0f"
+   },
+   {
+    "n": 16,
+    "amount": 299999,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-257f4ff1-e39a-4119-a563-2ce2adce53e2"
+   },
+   {
+    "n": 17,
+    "amount": 200016,
+    "url": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-610a8963-f97d-4e01-bcfd-2d8aa03a7aaf"
+   }
+  ]
  }
 ]
