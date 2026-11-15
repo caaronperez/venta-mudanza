@@ -7,7 +7,10 @@
 <meta name="description" content="Muebles y artículos en venta por mudanza en Ciudad de México. Paga con Mercado Pago hasta 3 meses sin intereses, o hazme una oferta por WhatsApp.">
 <meta property="og:title" content="Venta de mudanza · CDMX">
 <meta property="og:description" content="Todo se va antes del 25 de noviembre. Hasta 3 meses sin intereses.">
-<meta property="og:image" content="images/hero/IMG_4221.jpg">
+<meta property="og:image" content="https://caaronperez.github.io/venta-mudanza/images/hero/IMG_4221.jpg">
+<meta property="og:url" content="https://caaronperez.github.io/venta-mudanza/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -556,7 +559,8 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     if (e.key === "ArrowRight") showPhoto(idx + 1);
   });
   document.getElementById("m-share").addEventListener("click", function (e) {
-    var b = e.currentTarget, url = location.href.split("#")[0] + "#" + (current ? current.code : "");
+    // Share the item's own page (i/<CODE>/) so WhatsApp / iMessage show its photo and title, not the site's.
+    var b = e.currentTarget, url = location.href.split("#")[0].split("?")[0].replace(/index\.html$/, "") + (current ? "i/" + current.code + "/" : "");
     (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () {
       b.textContent = "Enlace copiado ✓"; setTimeout(function () { b.textContent = "Copiar enlace"; }, 2000);
     }).catch(function () { b.textContent = url; });

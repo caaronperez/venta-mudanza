@@ -17,13 +17,18 @@ Steps (run from the repo root):
      -> edits items.json and images/, prints a summary
      -> work/db_ops.json      ops for the artifact db_write (item updates + request deletes)
   Sold items: python3 tools/sync.py sold MV-02 MV-14   -> status "vendido" in items.json (kept on the site as Vendido)
+  Share pages: python3 tools/sync.py pages             -> i/<CODE>/index.html for every item (apply and sold also run it)
+     Each page carries the item's title, price and first photo as link-preview tags (WhatsApp, iMessage, Facebook)
+     and sends visitors on to index.html#<CODE>. Commit i/ together with items.json.
 """
-import glob, hashlib, json, math, os, re, sys
+import glob, hashlib, html, json, math, os, re, shutil, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ITEMS = os.path.join(ROOT, "items.json")
 IMAGES = os.path.join(ROOT, "images")
 WORK = os.path.join(ROOT, "work")
+SHARE = os.path.join(ROOT, "i")
+SITE = "https://caaronperez.github.io/venta-mudanza/"
 MAX_PHOTOS = 4
 SITE_FIELDS = ["title", "description", "category", "condition", "size", "brand", "originalPrice", "showOriginal", "held"]
 
@@ -222,7 +227,90 @@ def apply(plan_path, mp_result_path, photos_dir):
     with open(ITEMS, "w", encoding="utf-8") as f:
         f.write(json.dumps(cat, ensure_ascii=False, indent=1) + "\n")
     dump(os.path.join(WORK, "db_ops.json"), ops)
+    share_pages()
     print("\n".join(notes))
+
+
+def _img_size(rel):
+    try:
+        from PIL import Image
+        with Image.open(os.path.join(ROOT, rel)) as im:
+            return im.size
+    except Exception:
+        return None
+
+
+def share_pages():
+    """Write i/<CODE>/index.html for every catalog item: link-preview tags + redirect to the item on the catalog."""
+    cat = load(ITEMS)
+    os.makedirs(SHARE, exist_ok=True)
+    keep = set()
+    for c in cat:
+        code = str(c.get("code") or "")
+        if not re.match(r"^MV-\d+$", code) or not c.get("title"):
+            continue
+        keep.add(code)
+        sold_ = c.get("status") == "vendido"
+        price = float(c.get("price") or 0)
+        cash = float(c.get("cashPrice") or 0)
+        title = ("Vendido · " if sold_ else "") + str(c["title"]).strip()
+        # Cards top out at $300,000 per payment on Mercado Pago MX, so only promise MSI below that.
+        bits = [money(price) + " MXN" + (" · hasta 3 MSI" if not sold_ and 0 < price <= 300000 else "")]
+        if cash > 0 and not sold_ and cash < price:
+            bits.append("Efectivo " + money(cash))
+        desc = " · ".join(bits) + ". " + re.sub(r"\s+", " ", str(c.get("description") or "")).strip()
+        if len(desc) > 200:
+            desc = desc[:197].rsplit(" ", 1)[0] + "…"
+        photo = next((p for p in (c.get("photos") or []) if isinstance(p, str) and re.match(r"^images/[\w.\-/]+$", p)), "images/hero/IMG_4221.jpg")
+        size = _img_size(photo)
+        url = SITE + "i/" + code + "/"
+        target = "../../#" + code
+        e = lambda v: html.escape(str(v), quote=True)
+        dims = (f'<meta property="og:image:width" content="{size[0]}">\n<meta property="og:image:height" content="{size[1]}">\n') if size else ""
+        page = f"""<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(title)} · Venta de mudanza CDMX</title>
+<meta name="description" content="{e(desc)}">
+<meta property="og:type" content="product">
+<meta property="og:site_name" content="Venta de mudanza · CDMX">
+<meta property="og:locale" content="es_MX">
+<meta property="og:url" content="{e(url)}">
+<meta property="og:title" content="{e(title)}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:image" content="{e(SITE + photo)}">
+<meta property="og:image:secure_url" content="{e(SITE + photo)}">
+<meta property="og:image:type" content="image/jpeg">
+{dims}<meta property="og:image:alt" content="{e(c['title'])}">
+<meta property="product:price:amount" content="{int(round(price))}">
+<meta property="product:price:currency" content="MXN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(title)}">
+<meta name="twitter:description" content="{e(desc)}">
+<meta name="twitter:image" content="{e(SITE + photo)}">
+<script>location.replace("{target}");</script>
+<style>body{{margin:0;font:16px/1.5 system-ui,sans-serif;background:#F6F1E6;color:#14251B;display:grid;place-items:center;min-height:100vh;padding:16px;box-sizing:border-box;text-align:center}}img{{max-width:min(420px,100%);border-radius:16px}}a{{color:#1E3A2B;font-weight:600}}</style>
+</head>
+<body>
+<main>
+<img src="../../{e(photo)}" alt="{e(c['title'])}">
+<h1>{e(title)}</h1>
+<p>{e(money(price))} MXN</p>
+<p><a href="{target}">Ver el artículo en el catálogo</a></p>
+</main>
+</body>
+</html>
+"""
+        d = os.path.join(SHARE, code)
+        os.makedirs(d, exist_ok=True)
+        with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
+            f.write(page)
+    for d in glob.glob(os.path.join(SHARE, "MV-*")):
+        if os.path.basename(d) not in keep:
+            shutil.rmtree(d, ignore_errors=True)
+    return sorted(keep)
 
 
 def sold(codes):
@@ -235,6 +323,7 @@ def sold(codes):
             changed.append(c["code"])
     with open(ITEMS, "w", encoding="utf-8") as f:
         f.write(json.dumps(cat, ensure_ascii=False, indent=1) + "\n")
+    share_pages()
     print(json.dumps({"markedSold": changed}))
 
 
@@ -245,5 +334,7 @@ if __name__ == "__main__":
         sold(set(sys.argv[2:]))
     elif len(sys.argv) == 5 and sys.argv[1] == "apply":
         apply(sys.argv[2], sys.argv[3], sys.argv[4])
+    elif len(sys.argv) == 2 and sys.argv[1] == "pages":
+        print(json.dumps({"sharePages": len(share_pages())}))
     else:
         sys.exit(__doc__)
