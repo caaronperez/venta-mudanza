@@ -1764,6 +1764,7 @@
   "status": "disponible",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3754ffb4-80d7-4ad4-b301-091f6f6860d7"
-  }
+  },
+  "featured": true
  }
 ]
