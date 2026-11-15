@@ -661,26 +661,6 @@
   }
  },
  {
-  "code": "MV-35",
-  "title": "Refrigerador Samsung side-by-side negro con FlexZone",
-  "price": 20850,
-  "originalPrice": 49990,
-  "cashPrice": 20000,
-  "delivery": 0,
-  "category": "Electrodomésticos",
-  "condition": "Buen estado",
-  "size": "91 x 72 x 178 cm aprox.",
-  "brand": "Samsung",
-  "description": "Refrigerador Samsung side-by-side de 3 puertas en negro mate, con despachador de agua/hielo y compartimento FlexZone de temperatura ajustable (modelo probable RS68N8670B1). Funciona perfectamente y está en buen estado. Comprado en Palacio de Hierro.",
-  "photos": [
-   "images/mv-35-1.jpg"
-  ],
-  "status": "disponible",
-  "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-99dc2bac-7c4e-43df-9ee0-ffd2424a9d87"
-  }
- },
- {
   "code": "MV-36",
   "title": "Lavavajillas Frigidaire 24\" acero inoxidable",
   "price": 1570,
