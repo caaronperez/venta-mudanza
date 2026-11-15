@@ -227,9 +227,9 @@
  {
   "code": "MV-10",
   "title": "Lámpara de esquina LED RGB con control y app WiFi",
-  "price": 270,
+  "price": 240,
   "originalPrice": 530,
-  "cashPrice": 250,
+  "cashPrice": 220,
   "delivery": 0,
   "category": "Iluminación",
   "condition": "Buen estado",
@@ -247,7 +247,8 @@
    "title": "RGB LED corner lamp with remote and Wi-Fi app",
    "description": "Color-changing RGB LED corner floor lamp with remote control and Wi-Fi app. About 150 cm tall. Works perfectly.",
    "size": "150 cm tall"
-  }
+  },
+  "wasPrice": 270
  },
  {
   "code": "MV-11",
