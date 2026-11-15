@@ -17,9 +17,11 @@ Steps (run from the repo root):
      -> edits items.json and images/, prints a summary
      -> work/db_ops.json      ops for the artifact db_write (item updates + request deletes)
   Sold items: python3 tools/sync.py sold MV-02 MV-14   -> status "vendido" in items.json (kept on the site as Vendido)
-  Share pages: python3 tools/sync.py pages             -> i/<CODE>/index.html for every item (apply and sold also run it)
+  Share pages: python3 tools/sync.py pages             -> i/<CODE>/index.html for every item, en/index.html (English copy of
+                                                          index.html) and en/i/<CODE>/index.html (apply and sold also run it)
+     English item text lives in items.json as "en": {"title","description","size","condition"}; missing keys fall back to Spanish.
      Each page carries the item's title, price and first photo as link-preview tags (WhatsApp, iMessage, Facebook)
-     and sends visitors on to index.html#<CODE>. Commit i/ together with items.json.
+     and sends visitors on to index.html#<CODE>. Commit i/ and en/ together with items.json.
 """
 import glob, hashlib, html, json, math, os, re, shutil, sys
 
@@ -184,7 +186,10 @@ def apply(plan_path, mp_result_path, photos_dir):
         s = e["site"]
         for k in ["title", "description", "category", "condition", "size", "brand"]:
             if k in s:
-                c[k] = str(s[k]).strip()
+                v = str(s[k]).strip()
+                if v != c.get(k) and isinstance(c.get("en"), dict):
+                    c["en"].pop(k, None)   # the English text no longer matches; en/ shows the Spanish until it's translated again
+                c[k] = v
         if "originalPrice" in s or "showOriginal" in s:
             show = s.get("showOriginal", True) is not False
             op = int(float(s.get("originalPrice") or 0)) if "originalPrice" in s else None
@@ -240,50 +245,92 @@ def _img_size(rel):
         return None
 
 
+EN_PAGE = [  # (Spanish, English) replacements that turn index.html into en/index.html; the page's JS translates the rest
+    ('<html lang="es">', '<html lang="en">'),
+    ('<title>Venta de mudanza · CDMX</title>', '<title>Moving sale · Mexico City</title>'),
+    ('<meta name="description" content="Muebles y artículos en venta por mudanza en Ciudad de México. Paga con Mercado Pago hasta 3 meses sin intereses, o hazme una oferta por WhatsApp.">',
+     '<meta name="description" content="Furniture and home goods for sale in Mexico City because I\'m moving. Pay with Mercado Pago in up to 3 interest-free installments, or make me an offer on WhatsApp.">'),
+    ('<meta property="og:title" content="Venta de mudanza · CDMX">', '<meta property="og:title" content="Moving sale · Mexico City">'),
+    ('<meta property="og:description" content="Todo se va antes del 25 de noviembre. Hasta 3 meses sin intereses.">',
+     '<meta property="og:description" content="Everything goes before November 25. Up to 3 interest-free installments.">'),
+    ('<meta property="og:url" content="https://caaronperez.github.io/venta-mudanza/">', '<meta property="og:url" content="https://caaronperez.github.io/venta-mudanza/en/">'),
+    ('src="images/', 'src="../images/'),
+    ('src="brand/', 'src="../brand/'),
+    ('href="brand/', 'href="../brand/'),
+]
+
+
+def build_en():
+    with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
+        page = f.read()
+    for a, b in EN_PAGE:
+        if a not in page and a.startswith("<"):
+            raise SystemExit("en/index.html: index.html no longer contains " + a[:60])
+        page = page.replace(a, b)
+    os.makedirs(os.path.join(ROOT, "en"), exist_ok=True)
+    with open(os.path.join(ROOT, "en", "index.html"), "w", encoding="utf-8") as f:
+        f.write(page)
+
+
+COND_EN = {"Nuevo": "New", "Como nuevo": "Like new", "Buen estado": "Good condition", "Con detalles de uso": "Shows some wear"}
+
+
 def share_pages():
-    """Write i/<CODE>/index.html for every catalog item: link-preview tags + redirect to the item on the catalog."""
+    """i/<CODE>/ and en/i/<CODE>/ for every catalog item: link-preview tags + redirect to the item; also rebuilds en/index.html."""
+    build_en()
     cat = load(ITEMS)
-    os.makedirs(SHARE, exist_ok=True)
     keep = set()
-    for c in cat:
-        code = str(c.get("code") or "")
-        if not re.match(r"^MV-\d+$", code) or not c.get("title"):
-            continue
-        keep.add(code)
-        sold_ = c.get("status") == "vendido"
-        price = float(c.get("price") or 0)
-        cash = float(c.get("cashPrice") or 0)
-        title = ("Vendido · " if sold_ else "") + str(c["title"]).strip()
-        # Cards top out at $300,000 per payment on Mercado Pago MX, so only promise MSI below that.
-        bits = [money(price) + " MXN" + (" · hasta 3 MSI" if not sold_ and 0 < price <= 300000 else "")]
-        if cash > 0 and not sold_ and cash < price:
-            bits.append("Efectivo " + money(cash))
-        desc = " · ".join(bits) + ". " + re.sub(r"\s+", " ", str(c.get("description") or "")).strip()
-        if len(desc) > 200:
-            desc = desc[:197].rsplit(" ", 1)[0] + "…"
-        photo = next((p for p in (c.get("photos") or []) if isinstance(p, str) and re.match(r"^images/[\w.\-/]+$", p)), "images/hero/IMG_4221.jpg")
-        size = _img_size(photo)
-        url = SITE + "i/" + code + "/"
-        target = "../../#" + code
-        e = lambda v: html.escape(str(v), quote=True)
-        dims = (f'<meta property="og:image:width" content="{size[0]}">\n<meta property="og:image:height" content="{size[1]}">\n') if size else ""
-        page = f"""<!doctype html>
-<html lang="es">
+    for lang in ("es", "en"):
+        base_dir = SHARE if lang == "es" else os.path.join(ROOT, "en", "i")
+        os.makedirs(base_dir, exist_ok=True)
+        L = {"es": {"sold": "Vendido · ", "msi": " · hasta 3 MSI", "cash": "Efectivo ", "site": "Venta de mudanza · CDMX",
+                    "locale": "es_MX", "suffix": " · Venta de mudanza CDMX", "see": "Ver el artículo en el catálogo", "hl": "es"},
+             "en": {"sold": "Sold · ", "msi": " · up to 3 interest-free payments", "cash": "Cash ", "site": "Moving sale · Mexico City",
+                    "locale": "en_US", "suffix": " · Moving sale Mexico City", "see": "See the item in the catalog", "hl": "en"}}[lang]
+        prefix = SITE + ("" if lang == "es" else "en/")
+        up = "../../" if lang == "es" else "../../../"
+        for c in cat:
+            code = str(c.get("code") or "")
+            if not re.match(r"^MV-\d+$", code) or not c.get("title"):
+                continue
+            keep.add(code)
+            en = c.get("en") if isinstance(c.get("en"), dict) else {}
+            name = str((en.get("title") if lang == "en" else None) or c["title"]).strip()
+            text = str((en.get("description") if lang == "en" else None) or c.get("description") or "")
+            sold_ = c.get("status") == "vendido"
+            price = float(c.get("price") or 0)
+            cash = float(c.get("cashPrice") or 0)
+            title = (L["sold"] if sold_ else "") + name
+            # Cards top out at $300,000 per payment on Mercado Pago MX, so only promise MSI below that.
+            bits = [money(price) + " MXN" + (L["msi"] if not sold_ and 0 < price <= 300000 else "")]
+            if cash > 0 and not sold_ and cash < price:
+                bits.append(L["cash"] + money(cash))
+            desc = " · ".join(bits) + ". " + re.sub(r"\s+", " ", text).strip()
+            if len(desc) > 200:
+                desc = desc[:197].rsplit(" ", 1)[0] + "…"
+            photo = next((p for p in (c.get("photos") or []) if isinstance(p, str) and re.match(r"^images/[\w.\-/]+$", p)), "images/hero/IMG_4221.jpg")
+            size = _img_size(photo)
+            url = prefix + "i/" + code + "/"
+            target = "../../#" + code
+            e = lambda v: html.escape(str(v), quote=True)
+            dims = (f'<meta property="og:image:width" content="{size[0]}">\n<meta property="og:image:height" content="{size[1]}">\n') if size else ""
+            page = f"""<!doctype html>
+<html lang="{L['hl']}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{e(title)} · Venta de mudanza CDMX</title>
+<title>{e(title)}{e(L['suffix'])}</title>
 <meta name="description" content="{e(desc)}">
 <meta property="og:type" content="product">
-<meta property="og:site_name" content="Venta de mudanza · CDMX">
-<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="{e(L['site'])}">
+<meta property="og:locale" content="{L['locale']}">
 <meta property="og:url" content="{e(url)}">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:image" content="{e(SITE + photo)}">
 <meta property="og:image:secure_url" content="{e(SITE + photo)}">
 <meta property="og:image:type" content="image/jpeg">
-{dims}<meta property="og:image:alt" content="{e(c['title'])}">
+{dims}<meta property="og:image:alt" content="{e(name)}">
 <meta property="product:price:amount" content="{int(round(price))}">
 <meta property="product:price:currency" content="MXN">
 <meta name="twitter:card" content="summary_large_image">
@@ -295,21 +342,21 @@ def share_pages():
 </head>
 <body>
 <main>
-<img src="../../{e(photo)}" alt="{e(c['title'])}">
+<img src="{up}{e(photo)}" alt="{e(name)}">
 <h1>{e(title)}</h1>
 <p>{e(money(price))} MXN</p>
-<p><a href="{target}">Ver el artículo en el catálogo</a></p>
+<p><a href="{target}">{e(L['see'])}</a></p>
 </main>
 </body>
 </html>
 """
-        d = os.path.join(SHARE, code)
-        os.makedirs(d, exist_ok=True)
-        with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
-            f.write(page)
-    for d in glob.glob(os.path.join(SHARE, "MV-*")):
-        if os.path.basename(d) not in keep:
-            shutil.rmtree(d, ignore_errors=True)
+            d = os.path.join(base_dir, code)
+            os.makedirs(d, exist_ok=True)
+            with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
+                f.write(page)
+        for d in glob.glob(os.path.join(base_dir, "MV-*")):
+            if os.path.basename(d) not in keep:
+                shutil.rmtree(d, ignore_errors=True)
     return sorted(keep)
 
 

@@ -11,6 +11,8 @@
 <meta property="og:url" content="https://caaronperez.github.io/venta-mudanza/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="alternate" hreflang="es" href="https://caaronperez.github.io/venta-mudanza/">
+<link rel="alternate" hreflang="en" href="https://caaronperez.github.io/venta-mudanza/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500..800;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,6 +57,8 @@ svg.i { width: 26px; height: 26px; flex: none; fill: none; stroke: currentColor;
 .nav a:hover { color: var(--green); text-decoration: underline; text-underline-offset: 4px; }
 .loc { margin-left: auto; display: flex; align-items: center; gap: 6px; font-weight: 600; font-size: 15px; white-space: nowrap; }
 .loc svg.i { width: 20px; height: 20px; }
+.lang { font-weight: 700; font-size: 14px; color: var(--green); text-decoration: none; border: 1.5px solid var(--green); border-radius: 999px; padding: 5px 12px; white-space: nowrap; }
+.lang:hover { background: var(--green); color: var(--paper); }
 
 /* Hero */
 .hero .wrap { display: grid; grid-template-columns: minmax(300px, 420px) 1fr; gap: 24px; padding-top: 24px; padding-bottom: 24px; align-items: stretch; }
@@ -133,7 +137,12 @@ svg.i { width: 26px; height: 26px; flex: none; fill: none; stroke: currentColor;
 .btn.mp.alt { border-color: #CFC8B8; }
 .btn .mplogo { height: 40px; width: auto; display: inline-block; vertical-align: middle; margin: -12px -2px; }
 .btn.wa { background: var(--wa); color: var(--ink); }
-.plan { border: 1.5px solid var(--mp-navy); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; }
+.plan { display: grid; gap: 10px; }
+.plan > summary { list-style: none; }
+.plan > summary::-webkit-details-marker { display: none; }
+.plan > summary .chev { width: 20px; height: 20px; stroke-width: 2.2; transition: transform .2s ease; }
+.plan[open] > summary .chev { transform: rotate(180deg); }
+.plan .plan-body { border: 1.5px solid var(--mp-navy); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; }
 .plan h3 { margin: 0; font: 700 20px/1.2 var(--serif); color: var(--mp-navy); }
 .plan p { margin: 0; font-size: 15px; color: var(--muted); }
 .plan ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
@@ -243,14 +252,16 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
   <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
   <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
   <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
 </svg>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#"><svg class="i"><use href="#i-box"/></svg><b>Mudanza</b></a>
-    <nav class="nav" id="nav" aria-label="Secciones"></nav>
+    <nav class="nav" id="nav" aria-label="Secciones" data-t-al="sections"></nav>
     <span class="loc"><svg class="i"><use href="#i-pin"/></svg><span id="loc">Ciudad de México</span></span>
+    <a class="lang" id="lang" href="en/" hreflang="en" lang="en">English</a>
   </div>
 </header>
 
@@ -258,75 +269,75 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   <div class="wrap">
     <div class="hero-text">
       <span class="tag" id="deadline">Hasta el 25 de noviembre</span>
-      <h1>Venta de mudanza</h1>
-      <p>Me mudo y todo se tiene que ir. Muebles y artículos usados en buen estado. Paga con Mercado Pago hasta 3 meses sin intereses, o en efectivo con descuento al recoger.</p>
-      <a class="cta" href="#articulos">Ver artículos <svg class="i" style="width:20px;height:20px;stroke-width:2"><use href="#i-down"/></svg></a>
+      <h1 data-t="h1">Venta de mudanza</h1>
+      <p data-t="lead">Me mudo y todo se tiene que ir. Muebles y artículos usados en buen estado. Paga con Mercado Pago hasta 3 meses sin intereses, o en efectivo con descuento al recoger.</p>
+      <a class="cta" href="#articulos"><span data-t="cta">Ver artículos</span> <svg class="i" style="width:20px;height:20px;stroke-width:2"><use href="#i-down"/></svg></a>
     </div>
     <div class="photos">
-      <figure><img src="images/hero/IMG_4221.jpg" alt="Sala y comedor del departamento" fetchpriority="high"></figure>
-      <figure><img src="images/hero/IMG_4219.jpg" alt="Recámara del departamento"></figure>
+      <figure><img src="images/hero/IMG_4221.jpg" alt="Sala y comedor del departamento" data-t-alt="heroAlt1" fetchpriority="high"></figure>
+      <figure><img src="images/hero/IMG_4219.jpg" alt="Recámara del departamento" data-t-alt="heroAlt2"></figure>
     </div>
   </div>
 </section>
 
 <div class="wrap">
   <div class="features">
-    <div class="feature"><svg class="i"><use href="#i-card"/></svg>Hasta 3 meses sin intereses</div>
-    <div class="feature"><svg class="i"><use href="#i-cash"/></svg>Descuento en efectivo al recoger</div>
-    <div class="feature"><svg class="i"><use href="#i-truck"/></svg>Recoge en persona o manda tu Lalamove / Uber Flash</div>
+    <div class="feature"><svg class="i"><use href="#i-card"/></svg><span data-t="f1">Hasta 3 meses sin intereses</span></div>
+    <div class="feature"><svg class="i"><use href="#i-cash"/></svg><span data-t="f2">Descuento en efectivo al recoger</span></div>
+    <div class="feature"><svg class="i"><use href="#i-truck"/></svg><span data-t="f3">Recoge en persona o manda tu Lalamove / Uber Flash</span></div>
   </div>
 
-  <section id="articulos" aria-label="Artículos">
+  <section id="articulos" aria-label="Artículos" data-t-al="items">
     <div class="articles-head">
-      <h2>Artículos</h2>
-      <div class="chips" id="chips"><button class="chip" type="button" data-cat="" aria-pressed="true">Todo</button></div>
-      <label class="toggle" for="hide-sold"><input type="checkbox" id="hide-sold"> Ocultar vendidos</label>
+      <h2 data-t="items">Artículos</h2>
+      <div class="chips" id="chips"><button class="chip" type="button" data-cat="" aria-pressed="true" data-t="all">Todo</button></div>
+      <label class="toggle" for="hide-sold"><input type="checkbox" id="hide-sold"> <span data-t="hideSold">Ocultar vendidos</span></label>
     </div>
     <div class="search" role="search">
       <svg class="i"><use href="#i-search"/></svg>
-      <input type="search" id="q" placeholder="Buscar: nombre, precio, código, marca, medidas…" aria-label="Buscar artículos" autocomplete="off" spellcheck="false" enterkeyhint="search">
-      <button class="clear" type="button" id="q-clear" aria-label="Borrar búsqueda" hidden><svg class="i"><use href="#i-x"/></svg></button>
+      <input type="search" id="q" placeholder="Buscar: nombre, precio, código, marca, medidas…" aria-label="Buscar artículos" data-t-ph="searchPh" data-t-al="searchAl" autocomplete="off" spellcheck="false" enterkeyhint="search">
+      <button class="clear" type="button" id="q-clear" aria-label="Borrar búsqueda" data-t-al="clear" hidden><svg class="i"><use href="#i-x"/></svg></button>
     </div>
     <p class="count" id="count" aria-live="polite"></p>
     <div class="grid" id="grid"></div>
     <p class="noresults" id="noresults" hidden></p>
     <div class="empty" id="empty" hidden>
       <span class="boxart" aria-hidden="true"><svg viewBox="0 0 70 70" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M33 4v7M22 8l4 6M46 8l-4 6" stroke="#C9C23A" stroke-width="3"/><path d="M11 32l24-10 24 10-24 10z"/><path d="M11 32v18l24 10 24-10V32"/><path d="M35 42v18"/><path d="M11 32l-5 7 24 10 5-7M59 32l5 7-24 10-5-7"/></svg></span>
-      <h3>Estoy subiendo los artículos</h3>
-      <p>Si buscas algo en específico, escríbeme.</p>
-      <a class="btn wa-dark" id="empty-wa" target="_blank" rel="noopener"><img class="walogo" src="brand/whatsapp-glyph-white.svg" alt=""><span>Escríbeme por WhatsApp</span></a>
+      <h3 data-t="emptyH">Estoy subiendo los artículos</h3>
+      <p data-t="emptyP">Si buscas algo en específico, escríbeme.</p>
+      <a class="btn wa-dark" id="empty-wa" target="_blank" rel="noopener"><img class="walogo" src="brand/whatsapp-glyph-white.svg" alt=""><span data-t="emptyBtn">Escríbeme por WhatsApp</span></a>
     </div>
   </section>
 
-  <section class="how" id="como-comprar" aria-label="Cómo comprar">
-    <div class="step"><svg class="i"><use href="#i-hand"/></svg><h3>Elige</h3><p>Toca cualquier artículo para ver fotos, medidas y detalles.</p></div>
-    <div class="step"><svg class="i"><use href="#i-tag"/></svg><h3>Paga o haz una oferta</h3><p>Paga con Mercado Pago (tarjeta hasta 3 MSI, OXXO o transferencia), en efectivo al recoger con descuento, o mándame tu oferta por WhatsApp.</p></div>
-    <div class="step"><svg class="i"><use href="#i-open"/></svg><h3>Recoge o recibe</h3><p id="step3">Coordinamos día y hora por WhatsApp. Si quieres envío, tú pides el Lalamove, Uber Flash o DiDi Entrega y le pagas directo al conductor.</p></div>
+  <section class="how" id="como-comprar" aria-label="Cómo comprar" data-t-al="how">
+    <div class="step"><svg class="i"><use href="#i-hand"/></svg><h3 data-t="s1h">Elige</h3><p data-t="s1p">Toca cualquier artículo para ver fotos, medidas y detalles.</p></div>
+    <div class="step"><svg class="i"><use href="#i-tag"/></svg><h3 data-t="s2h">Paga o haz una oferta</h3><p data-t="s2p">Paga con Mercado Pago (tarjeta hasta 3 MSI, OXXO o transferencia), en efectivo al recoger con descuento, o mándame tu oferta por WhatsApp.</p></div>
+    <div class="step"><svg class="i"><use href="#i-open"/></svg><h3 data-t="s3h">Recoge o recibe</h3><p id="step3">Coordinamos día y hora por WhatsApp. Si quieres envío, tú pides el Lalamove, Uber Flash o DiDi Entrega y le pagas directo al conductor.</p></div>
   </section>
 </div>
 
 <footer id="contacto">
   <div class="wrap">
-    <span class="mpfoot">Pagos seguros con <img src="brand/mercadopago-color-horizontal.svg" alt="Mercado Pago"></span>
-    <span>Precios en pesos mexicanos (MXN). El precio en efectivo es solo para recoger en persona.</span>
-    <a id="foot-wa" target="_blank" rel="noopener">Contacto por WhatsApp</a>
+    <span class="mpfoot"><span data-t="secure">Pagos seguros con</span> <img src="brand/mercadopago-color-horizontal.svg" alt="Mercado Pago"></span>
+    <span data-t="footPrices">Precios en pesos mexicanos (MXN). El precio en efectivo es solo para recoger en persona.</span>
+    <a id="foot-wa" target="_blank" rel="noopener" data-t="footWa">Contacto por WhatsApp</a>
   </div>
 </footer>
 
 <dialog id="modal" aria-labelledby="m-title" tabindex="-1">
   <div class="m">
     <div class="gallery">
-      <button class="close gclose" type="button" id="m-close2" aria-label="Cerrar"><svg class="i"><use href="#i-x"/></svg></button>
+      <button class="close gclose" type="button" id="m-close2" aria-label="Cerrar" data-t-al="close"><svg class="i"><use href="#i-x"/></svg></button>
       <div class="main" id="m-main"></div>
       <div class="thumbs" id="m-thumbs"></div>
     </div>
     <div class="info">
       <div class="info-top">
         <span class="kicker" id="m-code"></span>
-        <button class="close" type="button" id="m-close" aria-label="Cerrar"><svg class="i"><use href="#i-x"/></svg></button>
+        <button class="close" type="button" id="m-close" aria-label="Cerrar" data-t-al="close"><svg class="i"><use href="#i-x"/></svg></button>
       </div>
       <h2 id="m-title"></h2>
-      <div class="bigprice"><b id="m-price"></b><span>MXN · con Mercado Pago</span></div>
+      <div class="bigprice"><b id="m-price"></b><span data-t="withMp">MXN · con Mercado Pago</span></div>
       <div id="m-was" hidden></div>
       <div id="m-orig"></div>
       <div class="msi-box" id="m-msi"></div>
@@ -334,8 +345,8 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       <dl class="facts" id="m-facts"></dl>
       <p class="desc" id="m-desc"></p>
       <div class="actions" id="m-actions"></div>
-      <button class="share" type="button" id="m-share">Copiar enlace</button>
-      <p class="fine">Paga con Mercado Pago y envía tu comprobante por WhatsApp para coordinar la entrega. El pago en efectivo es solo para recoger en persona.</p>
+      <button class="share" type="button" id="m-share" data-t="copy">Copiar enlace</button>
+      <p class="fine" data-t="fine">Paga con Mercado Pago y envía tu comprobante por WhatsApp para coordinar la entrega. El pago en efectivo es solo para recoger en persona.</p>
     </div>
   </div>
 </dialog>
@@ -353,6 +364,95 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     // Cash price = Mercado Pago price minus its commission (3.49% + $4, + IVA), rounded down to $10. Pickup only.
     mpRate: 0.0349, mpFixed: 4, iva: 1.16
   };
+
+  // ---- Language: index.html is Spanish; en/index.html is the same page in English (tools/sync.py pages copies it). ----
+  var LANG = document.documentElement.lang === "en" ? "en" : "es";
+  var ROOT = LANG === "en" ? "../" : "";   // en/ lives one folder down: images/, brand/ and items.json are in the parent
+  var STR = {
+    es: {
+      h1: "Venta de mudanza",
+      lead: "Me mudo y todo se tiene que ir. Muebles y artículos usados en buen estado. Paga con Mercado Pago hasta 3 meses sin intereses, o en efectivo con descuento al recoger.",
+      cta: "Ver artículos", heroAlt1: "Sala y comedor del departamento", heroAlt2: "Recámara del departamento",
+      f1: "Hasta 3 meses sin intereses", f2: "Descuento en efectivo al recoger", f3: "Recoge en persona o manda tu Lalamove / Uber Flash",
+      items: "Artículos", all: "Todo", hideSold: "Ocultar vendidos", sections: "Secciones", how: "Cómo comprar", contact: "Contacto",
+      searchPh: "Buscar: nombre, precio, código, marca, medidas…", searchAl: "Buscar artículos", clear: "Borrar búsqueda",
+      emptyH: "Estoy subiendo los artículos", emptyP: "Si buscas algo en específico, escríbeme.", emptyBtn: "Escríbeme por WhatsApp",
+      s1h: "Elige", s1p: "Toca cualquier artículo para ver fotos, medidas y detalles.",
+      s2h: "Paga o haz una oferta", s2p: "Paga con Mercado Pago (tarjeta hasta 3 MSI, OXXO o transferencia), en efectivo al recoger con descuento, o mándame tu oferta por WhatsApp.",
+      s3h: "Recoge o recibe", s3p: "Recoge en {pickup}. Si quieres envío, tú pides el Lalamove, Uber Flash o DiDi Entrega y le pagas directo al conductor. Coordinamos por WhatsApp.",
+      secure: "Pagos seguros con", footPrices: "Precios en pesos mexicanos (MXN). El precio en efectivo es solo para recoger en persona.", footWa: "Contacto por WhatsApp",
+      close: "Cerrar", withMp: "MXN · con Mercado Pago", copy: "Copiar enlace", copied: "Enlace copiado ✓",
+      fine: "Paga con Mercado Pago y envía tu comprobante por WhatsApp para coordinar la entrega. El pago en efectivo es solo para recoger en persona.",
+      daysLeft: "Hasta el 25 de noviembre · quedan {n} días", lastDay: "Último día", lastItems: "Últimos artículos",
+      waEmpty: "Hola, vi tu venta de mudanza. ¿Tienes…?", waFoot: "Hola, vi tu venta de mudanza.",
+      sold: "Vendido", held: "Apartado", deal: "Rebajado", soon: "Foto pronto", msiTag: "3 MSI",
+      orMsi: "o 3 × {amt} sin intereses", cashAt: "Efectivo al recoger: {amt}", was: "Rebajado ", orig: "Precio original: ",
+      results1: "1 resultado", resultsN: "{n} resultados", avail: "{a} disponibles de {n} artículos",
+      noMatch: "Nada coincide con “{q}”{cat}. ", inCat: " en {c}", askWa: "Pregúntame por WhatsApp", waAsk: "Hola, vi tu venta de mudanza. ¿Tienes {q}?",
+      photo: "{t} · foto {i} de {n}", prev: "Foto anterior", next: "Foto siguiente", seePhoto: "Ver foto {i}",
+      msiBox: "Hasta 3 meses sin intereses · ", cashBox: "Pago en efectivo: ", cashNote: "Se paga en persona al recoger, sin envío. Escríbeme por WhatsApp para apartarlo.",
+      fCond: "Estado", fSize: "Medidas", fBrand: "Marca", fPickup: "Recoger en", fShip: "Envío", ship: "Por tu cuenta: Lalamove, Uber Flash o DiDi Entrega",
+      planH: "Paga con tarjeta en {n} pagos", planP: "Mercado Pago acepta hasta $300,000 por pago con tarjeta. Haz los {n} pagos (suman {total}) y mándame los comprobantes por WhatsApp.", planI: "Pago {i} de {n}",
+      payWith: "Pagar con ", payPickup: "y recoger", payAll: "en 1 pago por SPEI", payDeliv: "+ envío", planBtn: "a MSI · {n} pagos con tarjeta",
+      waSold: "Hola, vi que vendiste {code} {title}. ¿Tienes algo parecido?", waOffer: "Hola, te ofrezco $____ por {code} · {title} (precio {price}).",
+      btnSold: "Preguntar por algo parecido en WhatsApp", btnOffer: "Hazme una oferta en WhatsApp",
+      other: "English", otherHref: "en/"
+    },
+    en: {
+      h1: "Moving sale",
+      lead: "I'm moving and everything has to go. Used furniture and home goods in good condition. Pay with Mercado Pago in up to 3 interest-free installments, or in cash with a discount at pickup.",
+      cta: "See items", heroAlt1: "Apartment living and dining room", heroAlt2: "Apartment bedroom",
+      f1: "Up to 3 interest-free installments", f2: "Cash discount at pickup", f3: "Pick up in person or send a Lalamove / Uber Flash",
+      items: "Items", all: "All", hideSold: "Hide sold", sections: "Sections", how: "How to buy", contact: "Contact",
+      searchPh: "Search: name, price, code, brand, size…", searchAl: "Search items", clear: "Clear search",
+      emptyH: "I'm uploading the items", emptyP: "Looking for something specific? Message me.", emptyBtn: "Message me on WhatsApp",
+      s1h: "Choose", s1p: "Tap any item to see photos, measurements and details.",
+      s2h: "Pay or make an offer", s2p: "Pay with Mercado Pago (card in up to 3 interest-free installments, OXXO or bank transfer), in cash with a discount at pickup, or send me your offer on WhatsApp.",
+      s3h: "Pick up or get it delivered", s3p: "Pick up at {pickup}. For delivery, you book the Lalamove, Uber Flash or DiDi Entrega and pay the driver directly. We arrange it on WhatsApp.",
+      secure: "Secure payments with", footPrices: "Prices in Mexican pesos (MXN). The cash price is for in-person pickup only.", footWa: "Contact on WhatsApp",
+      close: "Close", withMp: "MXN · with Mercado Pago", copy: "Copy link", copied: "Link copied ✓",
+      fine: "Pay with Mercado Pago and send me your receipt on WhatsApp to arrange pickup. The cash price is for in-person pickup only.",
+      daysLeft: "Until November 25 · {n} days left", lastDay: "Last day", lastItems: "Last items",
+      waEmpty: "Hi, I saw your moving sale. Do you have…?", waFoot: "Hi, I saw your moving sale.",
+      sold: "Sold", held: "On hold", deal: "Reduced", soon: "Photo soon", msiTag: "3 MSI",
+      orMsi: "or 3 × {amt} interest-free", cashAt: "Cash at pickup: {amt}", was: "Reduced ", orig: "Original price: ",
+      results1: "1 result", resultsN: "{n} results", avail: "{a} available of {n} items",
+      noMatch: "Nothing matches “{q}”{cat}. ", inCat: " in {c}", askWa: "Ask me on WhatsApp", waAsk: "Hi, I saw your moving sale. Do you have {q}?",
+      photo: "{t} · photo {i} of {n}", prev: "Previous photo", next: "Next photo", seePhoto: "See photo {i}",
+      msiBox: "Up to 3 interest-free installments · ", cashBox: "Cash price: ", cashNote: "Paid in person at pickup, no delivery. Message me on WhatsApp to hold it.",
+      fCond: "Condition", fSize: "Size", fBrand: "Brand", fPickup: "Pickup at", fShip: "Delivery", ship: "Your own: Lalamove, Uber Flash or DiDi Entrega",
+      planH: "Pay by card in {n} payments", planP: "Mercado Pago accepts up to $300,000 per card payment. Make all {n} payments (they add up to {total}) and send me the receipts on WhatsApp.", planI: "Payment {i} of {n}",
+      payWith: "Pay with ", payPickup: "and pick up", payAll: "in 1 SPEI transfer", payDeliv: "+ delivery", planBtn: "by card · {n} payments",
+      waSold: "Hi, I saw you sold {code} {title}. Do you have something similar?", waOffer: "Hi, I'd offer $____ for {code} · {title} (price {price}).",
+      btnSold: "Ask about something similar on WhatsApp", btnOffer: "Make me an offer on WhatsApp",
+      other: "Español", otherHref: "../"
+    }
+  };
+  function t(k, v) {
+    var s = (STR[LANG] && STR[LANG][k] != null ? STR[LANG][k] : STR.es[k]) || "";
+    return v ? s.replace(/\{(\w+)\}/g, function (m, x) { return v[x] != null ? String(v[x]) : m; }) : s;
+  }
+  var CAT_EN = { "Cocina": "Kitchen", "Decoración": "Decor", "Electrodomésticos": "Appliances", "Electrónica": "Electronics", "Hogar": "Home",
+    "Iluminación": "Lighting", "Mascotas": "Pets", "Movilidad": "Mobility", "Muebles": "Furniture", "Organización": "Storage", "Recámara": "Bedroom" };
+  var COND_EN = { "Nuevo": "New", "Como nuevo": "Like new", "Buen estado": "Good condition", "Con detalles de uso": "Shows some wear" };
+  function catName(c) { return LANG === "en" ? (CAT_EN[c] || c) : c; }
+  // Item text in the page's language: items.json may carry an "en" block; otherwise the Spanish text shows.
+  function tr(it, k) {
+    var e = it.en && typeof it.en === "object" ? it.en : null;
+    if (LANG === "en" && e && e[k]) return e[k];
+    if (LANG === "en" && k === "condition") return COND_EN[it[k]] || it[k];
+    return it[k];
+  }
+  document.querySelectorAll("[data-t]").forEach(function (el) { el.textContent = t(el.getAttribute("data-t")); });
+  document.querySelectorAll("[data-t-ph]").forEach(function (el) { el.setAttribute("placeholder", t(el.getAttribute("data-t-ph"))); });
+  document.querySelectorAll("[data-t-al]").forEach(function (el) { el.setAttribute("aria-label", t(el.getAttribute("data-t-al"))); });
+  document.querySelectorAll("[data-t-alt]").forEach(function (el) { el.setAttribute("alt", t(el.getAttribute("data-t-alt"))); });
+  (function () {
+    var a = document.getElementById("lang");
+    a.textContent = t("other"); a.setAttribute("hreflang", LANG === "en" ? "es" : "en"); a.setAttribute("lang", LANG === "en" ? "es" : "en");
+    function sync() { a.href = t("otherHref") + (/^#MV-\d+$/.test(location.hash) ? location.hash : ""); }
+    sync(); window.addEventListener("hashchange", sync); a.addEventListener("click", sync);
+  })();
 
   function h(tag, attrs, kids) {
     var e = document.createElement(tag);
@@ -378,7 +478,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   }
   function money(n) { return "$" + Math.round(Number(n) || 0).toLocaleString("es-MX"); }
   function safeUrl(u) { return typeof u === "string" && /^https:\/\//.test(u) ? u : null; }
-  function safePhoto(p) { return typeof p === "string" && /^(images\/[\w.\-\/]+|https:\/\/)/.test(p) ? p : null; }
+  function safePhoto(p) { return typeof p === "string" && /^images\/[\w.\-\/]+$/.test(p) ? ROOT + p : typeof p === "string" && /^https:\/\//.test(p) ? p : null; }
   function waLink(text) {
     var n = String(CONFIG.whatsapp || "").replace(/\D/g, "");
     return n ? "https://wa.me/" + n + "?text=" + encodeURIComponent(text) : CONFIG.whatsappFallback;
@@ -386,34 +486,34 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   function wasLine(it) {
     var w = Number(it.wasPrice) || 0, p = Number(it.price) || 0;
     if (w <= p || it.status === "vendido") return null;
-    return h("div", { class: "was" }, ["Rebajado ", h("s", { text: money(w) })]);
+    return h("div", { class: "was" }, [t("was"), h("s", { text: money(w) })]);
   }
   function origLine(it) {
     var o = Number(it.originalPrice) || 0, p = Number(it.price) || 0;
     if (o <= p) return null;
-    return h("div", { class: "orig" }, ["Precio original: ", h("s", { text: money(o) }), h("span", { class: "save", text: "-" + Math.round((1 - p / o) * 100) + "%" })]);
+    return h("div", { class: "orig" }, [t("orig"), h("s", { text: money(o) }), h("span", { class: "save", text: "-" + Math.round((1 - p / o) * 100) + "%" })]);
   }
   function mpBtn(cls, after, amt, href) {
     return h("a", { class: "btn mp " + cls, href: href, target: "_blank", rel: "noopener" }, [
-      h("span", null, ["Pagar con ", h("img", { class: "mplogo", src: "brand/mercadopago-color-horizontal.svg", alt: "Mercado Pago" }), " " + after]),
+      h("span", null, [t("payWith"), h("img", { class: "mplogo", src: ROOT + "brand/mercadopago-color-horizontal.svg", alt: "Mercado Pago" }), " " + after]),
       h("span", { class: "amt", text: amt })
     ]);
   }
   function waBtn(label, href) {
-    return h("a", { class: "btn wa", href: href, target: "_blank", rel: "noopener" }, [h("img", { class: "walogo", src: "brand/whatsapp-glyph-white.svg", alt: "" }), h("span", { text: label })]);
+    return h("a", { class: "btn wa", href: href, target: "_blank", rel: "noopener" }, [h("img", { class: "walogo", src: ROOT + "brand/whatsapp-glyph-white.svg", alt: "" }), h("span", { text: label })]);
   }
 
   // ---- Static bits ----
   if (CONFIG.pickup) {
     document.getElementById("loc").textContent = CONFIG.pickupShort || CONFIG.pickup;
-    document.getElementById("step3").textContent = "Recoge en " + CONFIG.pickup + ". Si quieres envío, tú pides el Lalamove, Uber Flash o DiDi Entrega y le pagas directo al conductor. Coordinamos por WhatsApp.";
+    document.getElementById("step3").textContent = t("s3p", { pickup: CONFIG.pickup });
   }
   (function () {
     var days = Math.ceil((new Date(CONFIG.deadline) - new Date()) / 86400000);
-    document.getElementById("deadline").textContent = days > 1 ? "Hasta el 25 de noviembre · quedan " + days + " días" : days === 1 ? "Último día" : "Últimos artículos";
+    document.getElementById("deadline").textContent = days > 1 ? t("daysLeft", { n: days }) : days === 1 ? t("lastDay") : t("lastItems");
   })();
-  document.getElementById("empty-wa").href = waLink("Hola, vi tu venta de mudanza. ¿Tienes…?");
-  document.getElementById("foot-wa").href = waLink("Hola, vi tu venta de mudanza.");
+  document.getElementById("empty-wa").href = waLink(t("waEmpty"));
+  document.getElementById("foot-wa").href = waLink(t("waFoot"));
 
   var items = [], cat = "", hideSold = false, query = "";
   // Search: every word must appear somewhere (title, description, code, price, brand, size…). Accents and case are ignored.
@@ -427,7 +527,10 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     var prices = [it.price, cashPrice(it), it.originalPrice].filter(function (n) { return Number(n) > 0; })
       .map(function (n) { n = Math.round(Number(n)); return n + " $" + n + " " + n.toLocaleString("es-MX"); });
     var st = it.status === "vendido" ? "vendido" : it.status === "apartado" ? "apartado" : "disponible";
-    it._hay = fold([code, code.replace(/[^a-z0-9]/gi, ""), code.replace(/^MV-0?/i, ""), it.title, it.description, it.category, it.condition, it.size, it.brand, st, prices.join(" ")].join(" \n "));
+    var en = it.en && typeof it.en === "object" ? it.en : {};
+    var stEn = st === "vendido" ? "sold" : st === "apartado" ? "on hold" : "available";
+    it._hay = fold([code, code.replace(/[^a-z0-9]/gi, ""), code.replace(/^MV-0?/i, ""), it.title, it.description, it.category, it.condition, it.size, it.brand, st, prices.join(" "),
+      en.title, en.description, en.size, en.condition, CAT_EN[it.category], COND_EN[it.condition], stEn].join(" \n "));
     return it._hay;
   }
   function matches(it, ts) { var hs = haystack(it); return ts.every(function (t) { return hs.indexOf(t) >= 0; }); }
@@ -447,30 +550,30 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       var sold = it.status === "vendido", held = it.status === "apartado";
       var pic = (it.photos || []).map(safePhoto).filter(Boolean)[0];
       var ph = h("div", { class: "ph" }, [
-        pic ? h("img", { src: pic, alt: it.title, loading: "lazy" }) : h("div", { class: "noimg", text: "Foto pronto" }),
-        sold ? h("span", { class: "badge sold", text: "Vendido" }) : held ? h("span", { class: "badge", text: "Apartado" }) : wasLine(it) ? h("span", { class: "badge deal", text: "Rebajado" }) : null,
-        sold ? null : h("span", { class: "msi-tag", text: "3 MSI" })
+        pic ? h("img", { src: pic, alt: tr(it, "title"), loading: "lazy" }) : h("div", { class: "noimg", text: t("soon") }),
+        sold ? h("span", { class: "badge sold", text: t("sold") }) : held ? h("span", { class: "badge", text: t("held") }) : wasLine(it) ? h("span", { class: "badge deal", text: t("deal") }) : null,
+        sold ? null : h("span", { class: "msi-tag", text: t("msiTag") })
       ]);
       var meta = h("div", { class: "meta" }, [
         h("span", { class: "code", text: it.code }),
-        h("h3", { text: it.title }),
+        h("h3", { text: tr(it, "title") }),
         h("div", { class: "price", text: money(it.price) }),
         wasLine(it),
-        h("div", { class: "sub", text: sold ? "Vendido" : "o 3 × " + money(it.price / 3) + " sin intereses" }),
-        sold ? null : h("div", { class: "cash", text: "Efectivo al recoger: " + money(cashPrice(it)) }),
+        h("div", { class: "sub", text: sold ? t("sold") : t("orMsi", { amt: money(it.price / 3) }) }),
+        sold ? null : h("div", { class: "cash", text: t("cashAt", { amt: money(cashPrice(it)) }) }),
         origLine(it)
       ]);
-      grid.appendChild(h("button", { class: "card" + (sold ? " is-sold" : ""), type: "button", "aria-label": it.code + ", " + it.title + ", " + money(it.price), onclick: function () { open(it.code); } }, [ph, meta]));
+      grid.appendChild(h("button", { class: "card" + (sold ? " is-sold" : ""), type: "button", "aria-label": it.code + ", " + tr(it, "title") + ", " + money(it.price), onclick: function () { open(it.code); } }, [ph, meta]));
     });
     var avail = items.filter(function (i) { return i.status !== "vendido"; }).length;
     var nr = document.getElementById("noresults");
     if (ts.length && items.length) {
-      document.getElementById("count").textContent = list.length === 1 ? "1 resultado" : list.length + " resultados";
+      document.getElementById("count").textContent = list.length === 1 ? t("results1") : t("resultsN", { n: list.length });
       nr.hidden = list.length > 0;
-      if (!list.length) nr.replaceChildren("Nada coincide con “" + query.trim() + "”" + (cat ? " en " + cat : "") + ". ",
-        h("a", { href: waLink("Hola, vi tu venta de mudanza. ¿Tienes " + query.trim() + "?"), target: "_blank", rel: "noopener", text: "Pregúntame por WhatsApp" }), ".");
+      if (!list.length) nr.replaceChildren(t("noMatch", { q: query.trim(), cat: cat ? t("inCat", { c: catName(cat) }) : "" }),
+        h("a", { href: waLink(t("waAsk", { q: query.trim() })), target: "_blank", rel: "noopener", text: t("askWa") }), ".");
     } else {
-      document.getElementById("count").textContent = items.length ? avail + " disponibles de " + items.length + " artículos" : "";
+      document.getElementById("count").textContent = items.length ? t("avail", { a: avail, n: items.length }) : "";
       nr.hidden = true;
     }
     document.getElementById("empty").hidden = items.length > 0;
@@ -479,13 +582,13 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   function buildNav() {
     var cats = [];
     items.forEach(function (i) { if (i.category && cats.indexOf(i.category) < 0) cats.push(i.category); });
-    cats.sort();
+    cats.sort(function (a, b) { return catName(a).localeCompare(catName(b)); });
     var chips = document.getElementById("chips");
-    cats.forEach(function (c) { chips.appendChild(h("button", { class: "chip", type: "button", "data-cat": c, "aria-pressed": "false", text: c })); });
+    cats.forEach(function (c) { chips.appendChild(h("button", { class: "chip", type: "button", "data-cat": c, "aria-pressed": "false", text: catName(c) })); });
     chips.addEventListener("click", function (e) { var b = e.target.closest(".chip"); if (b) setCat(b.getAttribute("data-cat")); });
     var nav = document.getElementById("nav");
-    var links = cats.length ? cats.slice(0, 4).map(function (c) { return [c, "#articulos", c]; }) : [["Artículos", "#articulos", ""], ["Cómo comprar", "#como-comprar", null]];
-    links.push(["Contacto", "#contacto", null]);
+    var links = cats.length ? cats.slice(0, 4).map(function (c) { return [catName(c), "#articulos", c]; }) : [[t("items"), "#articulos", ""], [t("how"), "#como-comprar", null]];
+    links.push([t("contact"), "#contacto", null]);
     links.forEach(function (l) {
       nav.appendChild(h("a", { href: l[1], text: l[0], onclick: function () { if (l[2] != null) setCat(l[2]); } }));
     });
@@ -504,14 +607,14 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     var pics = (current.photos || []).map(safePhoto).filter(Boolean);
     var main = document.getElementById("m-main"), th = document.getElementById("m-thumbs");
     main.replaceChildren(); th.replaceChildren();
-    if (!pics.length) { main.appendChild(h("div", { class: "noimg", style: "position:absolute;inset:0", text: "Foto pronto" })); return; }
+    if (!pics.length) { main.appendChild(h("div", { class: "noimg", style: "position:absolute;inset:0", text: t("soon") })); return; }
     idx = (i + pics.length) % pics.length;
-    main.appendChild(h("img", { src: pics[idx], alt: current.title + " · foto " + (idx + 1) + " de " + pics.length }));
+    main.appendChild(h("img", { src: pics[idx], alt: t("photo", { t: tr(current, "title"), i: idx + 1, n: pics.length }) }));
     if (pics.length > 1) {
-      main.appendChild(h("button", { class: "nav-btn prev", type: "button", "aria-label": "Foto anterior", onclick: function () { showPhoto(idx - 1); } }, [icon("i-left")]));
-      main.appendChild(h("button", { class: "nav-btn next", type: "button", "aria-label": "Foto siguiente", onclick: function () { showPhoto(idx + 1); } }, [icon("i-right")]));
+      main.appendChild(h("button", { class: "nav-btn prev", type: "button", "aria-label": t("prev"), onclick: function () { showPhoto(idx - 1); } }, [icon("i-left")]));
+      main.appendChild(h("button", { class: "nav-btn next", type: "button", "aria-label": t("next"), onclick: function () { showPhoto(idx + 1); } }, [icon("i-right")]));
       pics.forEach(function (p, k) {
-        th.appendChild(h("button", { type: "button", "aria-label": "Ver foto " + (k + 1), "aria-current": String(k === idx), onclick: function () { showPhoto(k); } }, [h("img", { src: p, alt: "" })]));
+        th.appendChild(h("button", { type: "button", "aria-label": t("seePhoto", { i: k + 1 }), "aria-current": String(k === idx), onclick: function () { showPhoto(k); } }, [h("img", { src: p, alt: "" })]));
       });
     }
   }
@@ -520,26 +623,26 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     if (!it) return;
     current = it;
     var sold = it.status === "vendido", held = it.status === "apartado";
-    document.getElementById("m-code").textContent = it.code + (it.category ? " · " + it.category : "") + (sold ? " · Vendido" : held ? " · Apartado" : "");
-    document.getElementById("m-title").textContent = it.title;
+    document.getElementById("m-code").textContent = it.code + (it.category ? " · " + catName(it.category) : "") + (sold ? " · " + t("sold") : held ? " · " + t("held") : "");
+    document.getElementById("m-title").textContent = tr(it, "title");
     document.getElementById("m-price").textContent = money(it.price);
     var mw = document.getElementById("m-was"), wl = wasLine(it);
     mw.replaceChildren(); if (wl) mw.appendChild(wl); mw.hidden = !wl;
     var mo = document.getElementById("m-orig"), ol = origLine(it);
     mo.replaceChildren(); if (ol) mo.appendChild(ol); mo.hidden = !ol;
     var msi = document.getElementById("m-msi");
-    msi.replaceChildren(icon("i-card"), h("span", null, ["Hasta 3 meses sin intereses · ", h("b", { text: "3 × " + money(it.price / 3) })]));
+    msi.replaceChildren(icon("i-card"), h("span", null, [t("msiBox"), h("b", { text: "3 × " + money(it.price / 3) })]));
     msi.hidden = sold || Number(it.price) > 300000;
     var cb = document.getElementById("m-cash");
-    cb.replaceChildren(icon("i-cash"), h("span", null, ["Pago en efectivo: ", h("b", { text: money(cashPrice(it)) }), h("small", { text: "Se paga en persona al recoger, sin envío. Escríbeme por WhatsApp para apartarlo." })]));
+    cb.replaceChildren(icon("i-cash"), h("span", null, [t("cashBox"), h("b", { text: money(cashPrice(it)) }), h("small", { text: t("cashNote") })]));
     cb.hidden = sold;
     var facts = document.getElementById("m-facts");
     facts.replaceChildren();
-    [["Estado", it.condition], ["Medidas", it.size], ["Marca", it.brand], ["Recoger en", CONFIG.pickup || "CDMX"], ["Envío", "Por tu cuenta: Lalamove, Uber Flash o DiDi Entrega"]].forEach(function (f) {
+    [[t("fCond"), tr(it, "condition")], [t("fSize"), tr(it, "size")], [t("fBrand"), it.brand], [t("fPickup"), CONFIG.pickup || "CDMX"], [t("fShip"), t("ship")]].forEach(function (f) {
       if (f[1]) { facts.appendChild(h("dt", { text: f[0] })); facts.appendChild(h("dd", { text: f[1] })); }
     });
     var desc = document.getElementById("m-desc");
-    desc.textContent = it.description || ""; desc.hidden = !it.description;
+    desc.textContent = tr(it, "description") || ""; desc.hidden = !it.description;
     var acts = document.getElementById("m-actions");
     acts.replaceChildren();
     if (!sold && !held) {
@@ -547,20 +650,26 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       // Cards top out at $300,000 per payment on Mercado Pago, so big items carry a plan of several links that add up to the price.
       var plan = (Array.isArray(it.paymentPlan) ? it.paymentPlan : []).filter(function (p) { return p && safeUrl(p.url) && Number(p.amount) > 0; });
       if (plan.length) {
-        acts.appendChild(h("div", { class: "plan" }, [
-          h("h3", { text: "Paga con tarjeta en " + plan.length + " pagos" }),
-          h("p", { text: "Mercado Pago acepta hasta $300,000 por pago con tarjeta. Haz los " + plan.length + " pagos (suman " + money(it.price) + ") y mándame los comprobantes por WhatsApp." }),
-          h("ol", null, plan.map(function (p, k) {
-            return h("li", null, [h("a", { href: safeUrl(p.url), target: "_blank", rel: "noopener" }, [h("span", { text: "Pago " + (k + 1) + " de " + plan.length }), h("b", { text: money(p.amount) })])]);
-          }))
+        // One "pay by card / MSI" button; tapping it opens the list of part payments.
+        acts.appendChild(h("details", { class: "plan" }, [
+          h("summary", { class: "btn mp" }, [
+            h("span", null, [t("payWith"), h("img", { class: "mplogo", src: ROOT + "brand/mercadopago-color-horizontal.svg", alt: "Mercado Pago" }), " " + t("planBtn", { n: plan.length })]),
+            h("span", { class: "amt", style: "display:inline-flex;align-items:center;gap:6px" }, [money(it.price), icon("i-chev", "chev")])
+          ]),
+          h("div", { class: "plan-body" }, [
+            h("h3", { text: t("planH", { n: plan.length }) }),
+            h("p", { text: t("planP", { n: plan.length, total: money(it.price) }) }),
+            h("ol", null, plan.map(function (p, k) {
+              return h("li", null, [h("a", { href: safeUrl(p.url), target: "_blank", rel: "noopener" }, [h("span", { text: t("planI", { i: k + 1, n: plan.length }) }), h("b", { text: money(p.amount) })])]);
+            }))
+          ])
         ]));
-        if (safeUrl(L.pickup)) acts.appendChild(mpBtn("alt", "todo por transferencia", money(it.price), safeUrl(L.pickup)));
-      } else if (safeUrl(L.pickup)) acts.appendChild(mpBtn("", "y recoger", money(it.price), safeUrl(L.pickup)));
-      if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(mpBtn("alt", "+ envío", money(it.price + deliv), safeUrl(L.delivery)));
+        if (safeUrl(L.pickup)) acts.appendChild(mpBtn("alt", t("payAll"), money(it.price), safeUrl(L.pickup)));
+      } else if (safeUrl(L.pickup)) acts.appendChild(mpBtn("", t("payPickup"), money(it.price), safeUrl(L.pickup)));
+      if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(mpBtn("alt", t("payDeliv"), money(it.price + deliv), safeUrl(L.delivery)));
     }
-    var msg = sold ? "Hola, vi que vendiste " + it.code + " " + it.title + ". ¿Tienes algo parecido?"
-      : "Hola, te ofrezco $____ por " + it.code + " · " + it.title + " (precio " + money(it.price) + ").";
-    acts.appendChild(waBtn(sold ? "Preguntar por algo parecido en WhatsApp" : "Hazme una oferta en WhatsApp", waLink(msg)));
+    var msg = sold ? t("waSold", { code: it.code, title: tr(it, "title") }) : t("waOffer", { code: it.code, title: tr(it, "title"), price: money(it.price) });
+    acts.appendChild(waBtn(sold ? t("btnSold") : t("btnOffer"), waLink(msg)));
     showPhoto(0);
     if (location.hash !== "#" + it.code) history.replaceState(null, "", "#" + it.code);
     if (!modal.open) modal.showModal();
@@ -581,12 +690,12 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     // Share the item's own page (i/<CODE>/) so WhatsApp / iMessage show its photo and title, not the site's.
     var b = e.currentTarget, url = location.href.split("#")[0].split("?")[0].replace(/index\.html$/, "") + (current ? "i/" + current.code + "/" : "");
     (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () {
-      b.textContent = "Enlace copiado ✓"; setTimeout(function () { b.textContent = "Copiar enlace"; }, 2000);
+      b.textContent = t("copied"); setTimeout(function () { b.textContent = t("copy"); }, 2000);
     }).catch(function () { b.textContent = url; });
   });
   window.addEventListener("hashchange", function () { var c = location.hash.slice(1); if (/^MV/.test(c)) open(c); else if (!c) close(); });
 
-  fetch("items.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (data) {
+  fetch(ROOT + "items.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (data) {
     items = (Array.isArray(data) ? data : []).filter(function (i) { return i && i.code && i.title && Number(i.price) > 0; });
     // "featured" items go first (e.g. MV-90), then available before sold, then by code.
     items.sort(function (a, b) { return (b.featured ? 1 : 0) - (a.featured ? 1 : 0) || (a.status === "vendido") - (b.status === "vendido") || String(a.code).localeCompare(String(b.code)); });
