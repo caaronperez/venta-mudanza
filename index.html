@@ -98,6 +98,10 @@ svg.i { width: 26px; height: 26px; flex: none; fill: none; stroke: currentColor;
 .card .price { font: 700 22px/1.2 var(--serif); margin-top: 4px; font-variant-numeric: lining-nums tabular-nums; }
 .card .sub { font-size: 14px; color: var(--muted); }
 .orig { font-size: 14px; color: var(--muted); }
+.was { font-size: 14px; color: #B3261E; font-weight: 600; }
+.was s { color: var(--muted); font-weight: 400; }
+.badge.deal { background: #B3261E; color: #fff; }
+#m-was .was { font-size: 18px; }
 .orig s { color: var(--ink); opacity: .75; }
 .orig .save { color: #137A3F; font-weight: 700; margin-left: 6px; }
 
@@ -294,6 +298,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       </div>
       <h2 id="m-title"></h2>
       <div class="bigprice"><b id="m-price"></b><span>MXN · con Mercado Pago</span></div>
+      <div id="m-was" hidden></div>
       <div id="m-orig"></div>
       <div class="msi-box" id="m-msi"></div>
       <div class="cash-box" id="m-cash"></div>
@@ -349,6 +354,11 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     var n = String(CONFIG.whatsapp || "").replace(/\D/g, "");
     return n ? "https://wa.me/" + n + "?text=" + encodeURIComponent(text) : CONFIG.whatsappFallback;
   }
+  function wasLine(it) {
+    var w = Number(it.wasPrice) || 0, p = Number(it.price) || 0;
+    if (w <= p || it.status === "vendido") return null;
+    return h("div", { class: "was" }, ["Rebajado ", h("s", { text: money(w) })]);
+  }
   function origLine(it) {
     var o = Number(it.originalPrice) || 0, p = Number(it.price) || 0;
     if (o <= p) return null;
@@ -393,13 +403,14 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       var pic = (it.photos || []).map(safePhoto).filter(Boolean)[0];
       var ph = h("div", { class: "ph" }, [
         pic ? h("img", { src: pic, alt: it.title, loading: "lazy" }) : h("div", { class: "noimg", text: "Foto pronto" }),
-        sold ? h("span", { class: "badge sold", text: "Vendido" }) : held ? h("span", { class: "badge", text: "Apartado" }) : null,
+        sold ? h("span", { class: "badge sold", text: "Vendido" }) : held ? h("span", { class: "badge", text: "Apartado" }) : wasLine(it) ? h("span", { class: "badge deal", text: "Rebajado" }) : null,
         sold ? null : h("span", { class: "msi-tag", text: "3 MSI" })
       ]);
       var meta = h("div", { class: "meta" }, [
         h("span", { class: "code", text: it.code }),
         h("h3", { text: it.title }),
         h("div", { class: "price", text: money(it.price) }),
+        wasLine(it),
         h("div", { class: "sub", text: sold ? "Vendido" : "o 3 × " + money(it.price / 3) + " sin intereses" }),
         sold ? null : h("div", { class: "cash", text: "Efectivo al recoger: " + money(cashPrice(it)) }),
         origLine(it)
@@ -452,6 +463,8 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     document.getElementById("m-code").textContent = it.code + (it.category ? " · " + it.category : "") + (sold ? " · Vendido" : held ? " · Apartado" : "");
     document.getElementById("m-title").textContent = it.title;
     document.getElementById("m-price").textContent = money(it.price);
+    var mw = document.getElementById("m-was"), wl = wasLine(it);
+    mw.replaceChildren(); if (wl) mw.appendChild(wl); mw.hidden = !wl;
     var mo = document.getElementById("m-orig"), ol = origLine(it);
     mo.replaceChildren(); if (ol) mo.appendChild(ol); mo.hidden = !ol;
     var msi = document.getElementById("m-msi");

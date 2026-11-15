@@ -1,0 +1,227 @@
+#!/usr/bin/env python3
+"""Apply Move-Out Tracker changes (discounts, photo updates, Modify listing) to the public catalog.
+
+The tracker artifact stores change requests; a Claude sync run reads them and calls this script.
+No secrets here: Mercado Pago links are updated on Cristian's Mac with ~/MovingSale/mp_links.py --update.
+
+Steps (run from the repo root):
+  1. python3 tools/sync.py plan work/db_items.json work/db_requests.json
+       db_items.json:    [{"id","version","data":{...}}]  posted items from db collection "items"
+       db_requests.json: [{"id","version","data":{...}}]  docs from db collection "requests" with status pending/error
+     -> work/plan.json        one entry per item to change
+     -> work/mp_update.json   input for `mp_links.py --update` (only entries whose price changes)
+     -> work/assets.txt       asset ids to download into work/photos/<assetId>.jpg
+  2. (Mac) python3 ~/MovingSale/mp_links.py --update mp_update.json  > work/mp_result.json
+  3. python3 tools/sync.py apply work/plan.json work/mp_result.json work/photos
+     -> edits items.json and images/, prints a summary
+     -> work/db_ops.json      ops for the artifact db_write (item updates + request deletes)
+"""
+import glob, hashlib, json, math, os, re, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ITEMS = os.path.join(ROOT, "items.json")
+IMAGES = os.path.join(ROOT, "images")
+WORK = os.path.join(ROOT, "work")
+MAX_PHOTOS = 4
+SITE_FIELDS = ["title", "description", "category", "condition", "size", "brand", "originalPrice", "showOriginal", "held"]
+
+
+def mp_link(cash):
+    """Mercado Pago link amount so the seller nets the cash price (3.49% + $4, + IVA), rounded up to $10."""
+    cash = float(cash or 0)
+    if cash <= 0:
+        return 0
+    return int(math.ceil((cash + 4 * 1.16) / (1 - 0.0349 * 1.16) / 10) * 10)
+
+
+def money(n):
+    return "${:,.0f}".format(n)
+
+
+def load(path):
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def dump(path, obj):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, ensure_ascii=False, indent=1)
+        f.write("\n")
+
+
+def base_price(d):
+    lp = float(d.get("listPrice") or 0)
+    return lp if lp > 0 else float((d.get("proposal") or {}).get("price") or 0)
+
+
+def plan(db_items_path, db_requests_path):
+    items = {r["id"]: r for r in load(db_items_path)}
+    reqs = {r["id"]: r for r in load(db_requests_path)}
+    # Modify-listing changes (pendingUpdate on the item) count as requests too.
+    ids = set(reqs) | {i for i, r in items.items() if isinstance(r["data"].get("pendingUpdate"), dict)}
+    out, mp, assets, skipped = [], [], [], []
+    for iid in sorted(ids):
+        it = items.get(iid)
+        rq = (reqs.get(iid) or {}).get("data") or {}
+        if not it or it["data"].get("status") != "posted" or not it["data"].get("code"):
+            skipped.append({"id": iid, "reason": "item is not live on the catalog"})
+            continue
+        d = it["data"]
+        p = d.get("proposal") or {}
+        pu = d.get("pendingUpdate") if isinstance(d.get("pendingUpdate"), dict) else {}
+        cash_now = float(p.get("price") or 0)
+        cash_new = float(rq.get("price") or 0) or cash_now
+        base = base_price(d)
+        photos = [x for x in (rq.get("photos") or pu.get("photos") or []) if isinstance(x, str)][:MAX_PHOTOS]
+        e = {
+            "itemId": iid, "version": it["version"], "code": d["code"], "sid": d.get("sid") or iid,
+            "requestId": iid if iid in reqs else None, "requestVersion": (reqs.get(iid) or {}).get("version"),
+            "hadPendingUpdate": bool(pu),
+            "title": pu.get("title") or p.get("title") or d.get("name") or d["code"],
+            "cashOld": cash_now, "cash": cash_new, "base": base or cash_new,
+            "link": mp_link(cash_new), "linkOld": int(((d.get("payLinks") or {}).get("pickup") or {}).get("amount") or mp_link(cash_now)),
+            "delivery": float(d.get("delivery") or 0),
+            "photos": photos,
+            "site": {k: pu[k] for k in SITE_FIELDS if k in pu},
+            "proposal": p, "siteObj": d.get("site") or {},
+        }
+        pl = d.get("payLinks") or {}
+        e["prefIds"] = {k: v["prefId"] for k, v in pl.items() if isinstance(v, dict) and v.get("prefId")}
+        e["urls"] = {k: v["url"] for k, v in pl.items() if isinstance(v, dict) and v.get("url")}
+        e["priceChange"] = cash_new != cash_now
+        if e["priceChange"]:
+            if not e["prefIds"]:
+                skipped.append({"id": iid, "reason": "no Mercado Pago link to update"})
+                continue
+            mp.append({"id": e["sid"], "title": e["title"], "price": e["link"], "delivery": e["delivery"],
+                       "prefIds": e["prefIds"], "urls": e["urls"]})
+        assets += photos
+        out.append(e)
+    dump(os.path.join(WORK, "plan.json"), out)
+    dump(os.path.join(WORK, "mp_update.json"), mp)
+    with open(os.path.join(WORK, "assets.txt"), "w") as f:
+        f.write("\n".join(assets) + ("\n" if assets else ""))
+    print(json.dumps({"changes": len(out), "mercadoPagoUpdates": len(mp), "photos": len(assets), "skipped": skipped}, ensure_ascii=False))
+
+
+def save_photo(src, dst):
+    try:
+        from PIL import Image, ImageOps
+        im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
+        im.thumbnail((1400, 1400))
+        im.save(dst, "JPEG", quality=82, optimize=True, progressive=True)
+    except ImportError:
+        import shutil
+        shutil.copyfile(src, dst)
+
+
+def apply(plan_path, mp_result_path, photos_dir):
+    plan_ = load(plan_path)
+    mp = load(mp_result_path) if mp_result_path and os.path.exists(mp_result_path) else {}
+    cat = load(ITEMS)
+    by_code = {x["code"]: x for x in cat}
+    ops, notes = [], []
+    now = __import__("datetime").datetime.now(__import__("datetime").timezone.utc).isoformat().replace("+00:00", "Z")
+    for e in plan_:
+        c = by_code.get(e["code"])
+        if c is None:
+            notes.append(e["code"] + ": not in items.json, skipped")
+            continue
+        did, patch = [], {}
+        prop, site = dict(e["proposal"]), dict(e["siteObj"])
+        if e["priceChange"]:
+            res = mp.get(e["sid"])
+            if not res or not all(k in res for k in e["prefIds"]):
+                notes.append(e["code"] + ": Mercado Pago update missing, price not changed")
+                if e["requestId"]:
+                    ops.append({"op": "update", "path": "requests/" + e["itemId"], "ifVersion": e["requestVersion"],
+                                "data": {"status": "error", "error": "Mercado Pago didn't confirm the new price", "failedAt": now}})
+                continue
+            for k, v in res.items():
+                if v.get("url") and e["urls"].get(k) and v["url"] != e["urls"][k]:
+                    raise SystemExit(e["code"] + ": Mercado Pago returned a different URL; stop and check")
+            c["price"] = e["link"]
+            c["cashPrice"] = int(e["cash"])
+            was = mp_link(e["base"])
+            if e["cash"] < e["base"] and was > e["link"]:
+                c["wasPrice"] = was
+            else:
+                c.pop("wasPrice", None)
+            pl = {k: {"url": e["urls"][k], "prefId": e["prefIds"][k], "amount": res[k]["amount"]} for k in e["prefIds"]}
+            patch["payLinks"] = pl
+            patch["listPrice"] = int(e["base"])
+            prop["price"] = int(e["cash"])
+            prop["linkPrice"] = e["link"]
+            did.append("price " + money(e["cash"]) + " cash / " + money(e["link"]) + " MP")
+        if e["photos"]:
+            slug = e["code"].lower()
+            tag = hashlib.sha1("".join(e["photos"]).encode()).hexdigest()[:6]
+            new = []
+            for n, aid in enumerate(e["photos"], 1):
+                src = os.path.join(photos_dir, aid + ".jpg")
+                if not os.path.exists(src):
+                    hits = glob.glob(os.path.join(photos_dir, aid + ".*"))
+                    if not hits:
+                        raise SystemExit(e["code"] + ": photo " + aid + " not downloaded")
+                    src = hits[0]
+                rel = "images/%s-%d-%s.jpg" % (slug, n, tag)
+                save_photo(src, os.path.join(ROOT, rel))
+                new.append(rel)
+            for old in c.get("photos") or []:
+                if old.startswith("images/") and old not in new and os.path.exists(os.path.join(ROOT, old)):
+                    os.remove(os.path.join(ROOT, old))
+            c["photos"] = new
+            patch["listingPhotos"] = e["photos"]
+            did.append("%d photo%s" % (len(new), "s" if len(new) > 1 else ""))
+        s = e["site"]
+        for k in ["title", "description", "category", "condition", "size", "brand"]:
+            if k in s:
+                c[k] = str(s[k]).strip()
+        if "originalPrice" in s or "showOriginal" in s:
+            show = s.get("showOriginal", True) is not False
+            op = int(float(s.get("originalPrice") or 0)) if "originalPrice" in s else None
+            if op is not None:
+                patch["originalPrice"] = op
+                prop["originalPrice"] = op
+            if show and op is not None:
+                c["originalPrice"] = op
+            elif not show:
+                c["originalPrice"] = 0
+        if "held" in s and c.get("status") != "vendido":
+            c["status"] = "apartado" if s["held"] else "disponible"
+        if s:
+            for k in ["title", "description"]:
+                if k in s:
+                    prop[k] = str(s[k]).strip()
+            for k in ["category", "condition", "size", "brand", "held"]:
+                if k in s:
+                    site[k] = s[k]
+            if "showOriginal" in s:
+                patch["showOriginal"] = s["showOriginal"] is not False
+            did.append("listing details")
+        if e["hadPendingUpdate"]:
+            patch["pendingUpdate"] = {"__delete__": True}
+        if prop != e["proposal"]:
+            patch["proposal"] = prop
+        if site != e["siteObj"]:
+            patch["site"] = site
+        patch["lastSync"] = {"at": now, "note": ", ".join(did)}
+        patch["updatedAt"] = now
+        ops.append({"op": "update", "path": "items/" + e["itemId"], "ifVersion": e["version"], "data": patch})
+        if e["requestId"]:
+            ops.append({"op": "delete", "path": "requests/" + e["itemId"], "ifVersion": e["requestVersion"]})
+        notes.append(e["code"] + ": " + ", ".join(did))
+    with open(ITEMS, "w", encoding="utf-8") as f:
+        f.write(json.dumps(cat, ensure_ascii=False, indent=1) + "\n")
+    dump(os.path.join(WORK, "db_ops.json"), ops)
+    print("\n".join(notes))
+
+
+if __name__ == "__main__":
+    if len(sys.argv) == 4 and sys.argv[1] == "plan":
+        plan(sys.argv[2], sys.argv[3])
+    elif len(sys.argv) == 5 and sys.argv[1] == "apply":
+        apply(sys.argv[2], sys.argv[3], sys.argv[4])
+    else:
+        sys.exit(__doc__)
