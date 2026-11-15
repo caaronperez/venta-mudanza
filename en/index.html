@@ -140,7 +140,7 @@ svg.i { width: 26px; height: 26px; flex: none; fill: none; stroke: currentColor;
 .plan { display: grid; gap: 10px; }
 .plan > summary { list-style: none; }
 .plan > summary::-webkit-details-marker { display: none; }
-.plan > summary .chev { width: 20px; height: 20px; stroke-width: 2.2; transition: transform .2s ease; }
+.plan > summary .chev { display: block; width: 20px; height: 20px; stroke-width: 2.2; transform-origin: 50% 50%; transition: transform .2s ease; }
 .plan[open] > summary .chev { transform: rotate(180deg); }
 .plan .plan-body { border: 1.5px solid var(--mp-navy); border-radius: 12px; padding: 14px 16px; display: grid; gap: 10px; }
 .plan h3 { margin: 0; font: 700 20px/1.2 var(--serif); color: var(--mp-navy); }
@@ -148,7 +148,15 @@ svg.i { width: 26px; height: 26px; flex: none; fill: none; stroke: currentColor;
 .plan ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
 .plan a { display: grid; gap: 1px; text-decoration: none; color: var(--mp-navy); background: #fff; border: 1.5px solid #CFC8B8; border-radius: 10px; padding: 8px 12px; }
 .plan a:hover { border-color: var(--mp-navy); }
-.plan a span { font-size: 13px; color: var(--muted); }
+.plan a span, .plan .done span { font-size: 13px; color: var(--muted); }
+.plan .done { display: grid; gap: 1px; border-radius: 10px; padding: 8px 12px; background: var(--sage); border: 1.5px solid var(--sage); color: var(--green); }
+.plan .done b { font-size: 17px; font-variant-numeric: tabular-nums; }
+.plan .done em { font-style: normal; font-weight: 700; font-size: 13px; }
+.plan .left { font-weight: 700; color: var(--ink); }
+.plan .bar { height: 8px; border-radius: 999px; background: var(--sage); overflow: hidden; }
+.plan .bar i { display: block; height: 100%; background: var(--green); }
+.btn .sub2 { display: block; font-size: 14px; font-weight: 600; color: var(--sold); margin-top: 2px; }
+.card .left { font-size: 14px; font-weight: 700; color: var(--sold); }
 .plan a b { font-size: 17px; font-variant-numeric: tabular-nums; }
 .btn.wa-dark { background: var(--green); color: var(--paper); width: auto; padding: 12px 30px; border-radius: 999px; }
 .btn .walogo { width: 26px; height: 26px; flex: none; }
@@ -367,7 +375,12 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
 
   // ---- Language: index.html is Spanish; en/index.html is the same page in English (tools/sync.py pages copies it). ----
   var LANG = document.documentElement.lang === "en" ? "en" : "es";
-  var ROOT = LANG === "en" ? "../" : "";   // en/ lives one folder down: images/, brand/ and items.json are in the parent
+  // PAGE = this language's catalog URL; ROOT = the site root (images/, brand/, items.json). Both absolute, because an open item
+  // shows its own address (…/i/MV-90/) in the address bar, and relative paths would resolve against that.
+  var PAGE = location.href.split("#")[0].split("?")[0].replace(/index\.html$/, "").replace(/i\/MV-\d+\/?$/, "");
+  var ROOT = new URL(LANG === "en" ? "../" : "./", PAGE).href;
+  var OTHER = LANG === "en" ? ROOT : ROOT + "en/";
+  function itemUrl(code, base) { return (base || PAGE) + "i/" + code + "/"; }
   var STR = {
     es: {
       h1: "Venta de mudanza",
@@ -393,10 +406,12 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       msiBox: "Hasta 3 meses sin intereses · ", cashBox: "Pago en efectivo: ", cashNote: "Se paga en persona al recoger, sin envío. Escríbeme por WhatsApp para apartarlo.",
       fCond: "Estado", fSize: "Medidas", fBrand: "Marca", fPickup: "Recoger en", fShip: "Envío", ship: "Por tu cuenta: Lalamove, Uber Flash o DiDi Entrega",
       planH: "Paga con tarjeta en {n} pagos", planP: "Mercado Pago acepta hasta $300,000 por pago con tarjeta. Haz los {n} pagos (suman {total}) y mándame los comprobantes por WhatsApp.", planI: "Pago {i} de {n}",
+      paidMark: "Pagado ✓", leftN: "Faltan {left} de {n} pagos ({amt}) para llevártelo", left1: "Falta 1 pago ({amt}) para llevártelo",
+      allPaid: "¡Todos los pagos completos! ✓", progress: "{done} de {n} pagados", cardLeft: "Faltan {left} pagos para llevártelo", cardLeft1: "Falta 1 pago para llevártelo",
       payWith: "Pagar con ", payPickup: "y recoger", payAll: "en 1 pago por SPEI", payDeliv: "+ envío", planBtn: "a MSI · {n} pagos con tarjeta",
       waSold: "Hola, vi que vendiste {code} {title}. ¿Tienes algo parecido?", waOffer: "Hola, te ofrezco $____ por {code} · {title} (precio {price}).",
       btnSold: "Preguntar por algo parecido en WhatsApp", btnOffer: "Hazme una oferta en WhatsApp",
-      other: "English", otherHref: "en/"
+      other: "English"
     },
     en: {
       h1: "Moving sale",
@@ -422,10 +437,12 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
       msiBox: "Up to 3 interest-free installments · ", cashBox: "Cash price: ", cashNote: "Paid in person at pickup, no delivery. Message me on WhatsApp to hold it.",
       fCond: "Condition", fSize: "Size", fBrand: "Brand", fPickup: "Pickup at", fShip: "Delivery", ship: "Your own: Lalamove, Uber Flash or DiDi Entrega",
       planH: "Pay by card in {n} payments", planP: "Mercado Pago accepts up to $300,000 per card payment. Make all {n} payments (they add up to {total}) and send me the receipts on WhatsApp.", planI: "Payment {i} of {n}",
+      paidMark: "Paid ✓", leftN: "{left} of {n} payments left ({amt}) to take it home", left1: "1 payment left ({amt}) to take it home",
+      allPaid: "All payments complete! ✓", progress: "{done} of {n} paid", cardLeft: "{left} payments left to take it home", cardLeft1: "1 payment left to take it home",
       payWith: "Pay with ", payPickup: "and pick up", payAll: "in 1 SPEI transfer", payDeliv: "+ delivery", planBtn: "by card · {n} payments",
       waSold: "Hi, I saw you sold {code} {title}. Do you have something similar?", waOffer: "Hi, I'd offer $____ for {code} · {title} (price {price}).",
       btnSold: "Ask about something similar on WhatsApp", btnOffer: "Make me an offer on WhatsApp",
-      other: "Español", otherHref: "../"
+      other: "Español"
     }
   };
   function t(k, v) {
@@ -435,6 +452,13 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   var CAT_EN = { "Cocina": "Kitchen", "Decoración": "Decor", "Electrodomésticos": "Appliances", "Electrónica": "Electronics", "Hogar": "Home",
     "Iluminación": "Lighting", "Mascotas": "Pets", "Movilidad": "Mobility", "Muebles": "Furniture", "Organización": "Storage", "Recámara": "Bedroom" };
   var COND_EN = { "Nuevo": "New", "Como nuevo": "Like new", "Buen estado": "Good condition", "Con detalles de uso": "Shows some wear" };
+  // Split payments (items over the card limit): parts in items.json paymentPlan, each marked "paid" by tools/sync.py parts.
+  function planOf(it) { return (Array.isArray(it.paymentPlan) ? it.paymentPlan : []).filter(function (p) { return p && safeUrl(p.url) && Number(p.amount) > 0; }); }
+  function planLeft(plan) {
+    var left = plan.filter(function (p) { return !p.paid; });
+    return { n: plan.length, done: plan.length - left.length, left: left.length, amt: left.reduce(function (a, p) { return a + Number(p.amount); }, 0) };
+  }
+  function leftText(st) { return st.left === 0 ? t("allPaid") : st.left === 1 ? t("left1", { amt: money(st.amt) }) : t("leftN", { left: st.left, n: st.n, amt: money(st.amt) }); }
   function catName(c) { return LANG === "en" ? (CAT_EN[c] || c) : c; }
   // Item text in the page's language: items.json may carry an "en" block; otherwise the Spanish text shows.
   function tr(it, k) {
@@ -450,7 +474,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   (function () {
     var a = document.getElementById("lang");
     a.textContent = t("other"); a.setAttribute("hreflang", LANG === "en" ? "es" : "en"); a.setAttribute("lang", LANG === "en" ? "es" : "en");
-    function sync() { a.href = t("otherHref") + (/^#MV-\d+$/.test(location.hash) ? location.hash : ""); }
+    function sync() { var m = location.href.match(/(?:#|\/i\/)(MV-\d+)/); a.href = m ? itemUrl(m[1], OTHER) : OTHER; }
     sync(); window.addEventListener("hashchange", sync); a.addEventListener("click", sync);
   })();
 
@@ -559,7 +583,12 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
         h("h3", { text: tr(it, "title") }),
         h("div", { class: "price", text: money(it.price) }),
         wasLine(it),
-        h("div", { class: "sub", text: sold ? t("sold") : t("orMsi", { amt: money(it.price / 3) }) }),
+        (function () {
+          var pl = planOf(it);
+          if (sold || !pl.length) return h("div", { class: "sub", text: sold ? t("sold") : t("orMsi", { amt: money(it.price / 3) }) });
+          var st = planLeft(pl);
+          return h("div", { class: "left", text: st.left === 0 ? t("allPaid") : st.left === 1 ? t("cardLeft1") : t("cardLeft", { left: st.left }) });
+        })(),
         sold ? null : h("div", { class: "cash", text: t("cashAt", { amt: money(cashPrice(it)) }) }),
         origLine(it)
       ]);
@@ -648,36 +677,46 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
     if (!sold && !held) {
       var L = it.links || {}, deliv = Number(it.delivery) || 0;
       // Cards top out at $300,000 per payment on Mercado Pago, so big items carry a plan of several links that add up to the price.
-      var plan = (Array.isArray(it.paymentPlan) ? it.paymentPlan : []).filter(function (p) { return p && safeUrl(p.url) && Number(p.amount) > 0; });
+      var plan = planOf(it);
       if (plan.length) {
+        var pst = planLeft(plan);
         // One "pay by card / MSI" button; tapping it opens the list of part payments.
         acts.appendChild(h("details", { class: "plan" }, [
           h("summary", { class: "btn mp" }, [
-            h("span", null, [t("payWith"), h("img", { class: "mplogo", src: ROOT + "brand/mercadopago-color-horizontal.svg", alt: "Mercado Pago" }), " " + t("planBtn", { n: plan.length })]),
+            h("span", null, [t("payWith"), h("img", { class: "mplogo", src: ROOT + "brand/mercadopago-color-horizontal.svg", alt: "Mercado Pago" }), " " + t("planBtn", { n: plan.length }),
+              h("span", { class: "sub2", text: leftText(pst) })]),
             h("span", { class: "amt", style: "display:inline-flex;align-items:center;gap:6px" }, [money(it.price), icon("i-chev", "chev")])
           ]),
           h("div", { class: "plan-body" }, [
             h("h3", { text: t("planH", { n: plan.length }) }),
             h("p", { text: t("planP", { n: plan.length, total: money(it.price) }) }),
+            h("p", { class: "left", text: t("progress", { done: pst.done, n: pst.n }) + " · " + leftText(pst) }),
+            h("div", { class: "bar", role: "progressbar", "aria-valuemin": "0", "aria-valuemax": String(pst.n), "aria-valuenow": String(pst.done), "aria-label": t("progress", { done: pst.done, n: pst.n }) },
+              [h("i", { style: "width:" + Math.round(pst.done / pst.n * 100) + "%" })]),
             h("ol", null, plan.map(function (p, k) {
-              return h("li", null, [h("a", { href: safeUrl(p.url), target: "_blank", rel: "noopener" }, [h("span", { text: t("planI", { i: k + 1, n: plan.length }) }), h("b", { text: money(p.amount) })])]);
+              var label = t("planI", { i: k + 1, n: plan.length });
+              if (p.paid) return h("li", null, [h("div", { class: "done" }, [h("span", { text: label }), h("b", { text: money(p.amount) }), h("em", { text: t("paidMark") })])]);
+              return h("li", null, [h("a", { href: safeUrl(p.url), target: "_blank", rel: "noopener" }, [h("span", { text: label }), h("b", { text: money(p.amount) })])]);
             }))
           ])
         ]));
-        if (safeUrl(L.pickup)) acts.appendChild(mpBtn("alt", t("payAll"), money(it.price), safeUrl(L.pickup)));
+        // The one-shot SPEI link is for the full price, so it only makes sense while no part has been paid.
+        if (safeUrl(L.pickup) && pst.done === 0) acts.appendChild(mpBtn("alt", t("payAll"), money(it.price), safeUrl(L.pickup)));
       } else if (safeUrl(L.pickup)) acts.appendChild(mpBtn("", t("payPickup"), money(it.price), safeUrl(L.pickup)));
       if (safeUrl(L.delivery) && deliv > 0) acts.appendChild(mpBtn("alt", t("payDeliv"), money(it.price + deliv), safeUrl(L.delivery)));
     }
     var msg = sold ? t("waSold", { code: it.code, title: tr(it, "title") }) : t("waOffer", { code: it.code, title: tr(it, "title"), price: money(it.price) });
     acts.appendChild(waBtn(sold ? t("btnSold") : t("btnOffer"), waLink(msg)));
     showPhoto(0);
-    if (location.hash !== "#" + it.code) history.replaceState(null, "", "#" + it.code);
+    // Show the item's own link (…/i/MV-90/) in the address bar: it's the link that previews nicely when shared.
+    if (location.href !== itemUrl(it.code)) history.replaceState(null, "", itemUrl(it.code));
+    document.getElementById("lang").href = itemUrl(it.code, OTHER);
     if (!modal.open) modal.showModal();
     modal.focus({ preventScroll: true });
     modal.querySelector(".m").scrollTop = 0; modal.querySelector(".info").scrollTop = 0;
   }
   function close() { if (modal.open) modal.close(); }
-  modal.addEventListener("close", function () { current = null; if (/^#MV/.test(location.hash)) history.replaceState(null, "", location.pathname + location.search); });
+  modal.addEventListener("close", function () { current = null; if (location.href !== PAGE) history.replaceState(null, "", PAGE); document.getElementById("lang").href = OTHER; });
   modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
   document.getElementById("m-close").addEventListener("click", close);
   document.getElementById("m-close2").addEventListener("click", close);
@@ -688,7 +727,7 @@ dialog::backdrop { background: rgba(20,37,27,.45); backdrop-filter: blur(6px); }
   });
   document.getElementById("m-share").addEventListener("click", function (e) {
     // Share the item's own page (i/<CODE>/) so WhatsApp / iMessage show its photo and title, not the site's.
-    var b = e.currentTarget, url = location.href.split("#")[0].split("?")[0].replace(/index\.html$/, "") + (current ? "i/" + current.code + "/" : "");
+    var b = e.currentTarget, url = current ? itemUrl(current.code) : PAGE;
     (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () {
       b.textContent = t("copied"); setTimeout(function () { b.textContent = t("copy"); }, 2000);
     }).catch(function () { b.textContent = url; });

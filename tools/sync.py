@@ -17,6 +17,9 @@ Steps (run from the repo root):
      -> edits items.json and images/, prints a summary
      -> work/db_ops.json      ops for the artifact db_write (item updates + request deletes)
   Sold items: python3 tools/sync.py sold MV-02 MV-14   -> status "vendido" in items.json (kept on the site as Vendido)
+  Split payments: python3 tools/sync.py parts parts.json  -> marks paymentPlan parts paid in items.json
+     parts.json is the output of (Mac) python3 ~/MovingSale/check_paid.py --parts 30: [{"code","part","date",...}].
+     The list is the full truth: parts missing from it go back to unpaid (refunds).
   Share pages: python3 tools/sync.py pages             -> i/<CODE>/index.html for every item, en/index.html (English copy of
                                                           index.html) and en/i/<CODE>/index.html (apply and sold also run it)
      English item text lives in items.json as "en": {"title","description","size","condition"}; missing keys fall back to Spanish.
@@ -360,6 +363,39 @@ def share_pages():
     return sorted(keep)
 
 
+def parts(parts_path):
+    """Mark the paid parts of split payments (items.json paymentPlan[].paid / paidAt) from check_paid.py --parts."""
+    paid = {}
+    for r in load(parts_path):
+        try:
+            paid[(str(r["code"]), int(r["part"]))] = r.get("date")
+        except (KeyError, TypeError, ValueError):
+            continue
+    cat = load(ITEMS)
+    changed = []
+    for c in cat:
+        plan_ = c.get("paymentPlan")
+        if not isinstance(plan_, list):
+            continue
+        before = json.dumps(plan_, sort_keys=True)
+        for k, pt in enumerate(plan_, 1):
+            n = int(pt.get("n") or k)
+            if (c["code"], n) in paid:
+                pt["paid"] = True
+                pt["paidAt"] = paid[(c["code"], n)] or pt.get("paidAt")
+            else:
+                pt.pop("paid", None)
+                pt.pop("paidAt", None)
+        if json.dumps(plan_, sort_keys=True) != before:
+            done = sum(1 for pt in plan_ if pt.get("paid"))
+            changed.append("%s %d/%d" % (c["code"], done, len(plan_)))
+    if changed:
+        with open(ITEMS, "w", encoding="utf-8") as f:
+            f.write(json.dumps(cat, ensure_ascii=False, indent=1) + "\n")
+        share_pages()
+    print(json.dumps({"partsChanged": changed}))
+
+
 def sold(codes):
     """Mark items as sold on the catalog (they stay visible with the "Vendido" badge)."""
     cat = load(ITEMS)
@@ -381,6 +417,8 @@ if __name__ == "__main__":
         sold(set(sys.argv[2:]))
     elif len(sys.argv) == 5 and sys.argv[1] == "apply":
         apply(sys.argv[2], sys.argv[3], sys.argv[4])
+    elif len(sys.argv) == 3 and sys.argv[1] == "parts":
+        parts(sys.argv[2])
     elif len(sys.argv) == 2 and sys.argv[1] == "pages":
         print(json.dumps({"sharePages": len(share_pages())}))
     else:
