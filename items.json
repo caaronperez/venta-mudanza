@@ -960,7 +960,7 @@
   "photos": [
    "images/mv-38-1.jpg"
   ],
-  "status": "disponible",
+  "status": "vendido",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3a7cedc6-ddb1-40ea-bda0-9f3caba72e40"
   },
@@ -1947,7 +1947,7 @@
   "photos": [
    "images/mv-77-1.jpg"
   ],
-  "status": "oferta",
+  "status": "vendido",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-692efaed-5d2d-4c3f-bc16-a4f7efb43175"
   },
