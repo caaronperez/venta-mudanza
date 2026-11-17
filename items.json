@@ -168,7 +168,7 @@
   "photos": [
    "images/mv-07-1.jpg"
   ],
-  "status": "disponible",
+  "status": "vendido",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c3719e68-5733-429c-9eb5-d84eadb559e4"
   },
