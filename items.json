@@ -816,6 +816,32 @@
   }
  },
  {
+  "code": "MV-33",
+  "title": "Aparador IKEA FJÄLLBO negro con puertas de malla",
+  "price": 3140,
+  "originalPrice": 6999,
+  "cashPrice": 2999,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "111 x 47 x 95 cm",
+  "brand": "IKEA",
+  "description": "Aparador IKEA FJÄLLBO en negro, estructura de acero con puertas de malla y cubierta/repisa de pino macizo, 111 x 47 x 95 cm. En buen estado. Estilo industrial, ideal para sala o comedor.",
+  "photos": [
+   "images/mv-33-1.jpg",
+   "images/mv-33-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-142a7241-aad8-4bda-a30e-4bbcae75bd4b"
+  },
+  "en": {
+   "title": "Black IKEA FJÄLLBO sideboard with mesh doors",
+   "size": "111 x 47 x 95 cm",
+   "description": "Black IKEA FJÄLLBO sideboard: steel frame with mesh doors and a solid pine top/shelf, 111 x 47 x 95 cm. Good condition. Industrial style, great for a living or dining room."
+  }
+ },
+ {
   "code": "MV-34",
   "title": "Bancos altos de bar negros giratorios con pistón",
   "price": 430,
@@ -2354,6 +2380,110 @@
    "description": "Georgie sleeps most of the day. Super calm: never scratches or bites. Healthy and very loving; he wakes you up with purrs. The only thing: he doesn't like being alone, so he needs company.",
    "size": "Fits perfectly on your lap (or in a tote bag)",
    "condition": "Healthy and pampered"
+  }
+ },
+ {
+  "code": "MV-91",
+  "title": "Bote de basura NINESTARS 50 L acero inox (sensor no funciona)",
+  "price": 220,
+  "originalPrice": 1779,
+  "cashPrice": 200,
+  "delivery": 0,
+  "category": "Hogar",
+  "condition": "Con detalles de uso",
+  "size": "50 L",
+  "brand": "NINESTARS",
+  "description": "Bote de basura NINESTARS de acero inoxidable, aprox. 50 litros, ovalado. El sensor de la tapa NO funciona (se vende para reparar o para usarse abriendo la tapa a mano). Cuerpo en buen estado y limpio.",
+  "photos": [
+   "images/mv-91-1.jpg",
+   "images/mv-91-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-40c61750-4ed9-4b8c-bac1-c308ae7b402a"
+  },
+  "en": {
+   "title": "NINESTARS 50 L stainless trash can (sensor doesn't work)",
+   "size": "50 L",
+   "description": "NINESTARS stainless steel trash can, about 50 liters, oval. The lid sensor does NOT work (sold for repair or to use opening the lid by hand). Body in good shape and clean."
+  }
+ },
+ {
+  "code": "MV-92",
+  "title": "Bote de basura con sensor NINESTARS 50 L, tapa negra",
+  "price": 770,
+  "originalPrice": 1607,
+  "cashPrice": 730,
+  "delivery": 0,
+  "category": "Hogar",
+  "condition": "Buen estado",
+  "size": "50 L",
+  "brand": "NINESTARS",
+  "description": "Bote de basura automático NINESTARS de 50 litros en acero inoxidable con tapa negra; abre solo al acercar la mano. Comprado en diciembre de 2025, funciona bien.",
+  "photos": [
+   "images/mv-92-1.jpg",
+   "images/mv-92-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-6dcf6be8-d1c2-4419-9f82-a37413342eff"
+  },
+  "en": {
+   "title": "NINESTARS 50 L sensor trash can, black lid",
+   "size": "50 L",
+   "description": "NINESTARS 50-liter automatic stainless steel trash can with black lid; opens when you bring your hand close. Bought December 2025, works well."
+  }
+ },
+ {
+  "code": "MV-93",
+  "title": "Cabecera King Size tapizada color arena",
+  "price": 320,
+  "originalPrice": 1799,
+  "cashPrice": 300,
+  "delivery": 0,
+  "category": "Muebles",
+  "condition": "Buen estado",
+  "size": "King Size",
+  "brand": "",
+  "description": "Cabecera tapizada para cama King Size en tela color arena. Usada, en buen estado y sin roturas. La cama de las fotos es matrimonial y no se incluye.",
+  "photos": [
+   "images/mv-93-1.jpg",
+   "images/mv-93-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-34914921-1618-49d6-8631-481d0d0561e7"
+  },
+  "en": {
+   "title": "Sand-colored upholstered King headboard",
+   "size": "King size",
+   "description": "Upholstered King-size headboard in sand-colored fabric. Used, good condition, no tears. The bed in the photos is a full/double and isn't included."
+  }
+ },
+ {
+  "code": "MV-94",
+  "title": "Sábila (aloe vera) grande con maceta decorativa",
+  "price": 170,
+  "originalPrice": 650,
+  "cashPrice": 150,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "55 cm de alto x 75 cm de ancho",
+  "brand": "",
+  "description": "Planta de sábila (aloe vera) natural y grande, aprox. 55 cm de alto y 75 cm de ancho. Incluye maceta decorativa de cerámica texturizada color crema. Muy fácil de cuidar.",
+  "photos": [
+   "images/mv-94-1.jpg",
+   "images/mv-94-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-d1c8d13d-be21-4a04-a965-e8785e6018d5"
+  },
+  "en": {
+   "title": "Large aloe vera plant in a decorative pot",
+   "size": "55 cm tall x 75 cm wide",
+   "description": "Large real aloe vera plant, about 55 cm tall and 75 cm wide. Comes in a cream textured ceramic pot. Very easy to care for."
   }
  }
 ]
