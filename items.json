@@ -110,8 +110,9 @@
   "condition": "Buen estado",
   "size": "75 pulgadas",
   "brand": "LG",
-  "description": "Pantalla LG UHD de 75 pulgadas, modelo 75UN8000PUB: 4K, Smart TV con webOS y ThinQ AI. Funciona perfectamente. Se entrega con control remoto y cable de corriente; se desmonta de la pared para la entrega.",
+  "description": "Pantalla LG UHD de 75 pulgadas, modelo 75UN8000PUB: 4K, Smart TV con webOS y ThinQ AI. Funciona perfectamente. Incluye el soporte para montarla en la pared y la canaleta para esconder los cables que bajan a la consola (corriente, ethernet, HDMI o cualquier otro módulo). Se entrega con control remoto y cable de corriente; se desmonta de la pared para la entrega.",
   "photos": [
+   "images/mv-05-3.jpg",
    "images/mv-05-1.jpg",
    "images/mv-05-2.jpg"
   ],
@@ -121,7 +122,7 @@
   },
   "en": {
    "title": "LG 75\" 4K UHD Smart TV ThinQ AI (75UN8000)",
-   "description": "LG 75-inch UHD TV, model 75UN8000PUB: 4K Smart TV with webOS and ThinQ AI. Works perfectly. Comes with remote and power cable; taken off the wall for pickup.",
+   "description": "LG 75-inch UHD TV, model 75UN8000PUB: 4K Smart TV with webOS and ThinQ AI. Works perfectly. Includes the wall mount and the cable raceway that hides the cables running down to the console (power, ethernet, HDMI or any other device). Comes with remote and power cable; taken off the wall for pickup.",
    "size": "75 inches"
   }
  },
