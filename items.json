@@ -39,7 +39,7 @@
   "photos": [
    "images/mv-02-1.jpg"
   ],
-  "status": "disponible",
+  "status": "oferta",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c5036175-b40d-4208-ae9f-42ae974e1f04"
   },
@@ -47,7 +47,8 @@
    "title": "Light gray tufted corner sofa with chaise",
    "description": "Light gray L-shaped sofa with chaise, tufted back and wooden legs. About 230 x 160 cm. Good condition, no visible tears; sold as is with its cushions.",
    "size": "230 x 160 cm"
-  }
+  },
+  "lockPay": true
  },
  {
   "code": "MV-03",
@@ -702,7 +703,7 @@
   "photos": [
    "images/mv-28-1.jpg"
   ],
-  "status": "disponible",
+  "status": "oferta",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-2b4f992e-9aed-43fd-a8d2-773922c128cd"
   },
@@ -710,7 +711,8 @@
    "title": "Rustic dark wood dining table with X legs, seats 6",
    "description": "Rustic dark wood dining table with crossed X legs, seats 6 (about 180–200 x 90 cm). Good condition with normal wear. The gray Eames-style chairs are sold separately.",
    "size": "About 180–200 x 90 x 76 cm"
-  }
+  },
+  "lockPay": true
  },
  {
   "code": "MV-29",
