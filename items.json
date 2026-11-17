@@ -292,13 +292,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-493f4a8e-0353-4bc0-a6ff-1b0895311878"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-493f4a8e-0353-4bc0-a6ff-1b0895311878",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-ac2dbd7b-b8fb-4757-bbf2-995458b2410b"
   },
   "en": {
    "title": "Black linear LED wall sconce",
    "description": "Black linear LED wall sconce, warm light, about 60 cm. Works perfectly; handed over uninstalled (needs an electrician to mount). 2 available. Price is per piece.",
    "size": "60 cm long"
-  }
+  },
+  "qty": 2,
+  "allPrice": 640
  },
  {
   "code": "MV-13",
@@ -542,13 +545,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-14ce892d-9006-4d74-9b66-b39dc2283312"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-14ce892d-9006-4d74-9b66-b39dc2283312",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3d887671-0fc7-416f-8b31-695cc573ac07"
   },
   "en": {
    "title": "Targus USB-C Quad 4K dock DOCK570USZ, 100W",
    "description": "Targus DOCK570USZ USB-C Universal Quad 4K docking station (DisplayLink): up to 4 4K monitors, 100 W laptop charging, USB and Ethernet ports. Works with Mac and Windows. Power adapter and USB-C cable included. 2 available. Price is per piece.",
    "size": "21 x 9 x 5 cm"
-  }
+  },
+  "qty": 2,
+  "allPrice": 3140
  },
  {
   "code": "MV-23",
@@ -717,13 +723,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c4796b28-6a68-4d3f-b735-ab5b06885716"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-c4796b28-6a68-4d3f-b735-ab5b06885716",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-7778360b-4e9e-48fe-9b1d-85f7cbd2e9b7"
   },
   "en": {
    "title": "Gray Eames-style dining chairs with wooden legs",
    "description": "Gray Eames-style dining chairs with polypropylene seats and wooden legs. 5 available, good condition. Price is per chair.",
    "size": "About 46 x 53 x 82 cm each"
-  }
+  },
+  "qty": 5,
+  "allPrice": 1600
  },
  {
   "code": "MV-30",
@@ -818,13 +827,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9e0058d9-0592-442c-a1f8-972044a73209"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-9e0058d9-0592-442c-a1f8-972044a73209",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-d14a8c98-8d4b-40c1-b637-8b235fd00673"
   },
   "en": {
    "title": "Black swivel bar stools with gas lift",
    "description": "Miereirl bar stools with black polypropylene seat and back, swivel, gas lift for height and a footrest ring. 4 available, good condition. Price is per stool.",
    "size": "Adjustable height 85–105 cm"
-  }
+  },
+  "qty": 4,
+  "allPrice": 1720
  },
  {
   "code": "MV-36",
@@ -1244,13 +1256,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-717d990b-5f1b-4729-9edf-453afd8d9d0d"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-717d990b-5f1b-4729-9edf-453afd8d9d0d",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-03f2fdf9-dc74-4f88-8351-620fdd96ff19"
   },
   "en": {
    "title": "IKEA MALM 2-drawer nightstand, white-stained oak",
    "description": "IKEA MALM 2-drawer chest in white-stained oak veneer, 40 x 55 cm. Good condition; I have two matching ones, $1,500 for the pair.",
    "size": "40 x 48 x 55 cm"
-  }
+  },
+  "qty": 2,
+  "allPrice": 1500
  },
  {
   "code": "MV-53",
@@ -1269,13 +1284,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-aebf4289-ae9b-4e24-ae8a-f77029fd0787"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-aebf4289-ae9b-4e24-ae8a-f77029fd0787",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-e0369b34-5a69-424a-8c49-056ce69d5261"
   },
   "en": {
    "title": "IKEA SYMFONISK Sonos Wi-Fi speaker lamp, black",
    "description": "IKEA SYMFONISK (Sonos) Wi-Fi speaker lamp, black base with smoked glass shade. Works with the Sonos app and AirPlay 2, great sound. I have two; they can be paired as stereo speakers. Price is per piece.",
    "size": "About 40 cm tall"
-  }
+  },
+  "qty": 2,
+  "allPrice": 10440
  },
  {
   "code": "MV-54",
@@ -1694,13 +1712,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-0cc0c7ee-f5b5-4e6e-aaa9-d7a34b9d9802"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-0cc0c7ee-f5b5-4e6e-aaa9-d7a34b9d9802",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-96b17816-cb22-4b70-b1ae-0fe0c9ea54cf"
   },
   "en": {
    "title": "Black step-style floating shelf",
    "description": "Black step-style floating wall shelf from Mercado Libre. 2 available, good condition. Price is per piece.",
    "size": "About 60 x 15 x 15 cm"
-  }
+  },
+  "qty": 2,
+  "allPrice": 220
  },
  {
   "code": "MV-71",
@@ -1769,13 +1790,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-27684d95-7014-4274-a671-2abe99ab3aa4"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-27684d95-7014-4274-a671-2abe99ab3aa4",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-eee89fa9-7471-4d5d-8372-711eae0761ce"
   },
   "en": {
    "title": "Small framed prints: Oaxaca Cathedral and axolotl",
    "description": "Framed prints: 'Oaxaca Cathedral' by José María Velasco (black frame) and a scientific axolotl illustration (natural wood frame). About 40 x 30 cm each. Good condition. Price is per piece.",
    "size": "About 40 x 30 cm each"
-  }
+  },
+  "qty": 2,
+  "allPrice": 3140
  },
  {
   "code": "MV-74",
@@ -1920,13 +1944,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-caab3dfc-15de-4b6a-be8d-31c917bf43ff"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-caab3dfc-15de-4b6a-be8d-31c917bf43ff",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-f8dde4b2-6e58-4cfa-9edc-24eb169760d0"
   },
   "en": {
    "title": "2 umbrella trees (schefflera) 2.2 m in black pots · $950 each",
    "description": "There are 2 real umbrella trees (aralia/schefflera), each about 2.2 m tall with pot, several trunks and lots of foliage. Each comes with its large black pot (about 45 cm). Price is per tree: $950 each with Mercado Pago or $900 each in cash. If you want both, pay the link twice or message me. Needs a big vehicle to transport.",
    "size": "2.2 m tall each"
-  }
+  },
+  "qty": 2,
+  "allPrice": 1900
  },
  {
   "code": "MV-80",
@@ -2167,13 +2194,16 @@
   ],
   "status": "disponible",
   "links": {
-   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-e9ee0928-84d5-4a4c-bb2c-b75963c82ea4"
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-e9ee0928-84d5-4a4c-bb2c-b75963c82ea4",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-1a0d444d-221f-484d-8e16-a82864bf95b1"
   },
   "en": {
    "title": "IKEA GLATTIS 38 cm round gold tray",
    "description": "IKEA GLATTIS round decorative tray in brass/gold, 38 cm diameter. Good condition. 2 available; sold individually or together.",
    "size": "Ø 38 cm"
-  }
+  },
+  "qty": 2,
+  "allPrice": 540
  },
  {
   "code": "MV-90",
