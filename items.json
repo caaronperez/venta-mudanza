@@ -243,7 +243,7 @@
   "photos": [
    "images/mv-10-1.jpg"
   ],
-  "status": "disponible",
+  "status": "vendido",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-31288fce-6488-4559-b8f8-6dcecbcda264"
   },
@@ -473,7 +473,7 @@
   "photos": [
    "images/mv-19-1.jpg"
   ],
-  "status": "disponible",
+  "status": "vendido",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-85ab8435-3b1f-4af5-8b47-707171da9695"
   },
@@ -1922,7 +1922,7 @@
   "photos": [
    "images/mv-76-1.jpg"
   ],
-  "status": "oferta",
+  "status": "vendido",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-d6d1ec21-d0d1-4410-9c8a-955ad3099906"
   },
