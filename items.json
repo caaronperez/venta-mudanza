@@ -1165,7 +1165,7 @@
   "photos": [
    "images/mv-46-1.jpg"
   ],
-  "status": "disponible",
+  "status": "vendido",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-5e66b304-26c9-41a6-8979-062843ae6dfd"
   },
@@ -1573,7 +1573,7 @@
   "photos": [
    "images/mv-62-1.jpg"
   ],
-  "status": "oferta",
+  "status": "vendido",
   "links": {
    "bbva": "https://api.openpay.mx/v1/ms1yc7i9o9skh4el5fq6/customers/ahy3v3rwnxqf7c1cedmo/checkouts/ck490j1x8wipjf1nzbkl"
   },
@@ -1747,7 +1747,7 @@
   "photos": [
    "images/mv-69-1.jpg"
   ],
-  "status": "disponible",
+  "status": "vendido",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-57a4e1a9-1344-4ca7-a9d4-c1eae5c93f79"
   },
