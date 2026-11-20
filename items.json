@@ -2814,5 +2814,62 @@
    "condition": "Like new",
    "description": "Full/double (matrimonial) mattress with its box spring. I bought it 6 months ago at Costco for $12,000 and it was in the guest room, so it has very little use. The headboard in the photo is sold separately (MV-93)."
   }
+ },
+ {
+  "code": "MV-107",
+  "title": "Estantes flotantes negros (juego de 5)",
+  "price": 220,
+  "originalPrice": 333,
+  "cashPrice": 200,
+  "delivery": 0,
+  "category": "Decoración",
+  "condition": "Buen estado",
+  "size": "Aprox. 60–90 cm",
+  "brand": "",
+  "description": "Juego de 5 estantes/repisas flotantes negros, comprados en Home Depot. 3 estaban en la recámara y 2 (más largas) en el baño. En buen estado. Precio por pieza; también puedes llevarte las 5.",
+  "photos": [
+   "images/mv-107-1.jpg",
+   "images/mv-107-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-3648dc9f-48b6-4eea-830a-646104196014",
+   "all": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-d46b781f-cf1f-4ca4-87cc-5854dd527ab3"
+  },
+  "en": {
+   "title": "Black floating shelves (set of 5)",
+   "condition": "Good condition",
+   "size": "About 60–90 cm",
+   "description": "Set of 5 black floating wall shelves from Home Depot. 3 were in the bedroom and 2 (longer) in the bathroom. Good condition. Price is per piece; you can also take all 5."
+  },
+  "qty": 5,
+  "allPrice": 1100
+ },
+ {
+  "code": "MV-108",
+  "title": "Cama King Size: colchón Spring Air Atlantic + box",
+  "price": 17730,
+  "originalPrice": 27000,
+  "cashPrice": 17000,
+  "delivery": 0,
+  "category": "Recámara",
+  "condition": "Buen estado",
+  "size": "King Size",
+  "brand": "Spring Air",
+  "description": "Cama King Size: colchón Spring Air modelo Atlantic con memory foam y gel refrescante (Cool Gel), incluye su box. En buen estado. Precio nuevo aprox. $27,000. La cabecera no se incluye.",
+  "photos": [
+   "images/mv-108-1.jpg",
+   "images/mv-108-2.jpg"
+  ],
+  "status": "disponible",
+  "links": {
+   "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-e71e3723-0efa-4208-aa48-e00ca228dcab"
+  },
+  "en": {
+   "title": "King size bed: Spring Air Atlantic mattress + box spring",
+   "condition": "Good condition",
+   "size": "King",
+   "description": "King size bed: Spring Air Atlantic mattress with memory foam and Cool Gel, box spring included. Good condition. About $27,000 new. Headboard not included."
+  }
  }
 ]
