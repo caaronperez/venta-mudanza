@@ -260,6 +260,7 @@ EN_PAGE = [  # (Spanish, English) replacements that turn index.html into en/inde
     ('src="images/', 'src="../images/'),
     ('src="brand/', 'src="../brand/'),
     ('href="brand/', 'href="../brand/'),
+    ('<link rel="manifest" href="manifest.json">', '<link rel="manifest" href="../manifest.json">'),
 ]
 
 
