@@ -785,7 +785,7 @@
   "photos": [
    "images/mv-31-1.jpg"
   ],
-  "status": "disponible",
+  "status": "oferta",
   "links": {
    "pickup": "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=77839444-b859563a-a203-463d-b6b1-96b675b060aa"
   },
@@ -793,7 +793,8 @@
    "title": "Merax black fluted sideboard, 121 cm",
    "description": "Black Merax sideboard/buffet with a curved fluted front and adjustable shelves, 121 x 42 x 76 cm. Note: some paint marks and small scuffs on the leg tips. Lots of storage for a dining or living room.",
    "size": "121 x 42 x 76 cm"
-  }
+  },
+  "lockPay": true
  },
  {
   "code": "MV-32",
